@@ -1,8 +1,7 @@
 /*****************************************************************************
  * tg13-4-robotic-project.c : This is were the "magic" happens...
  *****************************************************************************
- * Copyright (C) 2008 the tg13-4-robotic-project Team
- * $Id$
+ * Copyright (C) 2008-2009 the tg13-4-robotic-project Team
  *
  * Authors: Kai Hermann <kai -dot- uwe -dot- hermann -at- googlemail -dot- com>
  *			Emanuel Schrade <>
@@ -23,6 +22,8 @@
  *****************************************************************************/
 
 #include "asuro.h"
+#include "inc.c"
+
 const int ls = 255;
 const int rs = 249;
 const int white = 40;
@@ -34,10 +35,19 @@ const int fahrzeit5 = 100;
 const int drehzeit1 = 540; //90°-Drehung mit einem Motor
 const int drehzeit2 = 250; //90°-Drehung mit zwei Motoren
 
+
 int main(void)
 {
-  unsigned int data[2]; //Speicher bereitstellen
-  Init();
+//unsigned int data[2]; //Speicher bereitstellen
+
+	Init(); //Init-Funktion der Lib
+	msl = 1;
+	int status=0;
+	
+	status = asuro_init(); //unsre init-Funktion
+	
+	PrintInt(status);
+/*
 
 MotorDir(FWD, FWD);
 
@@ -46,7 +56,6 @@ Msleep(fahrzeit1); //Fährt zum Eingang des Labyrinths
 
 MotorSpeed(ls, 0); 
 Msleep(drehzeit1); //Dreht sich zum Eingang hin
-/*
 MotorSpeed(ls, rs);
 Msleep(fahrzeit2); //Fährt ins Labyrinth hinein
 
@@ -82,7 +91,10 @@ Msleep(drehzeit1); //dreht aus der bösen Ecke heraus
 MotorSpeed(ls, rs);
 Msleep(fahrzeit4); //fährt durchs Endstück
 */
+/*
 MotorSpeed(0, 0);
+ */
+ 
  /*
   FrontLED(ON);
   
