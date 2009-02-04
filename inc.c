@@ -206,6 +206,8 @@ void setMS(void)
 {
 	unsigned char serIn[1]; //input an der seriellen schnittstelle
 	
+	readEEPROM();
+	
 	int tmsl = msl;
 	int tmsr = msr;
 	int wait = 0;
