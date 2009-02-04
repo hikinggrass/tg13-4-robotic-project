@@ -60,7 +60,7 @@ unsigned int data[2]; //Speicher für Linien-Sensoren bereitstellen
 	MotorDir(FWD,RWD);
 	LineData(data);
 	while(data[RIGHT] >= white_r - 10) //Drehung vorm Lab
-		LineDate(data);
+		LineData(data);
 		
 	MotorDir(FWD,FWD);
 	Msleep(500);
@@ -69,7 +69,6 @@ unsigned int data[2]; //Speicher für Linien-Sensoren bereitstellen
 	
 	
 	
-	while(
 
 	while (1);
 	return 0;
