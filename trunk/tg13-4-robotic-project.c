@@ -41,20 +41,20 @@ unsigned int data[2]; //Speicher für Linien-Sensoren bereitstellen
 	LineData(data);
 	while(data[LEFT] <= black_l + 10 && data[RIGHT] <= black_r + 10)	//Bis von der schwarzen Linie runter
 		LineData(data);
-	/*lol*/
+	/*lol
 	MotorSpeed(0,0);
 	Msleep(1000);
 	MotorSpeed(msl,msr);
-	/*lol*/
+	lol*/
 	
 	LineData(data);
 	while(data[LEFT] >= white_l - 10 || data[RIGHT] >= white_r - 10) //Bis zu der kreuzenden schwarzen Linie
 		LineData(data);
-	/*lol*/
+	/*lol
 	MotorSpeed(0,0);
 	Msleep(1000);
 	MotorSpeed(msl,msr);
-	/*lol*/
+	lol*/
 	Msleep(30); //TESTEN!
 	
 	MotorDir(FWD,RWD);
