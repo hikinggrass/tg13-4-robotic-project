@@ -24,6 +24,10 @@
 #include "globals.c"
 #include <avr/eeprom.h>
 
+//evtl....
+#include <stdio.h> 
+#include <stdlib.h> 
+
 /*****************************************************************************
  * uint8_t KeyPressed(void)
  *****************************************************************************
@@ -170,6 +174,12 @@ void readEEPROM(void)
 	_EEGET(msr,EE_MSR);
 }
 
+
+/*****************************************************************************
+ * void info(void)
+ *****************************************************************************
+ * gib EEPROM infos aus
+ *****************************************************************************/
 void info(void)
 {
 	readEEPROM();
@@ -187,12 +197,29 @@ void info(void)
 	PrintInt(msr);
 	SerPrint("\r\n-DONE-\r\n");
 }
-
+/*****************************************************************************
+ * void setMS(void)
+ *****************************************************************************
+ * setze Motorgeschwindigkeit
+ *****************************************************************************/
 void setMS(void)
 {
-	//Motorspeed setzen -TODO-
-	_EEPUT(EE_MSL,255);
-	_EEPUT(EE_MSR,255);
+	unsigned char serIn[3];
+	
+	SerPrint("\r\nMOTORGESCHWINDIGKEIT EINSTELLEN !!!!!111einseinself\r\n");
+	
+	SerPrint("Motorgeschwindigkeit Links:\r\n");
+	SerRead(serIn,3,1); //warten auf Input	
+	msl = atoi(serIn); 
+	_EEPUT(EE_MSL,msl);
+	
+	SerPrint("Motorgeschwindigkeit Rechts:\r\n");
+	SerRead(serIn,3,1); //warten auf Input
+	msr = atoi(serIn);
+	_EEPUT(EE_MSR,msr);
+	
+	SerPrint("\r\n--THX--\r\n");
+
 }
 
 /*****************************************************************************
