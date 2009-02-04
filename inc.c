@@ -222,7 +222,7 @@ void setMS(void)
 				tmsl += 1;
 				break;
 			case 's': //-1
-				tmsl -= 0;
+				tmsl -= 1;
 				break;
 			case 'd': //fertig
 				msl = tmsl;
@@ -236,7 +236,7 @@ void setMS(void)
 	SerPrint("\r\n-Done: MSL: ");
 	PrintInt(msl);
 	
-	wait = 1;
+	wait = 0;
 	
 	SerPrint("\r\n-Motorspeed rechts +1 mit a -1 mit s - ende mit d-\r\n");
 	while(wait<1)
@@ -250,7 +250,7 @@ void setMS(void)
 				tmsr += 1;
 				break;
 			case 's': //-1
-				tmsr -= 0;
+				tmsr -= 1;
 				break;
 			case 'd': //fertig
 				msr = tmsr;
@@ -263,6 +263,11 @@ void setMS(void)
 	}
 	SerPrint("\r\n-Done: MSR: ");
 	PrintInt(msr);
+	
+	SerPrint("\r\nWriting holy shit to EEPROM\r\n");
+	
+	_EEPUT(EE_MSL,msl);
+	_EEPUT(EE_MSR,msr);
 	
 	SerPrint("\r\n-DONE!!!!!!!!!!!!!!\r\n");
 }
