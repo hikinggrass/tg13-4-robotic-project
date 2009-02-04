@@ -191,14 +191,16 @@ void info(void)
 void setMS(void)
 {
 	//Motorspeed setzen -TODO-
+	_EEPUT(EE_MSL,255);
+	_EEPUT(EE_MSR,255);
 }
 
 /*****************************************************************************
- * void asuro_init(void)
+ * uint8_t asuro_init(void)
  *****************************************************************************
  * initialisiert den Asuro
  *****************************************************************************/
-void asuro_init(void) 
+uint8_t asuro_init(void) 
 {
 	unsigned char serIn[1]; //input an der seriellen schnittstelle
 	
@@ -208,6 +210,7 @@ void asuro_init(void)
 		switch(serIn[0])
 		{
 			case START:		//startprozedur einleiten
+				readEEPROM();
 				return 0; 
 			case C_LINE:	//line-sensor konfigurieren
 				line_init();
