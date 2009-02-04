@@ -31,8 +31,6 @@ void cake1(void)
 	
 	FrontLED(ON);
 	
-	msl = 100;
-	msr = 100;
 	
 	MotorDir(FWD,FWD);
 	MotorSpeed(msl,msr);
@@ -71,8 +69,6 @@ void cake1(void)
 void cake2(void)
 {
 
-	msl = 255;
-	msr = 255;
 
 	MotorDir(FWD,FWD);
 	MotorSpeed(msl,msr);
@@ -82,9 +78,9 @@ void cake2(void)
 	MotorSpeed(0,0);
 	Msleep(100);
 	
-	MotorDir(FWD,RWD);
-	MotorSpeed(0,255);   //Drehung
-	Msleep(500);
+	MotorDir(RWD,RWD);
+	MotorSpeed(100,255);   //Drehung
+	Msleep(1000);
 	
 	MotorDir(FWD,FWD);
 	MotorSpeed(255,255);
