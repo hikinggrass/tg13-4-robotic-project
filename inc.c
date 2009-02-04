@@ -196,11 +196,11 @@ void setMS(void)
 }
 
 /*****************************************************************************
- * uint8_t asuro_init(void)
+ * int asuro_init(void)
  *****************************************************************************
  * initialisiert den Asuro
  *****************************************************************************/
-uint8_t asuro_init(void) 
+int asuro_init(void) 
 {
 	unsigned char serIn[1]; //input an der seriellen schnittstelle
 	
