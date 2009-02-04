@@ -77,7 +77,7 @@ void cake2(void)
 	MotorDir(FWD,FWD);
 	MotorSpeed(msl,msr);
 
-	while(getKey == 0);  //Bis er an der Wand hängt (vorwärts)
+	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
 	
 	MotorSpeed(0,0);
 	Msleep(100);
@@ -89,7 +89,7 @@ void cake2(void)
 	MotorDir(FWD,FWD);
 	MotorSpeed(255,255);
 	
-	while(getKey == 0);
+	while(getKey() == 0);
 	
 	MotorSpeed(0,0);
 	
