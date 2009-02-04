@@ -100,6 +100,7 @@ void line_init(void)
 {
 	uint8_t wait = 0;
 	unsigned int data[2]; //Speicher für linedata bereitstellen
+	FrontLED(ON);
 	
 	SerPrint("\r\nKalibriere Line-Sensor\r\n");
 	SerPrint("ASURO auf schwarzen Untergrund stellen und T1 druecken\r\n");
@@ -110,7 +111,6 @@ void line_init(void)
 		{
 			SerPrint("Kalibriere...\r\n");
 			
-			FrontLED(ON);
 			LineData(data);
 			
 			_EEPUT(EE_BLACK_L,data[LEFT]);		//Schwarzwerte in EEPROM schreiben
@@ -122,8 +122,6 @@ void line_init(void)
 			PrintInt(data[RIGHT]);
 			SerPrint("\r\n");
 			SerPrint("Kalibrierung 1/2 - Abgeschlossen\r\n");
-			
-			FrontLED(OFF);
 			
 			wait = 1;
 		}	
@@ -139,7 +137,6 @@ void line_init(void)
 		{
 			SerPrint("Kalibriere...\r\n");
 			
-			FrontLED(ON);
 			LineData(data);
 			
 			_EEPUT(EE_WHITE_L,data[LEFT]);		//Weisswerte in EEPROM schreiben
@@ -152,13 +149,12 @@ void line_init(void)
 			SerPrint("\r\n");
 			SerPrint("Kalibrierung 2/2 - Abgeschlossen\r\n");
 			
-			FrontLED(OFF);
 			
 			wait = 1;
 		}	
 	}
 	
-	
+	FrontLED(OFF);
 	SerPrint("THX\r\n");
 	
     
