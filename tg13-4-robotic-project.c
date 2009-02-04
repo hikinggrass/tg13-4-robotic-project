@@ -24,6 +24,7 @@
 #include "asuro.h"
 #include "inc.c"
 
+//Gute Motorspeed-Werte vom 04.02.09 (achtung, Wetter, Luftfeuchtigkeit usw. beachten!) waren: 252 bei beiden Motoren!
 //*****************************************************************************
 void cake1(void)
 {
@@ -66,6 +67,36 @@ void cake1(void)
 
 
 //*****************************************************************************
+void labAbschnitt_Rechtsdrehung(void)
+{
+	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
+	
+	MotorSpeed(0,0);
+	Msleep(100);
+	
+	MotorDir(FWD,RWD);
+	MotorSpeed(msl,msr);   //Drehung
+	Msleep(200);
+	
+	MotorDir(FWD,FWD);
+	MotorSpeed(msl,msr);
+}
+
+void labAbschnitt_Linksdrehung(void)
+{
+	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
+	
+	MotorSpeed(0,0);
+	Msleep(100);
+	
+	MotorDir(RWD,FWD);
+	MotorSpeed(msl,msr);   //Drehung
+	Msleep(200);
+	
+	MotorDir(FWD,FWD);
+	MotorSpeed(msl,msr);
+}
+
 void cake2(void)
 {
 
@@ -73,17 +104,17 @@ void cake2(void)
 	MotorDir(FWD,FWD);
 	MotorSpeed(msl,msr);
 
-	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
+	labAbschnitt_Rechtsdrehung();
 	
-	MotorSpeed(0,0);
-	Msleep(100);
+	labAbschnitt_Linksdrehung();
 	
-	MotorDir(RWD,RWD);
-	MotorSpeed(100,255);   //Drehung
-	Msleep(1000);
+	labAbschnitt_Linksdrehung();
 	
-	MotorDir(FWD,FWD);
-	MotorSpeed(255,255);
+	labAbschnitt_Linksdrehung();
+	
+	labAbschnitt_Rechtsdrehung();
+
+	labAbschnitt_Linksdrehung();
 	
 	while(getKey() == 0);
 	
