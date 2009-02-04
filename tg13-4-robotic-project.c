@@ -26,43 +26,28 @@
 
 //Gute Motorspeed-Werte vom 04.02.09 (achtung, Wetter, Luftfeuchtigkeit usw. beachten!) waren: 252 bei beiden Motoren!
 //*****************************************************************************
-void cake1(void)
+void cake1(void)  //Vom Start bis zum Labyrintheingang
 {
 	unsigned int data[2]; //Speicher für Linien-Sensoren bereitstellen
 	
 	FrontLED(ON);
 	
-	
 	MotorDir(FWD,FWD);
-	MotorSpeed(msl,msr);
+	MotorSpeed(msl-100,msr-100);
 	
 	LineData(data);
 	while(data[LEFT] >= white_l - 10 || data[RIGHT] >= white_r - 10) //Bis zu der kreuzenden schwarzen Linie
-		{
-		PrintInt(data[0]);
-		SerPrint(" ");
-		PrintInt(data[1]);
-		SerPrint("\r\n");
 		LineData(data);
-		}
-	SerPrint("weiss1 end - Jetzt muss er die Drehung beginnen\r\n");
 
-	Msleep(30); //TESTEN!!!
+	MotorDir(RWD,RWD);
+	MotorSpeed(msl,msr);
 	
-	MotorDir(FWD,RWD);
-	LineData(data);
-	while(data[RIGHT] >= white_r - 10) //Drehung vorm Lab
-		{
-		PrintInt(data[0]);
-		SerPrint(" ");
-		PrintInt(data[1]);
-		SerPrint("\r\n");
-		LineData(data);
-		}
-	SerPrint("weiss2 _drehung_ end\r\n");
+	Msleep(40);  //Ruck zurück!
 	
-	FrontLED(OFF);
+	MotorDir(FWD,RWD);  //Drehung
+	Msleep(200);
 	
+	FrontLED(OFF);	
 }
 
 
@@ -71,38 +56,37 @@ void labAbschnitt_Rechtsdrehung(void)
 {
 	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
 	
-	MotorSpeed(0,0);
+	MotorSpeed(0,0);   //Damit die Motoren stillstehen
 	Msleep(100);
 	
 	MotorDir(FWD,RWD);
 	MotorSpeed(msl,msr);   //Drehung
 	Msleep(200);
 	
-	MotorDir(FWD,FWD);
+	MotorDir(FWD,FWD);	//gerade aus weitergurken
 	MotorSpeed(msl,msr);
 }
 
+//*****************************************************************************
 void labAbschnitt_Linksdrehung(void)
 {
 	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
 	
-	MotorSpeed(0,0);
+	MotorSpeed(0,0);  //Damit die Motoren stillstehen
 	Msleep(100);
 	
 	MotorDir(RWD,FWD);
 	MotorSpeed(msl,msr);   //Drehung
 	Msleep(200);
 	
-	MotorDir(FWD,FWD);
+	MotorDir(FWD,FWD);  //gerade aus weitergurken
 	MotorSpeed(msl,msr);
 }
 
-void cake2(void)
+//*****************************************************************************
+void cake2(void)  //Durchs Labyrinth (hinweg)
 {
-
-
 	MotorDir(FWD,FWD);
-	MotorSpeed(msl,msr);
 
 	labAbschnitt_Rechtsdrehung();
 	
@@ -119,7 +103,6 @@ void cake2(void)
 	while(getKey() == 0);
 	
 	MotorSpeed(0,0);
-	
 }
 
 
@@ -130,7 +113,7 @@ int main(void)
 	
 	int devNull = asuro_init(); //unsre init-Funktion
 
-	//cake1(void);
+	cake1();
 	
 	cake2();
 	
