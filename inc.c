@@ -204,8 +204,67 @@ void info(void)
  *****************************************************************************/
 void setMS(void)
 {
+	unsigned char serIn[1]; //input an der seriellen schnittstelle
+	
+	int tmsl = msl;
+	int tmsr = msr;
+	int wait = 0;
 
-
+	SerPrint("\r\n-Motorspeed links +1 mit a -1 mit s - ende mit d-\r\n");
+	while(wait<1)
+	{
+		
+		SerRead(serIn,1,0);
+	
+		switch(serIn[0])
+		{
+			case 'a': //+1
+				tmsl += 1;
+				break;
+			case 's': //-1
+				tmsl -= 0;
+				break;
+			case 'd': //fertig
+				msl = tmsl;
+				wait = 1;
+				break;
+		}
+		
+		PrintInt(tmsl);
+		SerPrint(" ");	
+	}
+	SerPrint("\r\n-Done: MSL: ");
+	PrintInt(msl);
+	
+	wait = 1;
+	
+	SerPrint("\r\n-Motorspeed rechts +1 mit a -1 mit s - ende mit d-\r\n");
+	while(wait<1)
+	{
+		
+		SerRead(serIn,1,0);
+	
+		switch(serIn[0])
+		{
+			case 'a': //+1
+				tmsr += 1;
+				break;
+			case 's': //-1
+				tmsr -= 0;
+				break;
+			case 'd': //fertig
+				msr = tmsr;
+				wait = 1;
+				break;
+		}
+		
+		PrintInt(tmsr);
+		SerPrint(" ");	
+	}
+	SerPrint("\r\n-Done: MSR: ");
+	PrintInt(msr);
+	
+	SerPrint("\r\n-DONE!!!!!!!!!!!!!!\r\n");
 }
 
 /*****************************************************************************
