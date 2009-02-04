@@ -40,7 +40,7 @@ OPT = s
 
 # additional Include path for libraries
 #LIBPATH = C:/ASURO_SRC/AsuroLib/lib
-LIBPATH = ../../lib
+LIBPATH = ../../../lib
 LIBFILE = asuro
 
 # additional include path for header files
