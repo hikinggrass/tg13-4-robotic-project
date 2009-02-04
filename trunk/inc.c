@@ -204,24 +204,7 @@ void info(void)
  *****************************************************************************/
 void setMS(void)
 {
-	unsigned char serIn[3];
-	int i=0, arrToInt=0;
-		
-	SerPrint("\r\nMOTORGESCHWINDIGKEIT EINSTELLEN !!!!!111einseinself\r\n");
-	
-	SerPrint("Motorgeschwindigkeit Links:\r\n");
-	SerRead(serIn,3,1); //warten auf Input	
-	for(i=0;i<3;i++)
-		msl =(arrToInt<<8) | serIn[i];
-	_EEPUT(EE_MSL,msl);
-	
-	SerPrint("Motorgeschwindigkeit Rechts:\r\n");
-	SerRead(serIn,3,1); //warten auf Input
-	for(i=0;i<3;i++)
-		msr =(arrToInt<<8) | serIn[i];
-	_EEPUT(EE_MSR,msr);
-	
-	SerPrint("\r\n--THX--\r\n");
+
 
 }
 
