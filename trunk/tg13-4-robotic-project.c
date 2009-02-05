@@ -117,6 +117,15 @@ int main(void)
 	
 	cake2();
 	
+	//cake3();
+	
+	//cake4();
+	
+	//cake5();
+	
+	//cake6();
+
+	angekommen();
 
 	while (1);
 	return 0;
