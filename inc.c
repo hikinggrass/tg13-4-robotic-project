@@ -29,6 +29,20 @@
 #include <stdlib.h> 
 
 /*****************************************************************************
+ * void angekommen(void)
+ *****************************************************************************
+ * Wird ausgeführt, wenn wir im Ziel angekommen sind.
+ *
+ * Diese Funktion sendet über die Infrarotschnittstelle ein "x"-Singal, um an-
+ * zuzeigen, dass unser Asuro im Ziel angekommen ist.
+ * Irgendwelches Geblinke, Gedudle, oä. wäre dann auch hier einzufügen. ;)
+ *****************************************************************************/
+void angekommen(void)
+{
+	SerPrint("\r\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\nI wonder if there will be cake...\r\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\n");
+}
+
+/*****************************************************************************
  * uint8_t KeyPressed(void)
  *****************************************************************************
  * zeigt, ob eine Taste des ASUROs gedrueckt ist.
