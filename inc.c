@@ -36,7 +36,11 @@
  *****************************************************************************/
 void angekommen(void)
 {
-	SerPrint("\r\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\nI wonder if there will be cake...\r\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\n");
+	while(42)
+	{
+		//SerPrint("\r\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\nI wonder if there will be cake...\r\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\r\n");
+		SerPrint("x");
+	}
 }
 
 /*****************************************************************************
@@ -74,8 +78,10 @@ uint8_t KeyPressed(void)
 /*****************************************************************************
  * uint8_t getkey(void)
  *****************************************************************************
- * liefert die Nummer des gedrückten tasters
- * 0 = Kein Taster gedrueckt
+ * liefert die Nummer des gedrückten Tasters
+ * 0 = Kein Taster gedrückt
+ * 1 = Taster aussen rechts
+ * 6 = Taster aussen links
  *****************************************************************************/
 uint8_t getKey(void)
 {
@@ -121,8 +127,7 @@ void line_init(void)
 	
 	FrontLED(ON);
 	
-	SerPrint("\r\nKalibriere Line-Sensor\r\n");
-	SerPrint("ASURO auf schwarzen Untergrund stellen und T1 druecken\r\n");
+	SerPrint("\r\nKalibriere Line-Sensor\r\nASURO auf schwarzen Untergrund stellen und T1 druecken\r\n");
 	
 	while(wait<1)
 	{
@@ -139,8 +144,7 @@ void line_init(void)
 			PrintInt(data[LEFT]);
 			SerPrint(" R: ");
 			PrintInt(data[RIGHT]);
-			SerPrint("\r\n");
-			SerPrint("Kalibrierung 1/2 - Abgeschlossen\r\n");
+			SerPrint("\r\nKalibrierung 1/2 - Abgeschlossen\r\n");
 			
 			wait = 1;
 		}	
@@ -165,8 +169,7 @@ void line_init(void)
 			PrintInt(data[LEFT]);
 			SerPrint(" R: ");
 			PrintInt(data[RIGHT]);
-			SerPrint("\r\n");
-			SerPrint("Kalibrierung 2/2 - Abgeschlossen\r\n");
+			SerPrint("\r\nKalibrierung 2/2 - Abgeschlossen\r\n");
 			
 			
 			wait = 1;
@@ -175,7 +178,7 @@ void line_init(void)
 	
 	FrontLED(OFF);
 	
-	SerPrint("THX\r\n");
+	SerPrint(done);
 }
 
 /*****************************************************************************
@@ -219,7 +222,7 @@ void info(void)
 	SerPrint(" R: ");
 	PrintInt(msr);
 	
-	SerPrint("\r\n-DONE-\r\n");
+	SerPrint(done);
 }
 /*****************************************************************************
  * void setMS(void)
@@ -236,7 +239,7 @@ void setMS(void)
 	int tmsr = msr;
 	int wait = 0;
 
-	SerPrint("\r\n-Motorspeed links +1 mit a -1 mit s - ende mit d-\r\n");
+	SerPrint("\r\n-Motorspeed einstellen-\r\na = +1\r\ns = -1\r\nd = speichern\r\nLinks:\r\n");
 	
 	while(wait<1)
 	{
@@ -260,12 +263,12 @@ void setMS(void)
 		SerPrint(" ");	
 	}
 	
-	SerPrint("\r\n-Done: MSL: ");
+	SerPrint("\r\nDone: MSL: ");
 	PrintInt(msl);
 	
 	wait = 0;
 	
-	SerPrint("\r\n-Motorspeed rechts +1 mit a -1 mit s - ende mit d-\r\n");
+	SerPrint("\r\nRechts:");
 	
 	while(wait<1)
 	{
@@ -289,7 +292,7 @@ void setMS(void)
 		SerPrint(" ");	
 	}
 	
-	SerPrint("\r\n-Done: MSR: ");
+	SerPrint("\r\nDone: MSR: ");
 	PrintInt(msr);
 	
 	SerPrint("\r\nWriting holy shit to EEPROM\r\n");
@@ -297,7 +300,7 @@ void setMS(void)
 	_EEPUT(EE_MSL,msl);
 	_EEPUT(EE_MSR,msr);
 	
-	SerPrint("\r\n-DONE!!!!!!!!!!!!!!\r\n");
+	SerPrint(done);
 }
 
 /*****************************************************************************

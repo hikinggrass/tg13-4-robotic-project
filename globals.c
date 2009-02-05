@@ -25,3 +25,4 @@ unsigned int black_l;
 unsigned int black_r;
 unsigned int white_l;
 unsigned int white_r;
+char *done = "\r\n-THX-\r\n";
