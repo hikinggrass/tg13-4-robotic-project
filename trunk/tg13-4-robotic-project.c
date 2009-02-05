@@ -3,9 +3,9 @@
  *****************************************************************************
  * Copyright (C) 2008-2009 the tg13-4-robotic-project Team
  *
- * Authors: Kai Hermann <kai -dot- uwe -dot- hermann -at- googlemail -dot- com>
+ * Authors: Kai Hermann <kai -dot- uwe -dot- hermann -at- gmail -dot- com>
+ *			Matthias Holoch <MHoloch -at- gmail -dot- com>
  *			Emanuel Schrade <>
- *			Matthias Holoch <>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +25,15 @@
 #include "inc.c"
 
 //Gute Motorspeed-Werte vom 04.02.09 (achtung, Wetter, Luftfeuchtigkeit usw. beachten!) waren: 252 bei beiden Motoren!
-//*****************************************************************************
-void cake1(void)  //Vom Start bis zum Labyrintheingang
+
+
+/*****************************************************************************
+ * void cake1(void)
+ *****************************************************************************
+ * fährt den ASURO vom Start (rechts neben der schwarzen Linie)
+ * zum Labyrintheingang
+ *****************************************************************************/
+void cake1(void)
 {
 	unsigned int data[2]; //Speicher für Linien-Sensoren bereitstellen
 	
@@ -51,7 +58,11 @@ void cake1(void)  //Vom Start bis zum Labyrintheingang
 }
 
 
-//*****************************************************************************
+/*****************************************************************************
+ * void labAbschnitt_Rechtsdrehung(void)
+ *****************************************************************************
+ * ermöglicht eine Drehung nach RECHTS im Labyrinth
+ *****************************************************************************/
 void labAbschnitt_Rechtsdrehung(void)
 {
 	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
@@ -67,7 +78,11 @@ void labAbschnitt_Rechtsdrehung(void)
 	MotorSpeed(msl,msr);
 }
 
-//*****************************************************************************
+/*****************************************************************************
+ * void labAbschnitt_Linksdrehung(void)
+ *****************************************************************************
+ * ermöglicht eine Drehung nach LINKS im Labyrinth
+ *****************************************************************************/
 void labAbschnitt_Linksdrehung(void)
 {
 	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
@@ -83,8 +98,12 @@ void labAbschnitt_Linksdrehung(void)
 	MotorSpeed(msl,msr);
 }
 
-//*****************************************************************************
-void cake2(void)  //Durchs Labyrinth (hinweg)
+/*****************************************************************************
+ * void cake2(void)
+ *****************************************************************************
+ * fährt den ASURO durchs Labyrinth (hinweg)
+ *****************************************************************************/
+void cake2(void)
 {
 	MotorDir(FWD,FWD);
 

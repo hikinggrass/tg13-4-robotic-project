@@ -3,7 +3,8 @@
  *****************************************************************************
  * Copyright (C) 2009 the tg13-4-robotic-project Team
  *
- * Authors: Kai Hermann <kai -dot- uwe -dot- hermann -at- googlemail -dot- com>
+ * Authors: Kai Hermann <kai -dot- uwe -dot- hermann -at- gmail -dot- com>
+ *			Matthias Holoch <MHoloch -at- gmail -dot- com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,10 +24,6 @@
 #include "defines.c"
 #include "globals.c"
 #include <avr/eeprom.h>
-
-//evtl....
-#include <stdio.h> 
-#include <stdlib.h> 
 
 /*****************************************************************************
  * void angekommen(void)
@@ -57,21 +54,21 @@ void angekommen(void)
  *****************************************************************************/
 uint8_t KeyPressed(void)
 {
-        uint8_t flag;
+	uint8_t flag;
+	
+	DDRD &= ~SWITCHES; // High Impedance ( Input )
+	DDRC |= (1<<PC4); // ADC-Switch-Pin to Output
+	PORTC |=  (1<<PC4); // load capacitor / Pull up
+	Msleep(1);
+	DDRC &= ~(1<<PC4); // Set ACD-Switch to Input
+	PORTC &=  ~(1<<PC4); // High Impedance
 
-        DDRD &= ~SWITCHES; // High Impedance ( Input )
-        DDRC |= (1<<PC4); // ADC-Switch-Pin to Output
-        PORTC |=  (1<<PC4); // load capacitor / Pull up
-        Msleep(1);
-        DDRC &= ~(1<<PC4); // Set ACD-Switch to Input
-        PORTC &=  ~(1<<PC4); // High Impedance
+	Msleep(1);
 
-        Msleep(1);
+	if(PIND&SWITCHES) flag = FALSE;
+	else flag = TRUE;
 
-        if(PIND&SWITCHES) flag=FALSE;
-        else flag=TRUE;
-
-        return flag;
+	return flag;
 }
 
 /*****************************************************************************
@@ -83,12 +80,15 @@ uint8_t KeyPressed(void)
 uint8_t getKey(void)
 {
 	uint8_t pressed,key;
-	while(1) {
+	while(1)
+	{
 		pressed = KeyPressed();
 		key = PollSwitch();
 		
-		if(pressed) {
-			switch(key) {
+		if(pressed)
+		{
+			switch(key) 
+			{
 				case 0x01:
 					return 1;
 				case 0x02:
@@ -118,6 +118,7 @@ void line_init(void)
 {
 	uint8_t wait = 0;
 	unsigned int data[2]; //Speicher für linedata bereitstellen
+	
 	FrontLED(ON);
 	
 	SerPrint("\r\nKalibriere Line-Sensor\r\n");
@@ -173,11 +174,16 @@ void line_init(void)
 	}
 	
 	FrontLED(OFF);
-	SerPrint("THX\r\n");
 	
-    
+	SerPrint("THX\r\n");
 }
 
+/*****************************************************************************
+ * void readEEPROM(void)
+ *****************************************************************************
+ * liest werte aus dem EEPROM aus und speichert diese in den
+ * dazugehörigen Variablen.
+ *****************************************************************************/
 void readEEPROM(void)
 {
 	_EEGET(black_l,EE_BLACK_L);
@@ -197,18 +203,22 @@ void readEEPROM(void)
 void info(void)
 {
 	readEEPROM();
+	
 	SerPrint("\r\nInfos:\r\nEEPROM:\r\n-Schwarzwerte-\r\nL: ");
 	PrintInt(black_l);
 	SerPrint(" R: ");
 	PrintInt(black_r);
+	
 	SerPrint("\r\n-Weisswerte-\r\nL: ");
 	PrintInt(white_l);
 	SerPrint(" R: ");
 	PrintInt(white_r);
+	
 	SerPrint("\r\n-Motorspeed-\r\nL: ");
 	PrintInt(msl);
 	SerPrint(" R: ");
 	PrintInt(msr);
+	
 	SerPrint("\r\n-DONE-\r\n");
 }
 /*****************************************************************************
@@ -227,11 +237,11 @@ void setMS(void)
 	int wait = 0;
 
 	SerPrint("\r\n-Motorspeed links +1 mit a -1 mit s - ende mit d-\r\n");
+	
 	while(wait<1)
 	{
-		
 		SerRead(serIn,1,0);
-	
+		
 		switch(serIn[0])
 		{
 			case 'a': //+1
@@ -249,17 +259,18 @@ void setMS(void)
 		PrintInt(tmsl);
 		SerPrint(" ");	
 	}
+	
 	SerPrint("\r\n-Done: MSL: ");
 	PrintInt(msl);
 	
 	wait = 0;
 	
 	SerPrint("\r\n-Motorspeed rechts +1 mit a -1 mit s - ende mit d-\r\n");
+	
 	while(wait<1)
 	{
-		
 		SerRead(serIn,1,0);
-	
+		
 		switch(serIn[0])
 		{
 			case 'a': //+1
@@ -277,6 +288,7 @@ void setMS(void)
 		PrintInt(tmsr);
 		SerPrint(" ");	
 	}
+	
 	SerPrint("\r\n-Done: MSR: ");
 	PrintInt(msr);
 	
@@ -300,21 +312,24 @@ int asuro_init(void)
 	while(42)
 	{
 		SerRead(serIn,1,1); //warten auf Startzeichen
+		
 		switch(serIn[0])
 		{
 			case START:		//startprozedur einleiten
 				readEEPROM();
 				return 0; 
+				
 			case C_LINE:	//line-sensor konfigurieren
 				line_init();
 				break;
+				
 			case INFO:		//Infos ausgeben (atm aus EEPROM auslesen)
 				info();
 				break;
+				
 			case SETMS:		//Motorspeed per SeriellerSchnittstelle setzen
-				setMS();	//atm nicht vorhanden
+				setMS();
 				break;
 		}
-				
 	}
 }
