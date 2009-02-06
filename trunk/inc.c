@@ -334,5 +334,10 @@ int asuro_init(void)
 				setMS();
 				break;
 		}
+	/*	if(getKey() != 0)
+			{
+			Msleep(2000);
+			return 0;
+			}*/
 	}
 }

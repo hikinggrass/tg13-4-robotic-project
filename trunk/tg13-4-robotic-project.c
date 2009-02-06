@@ -34,7 +34,7 @@
  * zum Labyrintheingang
  *****************************************************************************/
 void cake1(void)
-{
+{	
 	unsigned int data[2]; //Speicher für Linien-Sensoren bereitstellen
 	
 	FrontLED(ON);
@@ -42,18 +42,17 @@ void cake1(void)
 	MotorDir(FWD,FWD);
 	MotorSpeed(msl-100,msr-100);
 	
+	
 	LineData(data);
 	while(data[LEFT] >= white_l - 10 || data[RIGHT] >= white_r - 10) //Bis zu der kreuzenden schwarzen Linie
 		LineData(data);
-
+	
 	MotorDir(RWD,RWD);
 	MotorSpeed(msl,msr);
 	
 	Msleep(40);  //Ruck zurück!
-	
 	MotorDir(FWD,RWD);  //Drehung
 	Msleep(200);
-	
 	FrontLED(OFF);	
 }
 
@@ -65,7 +64,7 @@ void cake1(void)
  *****************************************************************************/
 void labAbschnitt_Rechtsdrehung(void)
 {
-	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
+	while(getKey() != 2 && getKey() != 3 && getKey() != 4 && getKey() != 5);  //Bis er an der Wand hängt (vorwärts)
 	
 	MotorSpeed(0,0);   //Damit die Motoren stillstehen
 	Msleep(100);
@@ -85,7 +84,7 @@ void labAbschnitt_Rechtsdrehung(void)
  *****************************************************************************/
 void labAbschnitt_Linksdrehung(void)
 {
-	while(getKey() == 0);  //Bis er an der Wand hängt (vorwärts)
+	while(getKey() != 2 && getKey() != 3 && getKey() != 4 && getKey() != 5);  //Bis er an der Wand hängt (vorwärts)
 	
 	MotorSpeed(0,0);  //Damit die Motoren stillstehen
 	Msleep(100);
@@ -118,12 +117,46 @@ void cake2(void)
 	labAbschnitt_Rechtsdrehung();
 
 	labAbschnitt_Linksdrehung();
-	
-	while(getKey() == 0);
-	
-	MotorSpeed(0,0);
+
 }
 
+/*****************************************************************************
+ * void cake3(void)
+ *****************************************************************************
+ * fährt den ASURO aus dem Labyrinth (hinweg)
+ *****************************************************************************/
+void cake3(void)
+{
+	int companionCube = 0;
+	int n_msl = n_msl - 150;
+	int n_msr = n_msr - 150;
+	unsigned int data[2];
+	
+	LineData(data);
+	while(data[LEFT] >= white_l - 10 || data[RIGHT] >= white_r - 10) //Bis zum Dreieck
+		LineData(data);
+	
+	MotorSpeed(n_msl,n_msr);
+	
+	while(companionCube == 0)
+	{
+		LineData(data);
+		if(data[0] > data[1])
+			{
+			n_msl += 1;
+			n_msr -= 1;
+			}
+			
+		if(data[1] > data[0])
+			{
+			n_msr += 1;
+			n_msl -= 1;
+			}
+		MotorSpeed(n_msl,n_msr);
+		if(data[0] >= white_l -10 && data[1] >= white_r - 10)
+			companionCube = 1;
+	}
+}
 
 //*****************************************************************************
 int main(void)
@@ -132,18 +165,22 @@ int main(void)
 	
 	int devNull = asuro_init(); //unsre init-Funktion
 
-	cake1();
-	
-	cake2();
-	
-	//cake3();
+	//cake1();
+
+	//cake2();
+
+	cake3();
 	
 	//cake4();
 	
 	//cake5();
 	
 	//cake6();
-
+	
+	while(getKey() == 0);
+	
+	MotorSpeed(0,0);
+	
 	angekommen();
 
 	while (1);
