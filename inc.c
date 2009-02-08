@@ -334,10 +334,11 @@ int asuro_init(void)
 				setMS();
 				break;
 		}
-	/*	if(getKey() != 0)
+		if(getKey() != 0) //Alternativ durch Knopfdruck zu starten
 			{
-			Msleep(2000);
+			Msleep(1000); //Zeit, um die Grabscherchen aus dem Weg zu tun. :-P
+			readEEPROM();
 			return 0;
-			}*/
+			}
 	}
 }
