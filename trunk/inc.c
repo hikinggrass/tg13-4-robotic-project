@@ -88,11 +88,11 @@ uint8_t getKey(void)
 	uint8_t pressed,key;
 	while(1)
 	{
-		pressed = KeyPressed();
+		//pressed = KeyPressed();
 		key = PollSwitch();
 		
-		if(pressed)
-		{
+		//if(pressed)
+		//{
 			switch(key) 
 			{
 				case 0x01:
@@ -110,7 +110,7 @@ uint8_t getKey(void)
 				default:
 					return 0;
 			}
-		}
+		//}								Die hier auskommentierten Dinger scheinen überflüssig zu sein. Falls was nichts mehr tut, dürft ihr mich hauen. ;)
    }
 }
 

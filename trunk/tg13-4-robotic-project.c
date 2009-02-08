@@ -128,8 +128,8 @@ void cake2(void)
 void cake3(void)
 {
 	unsigned char companionCube = 0;
-	int n_msl = n_msl - 180;
-	int n_msr = n_msr - 180;
+	int n_msl = msl - 140;
+	int n_msr = msr - 140;
 	unsigned int data[2];
 	
 	FrontLED(ON);
@@ -147,28 +147,25 @@ void cake3(void)
 	while(companionCube == 0) //soland aktiv, bis er am wendekreis ist
 	{
 		LineData(data);
-		if(data[0] > data[1]) //links auf weiß? --> linker Motor schneller, rechter langsamer.
-			{
-			n_msl += 1;
-			n_msr -= 1;
-			}
-			
-		if(data[1] > data[0]) //rechts auf weiß? --> rechter Motor schneller, linker langsamer.
-			{
-			n_msr += 1;
-			n_msl -= 1;
-			}
-			
-		MotorSpeed(n_msl,n_msr); //neue Motorspeed schreiben
+
+		if(data[1] >= white_l - 20) //die Reihenfolge ist wichtig, da der eine Motor (der Rechte) iwie schwächer ist und bei so geringen geschwindigkeiten irgendwie muckt. :D
+			MotorSpeed(0,n_msr);	
+		else
+			if(data[0] >= white_r - 20)
+				MotorSpeed(n_msl,0);
 		
 		//if(data[0] >= white_l -10 && data[1] >= white_r - 10)
 			//companionCube = 1; ---------------------------------------> Diese Bedingung muss noch irgendwie ein bisschen vercoolert werden, damit die richtig tut. So hört er sofort auf, wenn er mal kuuuuurz 
 			//															  was weißes sieht. Irgendwie noch n bisschen mehr "time" muss dazwischen sein. Msleep ist aber keine Option, sonst fährt er ja völlig falsch.
 	}
+	
 	//--später wieder rauslöschbar, nur nötig, solang NUR cake3 ausgeführt wird-------
 	MotorSpeed(0,0);
-	FrontLED(OFF);
+	Msleep(1000);
+	MotorSpeed(msl,msr);
 	//--------------------------------------------------------------------------------
+	
+	FrontLED(OFF);
 }
 
 //*****************************************************************************
