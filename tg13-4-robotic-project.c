@@ -128,8 +128,8 @@ void cake2(void)
 void cake3(void)
 {
 	unsigned char companionCube = 0;
-	int n_msl = msl - 140;
-	int n_msr = msr - 140;
+	int n_msl = msl - 120;
+	int n_msr = msr - 120;
 	unsigned int data[2];
 	
 	FrontLED(ON);
@@ -148,11 +148,10 @@ void cake3(void)
 	{
 		LineData(data);
 
-		if(data[1] >= white_l - 20) //die Reihenfolge ist wichtig, da der eine Motor (der Rechte) iwie schwächer ist und bei so geringen geschwindigkeiten irgendwie muckt. :D
-			MotorSpeed(0,n_msr);	
+		if(data[0] >= white_l - 20 && data[1] >= white_r - 20)
+			MotorSpeed(0,n_msr);
 		else
-			if(data[0] >= white_r - 20)
-				MotorSpeed(n_msl,0);
+			MotorSpeed(n_msl,0);
 		
 		//if(data[0] >= white_l -10 && data[1] >= white_r - 10)
 			//companionCube = 1; ---------------------------------------> Diese Bedingung muss noch irgendwie ein bisschen vercoolert werden, damit die richtig tut. So hört er sofort auf, wenn er mal kuuuuurz 
