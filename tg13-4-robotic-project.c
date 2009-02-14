@@ -166,7 +166,26 @@ void cake3(void)
 	
 	FrontLED(OFF);
 }
-
+/******************************************************************************
+*Böser Zeit- und Odometrietest
+*******************************************************************************/
+void odoZeitTest(void)
+{
+	unsigned int odoData[2];
+	unsigned long zeit_alt;
+	unsigned long zeit_neu = 1000;
+	unsigned int umdrehungen = 0;
+	
+	while(42)
+	{
+	zeit_alt = Gettime();
+	while(zeit_alt >= (zeit_neu - 1000))
+		{
+		zeit_neu = Gettime();
+		}
+	SerPrint("Sekunde vergangen.\r\n");
+	}
+}
 //*****************************************************************************
 int main(void)
 {
@@ -174,11 +193,13 @@ int main(void)
 	
 	int devNull = asuro_init(); //unsre init-Funktion
 
+	odoZeitTest();
+
 	//cake1();
 
 	//cake2();
 
-	cake3();
+	//cake3();
 	
 	//cake4();
 	
