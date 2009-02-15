@@ -167,24 +167,36 @@ void cake3(void)
 	FrontLED(OFF);
 }
 /******************************************************************************
-*Böser Zeit- und Odometrietest
+*Böser Zeit- und Odometrietest.. FRISST EINE SEKUNDE! (bissl mehr eigentlich)
 *******************************************************************************/
-void odoZeitTest(void)
+int anzScheibenwechsel(void)
 {
-	unsigned int odoData[2];
+	unsigned int odoData_neu[2];
+	unsigned int odoData_alt[2];
 	unsigned long zeit_alt;
 	unsigned long zeit_neu = 1000;
-	unsigned int umdrehungen = 0;
+	unsigned int wechsel[2];
+	wechsel[0] = 0;
+	wechsel[1] = 0;
 	
-	while(42)
-	{
+	OdometryData(odoData_alt);
 	zeit_alt = Gettime();
-	while(zeit_alt >= (zeit_neu - 1000))
+	while(zeit_alt >= (zeit_neu - 100)) //hängt eine zehntels Sekunde hier drin
 		{
 		zeit_neu = Gettime();
+		OdometryData(odoData_neu);
+		if(odoData_alt[0] >= odoData_neu[0] + 100 || odoData_alt[0] <= odoData_neu[0]  - 100) //falls ein Übergang geschehen ist... (links)
+			{
+			odoData_alt[0] = odoData_neu[0];
+			wechsel[0] += 1;
+			}
+		if(odoData_alt[1] >= odoData_neu[1] + 100 || odoData_alt[1] <= odoData_neu[1]  - 100) //falls ein Übergang geschehen ist... (rechts)
+			{
+			odoData_alt[1] = odoData_neu[1];
+			wechsel[1] += 1;
+			}
 		}
-	SerPrint("Sekunde vergangen.\r\n");
-	}
+	return wechsel[0] - wechsel[1];
 }
 //*****************************************************************************
 int main(void)
@@ -192,9 +204,32 @@ int main(void)
 	Init(); //Init-Funktion der Lib
 	
 	int devNull = asuro_init(); //unsre init-Funktion
-
-	odoZeitTest();
-
+//***********Test... soll die Geschw. beider Motoren gleichhalten. Tut aber nicht. :D****/
+	int geschwDifferenz;
+	
+	int n_msl = msl;
+	int n_msr = msr;
+	
+	MotorDir(FWD,FWD);
+	MotorSpeed(n_msl,n_msr);
+	
+	while(42)
+	{
+		geschwDifferenz = anzScheibenwechsel();
+	
+		if(geschwDifferenz > 0)
+			{
+			n_msl -= 1;
+			n_msr += 1;
+			}
+		if(geschwDifferenz < 0)
+			{
+			n_msl += 1;
+			n_msr -= 1;
+			}
+		MotorSpeed(n_msr,n_msr);
+	}
+//***********************************************Test: ENDE******************************/
 	//cake1();
 
 	//cake2();
