@@ -85,7 +85,8 @@ uint8_t KeyPressed(void)
  *****************************************************************************/
 uint8_t getKey(void)
 {
-	uint8_t pressed,key;
+	uint8_t key;
+	//uint8_t pressed;
 	while(1)
 	{
 		//pressed = KeyPressed();
