@@ -179,9 +179,11 @@ int anzScheibenwechsel(void)
 	wechsel[0] = 0;
 	wechsel[1] = 0;
 	
+	BackLED(ON,ON);
+	
 	OdometryData(odoData_alt);
 	zeit_alt = Gettime();
-	while(zeit_alt >= (zeit_neu - 100)) //hängt eine zehntels Sekunde hier drin
+	while(zeit_alt >= (zeit_neu - 1000)) //hängt eine zehntels Sekunde hier drin
 		{
 		zeit_neu = Gettime();
 		OdometryData(odoData_neu);
@@ -196,7 +198,8 @@ int anzScheibenwechsel(void)
 			wechsel[1] += 1;
 			}
 		}
-	return wechsel[0] - wechsel[1];
+	BackLED(OFF,OFF);
+	return (wechsel[0] - wechsel[1]);
 }
 //*****************************************************************************
 int main(void)
@@ -216,7 +219,8 @@ int main(void)
 	while(42)
 	{
 		geschwDifferenz = anzScheibenwechsel();
-	
+		SerPrint("\r\n Geschwindigkeitsdifferenz beträgt:");
+		PrintInt(geschwDifferenz);
 		if(geschwDifferenz > 0)
 			{
 			n_msl -= 1;
@@ -227,6 +231,10 @@ int main(void)
 			n_msl += 1;
 			n_msr -= 1;
 			}
+		SerPrint("\n\r Motorspeed links ist:");
+		PrintInt(n_msl);
+		SerPrint("\n\r Motorspeed rechts ist:");
+		PrintInt(n_msr);
 		MotorSpeed(n_msr,n_msr);
 	}
 //***********************************************Test: ENDE******************************/
