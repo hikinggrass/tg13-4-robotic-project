@@ -1,0 +1,3806 @@
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 1
+
+
+   1               		.file	"lie.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.section	.debug_abbrev,"",@progbits
+  11               	.Ldebug_abbrev0:
+  12               		.section	.debug_info,"",@progbits
+  13               	.Ldebug_info0:
+  14               		.section	.debug_line,"",@progbits
+  15               	.Ldebug_line0:
+  16               		.text
+  17               	.Ltext0:
+  18               	.global	readEEPROM
+  19               		.type	readEEPROM, @function
+  20               	readEEPROM:
+  21               	.LFB14:
+  22               	.LM1:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25               	.L2:
+  26               	.LBB26:
+  27               	.LBB27:
+  28               	.LM2:
+  29 0000 E199      		sbic 60-32,1
+  30 0002 00C0      		rjmp .L2
+  31               	.LM3:
+  32 0004 8EEF      		ldi r24,lo8(510)
+  33 0006 91E0      		ldi r25,hi8(510)
+  34 0008 9FBB      		out (62)+1-32,r25
+  35 000a 8EBB      		out 62-32,r24
+  36               	.LM4:
+  37 000c E09A      		sbi 60-32,0
+  38               	.LM5:
+  39 000e 8DB3      		in r24,61-32
+  40               	.LBE27:
+  41               	.LBE26:
+  42               	.LM6:
+  43 0010 8093 0000 		sts black_l,r24
+  44 0014 1092 0000 		sts black_l+1,__zero_reg__
+  45               	.L3:
+  46               	.LBB28:
+  47               	.LBB29:
+  48               	.LM7:
+  49 0018 E199      		sbic 60-32,1
+  50 001a 00C0      		rjmp .L3
+  51               	.LM8:
+  52 001c 8FEF      		ldi r24,lo8(511)
+  53 001e 91E0      		ldi r25,hi8(511)
+  54 0020 9FBB      		out (62)+1-32,r25
+  55 0022 8EBB      		out 62-32,r24
+  56               	.LM9:
+  57 0024 E09A      		sbi 60-32,0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 2
+
+
+  58               	.LM10:
+  59 0026 8DB3      		in r24,61-32
+  60               	.LBE29:
+  61               	.LBE28:
+  62               	.LM11:
+  63 0028 8093 0000 		sts black_r,r24
+  64 002c 1092 0000 		sts black_r+1,__zero_reg__
+  65               	.L4:
+  66               	.LBB30:
+  67               	.LBB31:
+  68               	.LM12:
+  69 0030 E199      		sbic 60-32,1
+  70 0032 00C0      		rjmp .L4
+  71               	.LM13:
+  72 0034 80E0      		ldi r24,lo8(512)
+  73 0036 92E0      		ldi r25,hi8(512)
+  74 0038 9FBB      		out (62)+1-32,r25
+  75 003a 8EBB      		out 62-32,r24
+  76               	.LM14:
+  77 003c E09A      		sbi 60-32,0
+  78               	.LM15:
+  79 003e 8DB3      		in r24,61-32
+  80               	.LBE31:
+  81               	.LBE30:
+  82               	.LM16:
+  83 0040 8093 0000 		sts white_l,r24
+  84 0044 1092 0000 		sts white_l+1,__zero_reg__
+  85               	.L5:
+  86               	.LBB32:
+  87               	.LBB33:
+  88               	.LM17:
+  89 0048 E199      		sbic 60-32,1
+  90 004a 00C0      		rjmp .L5
+  91               	.LM18:
+  92 004c 81E0      		ldi r24,lo8(513)
+  93 004e 92E0      		ldi r25,hi8(513)
+  94 0050 9FBB      		out (62)+1-32,r25
+  95 0052 8EBB      		out 62-32,r24
+  96               	.LM19:
+  97 0054 E09A      		sbi 60-32,0
+  98               	.LM20:
+  99 0056 8DB3      		in r24,61-32
+ 100               	.LBE33:
+ 101               	.LBE32:
+ 102               	.LM21:
+ 103 0058 8093 0000 		sts white_r,r24
+ 104 005c 1092 0000 		sts white_r+1,__zero_reg__
+ 105               	.L6:
+ 106               	.LBB34:
+ 107               	.LBB35:
+ 108               	.LM22:
+ 109 0060 E199      		sbic 60-32,1
+ 110 0062 00C0      		rjmp .L6
+ 111               	.LM23:
+ 112 0064 82E0      		ldi r24,lo8(514)
+ 113 0066 92E0      		ldi r25,hi8(514)
+ 114 0068 9FBB      		out (62)+1-32,r25
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 3
+
+
+ 115 006a 8EBB      		out 62-32,r24
+ 116               	.LM24:
+ 117 006c E09A      		sbi 60-32,0
+ 118               	.LM25:
+ 119 006e 8DB3      		in r24,61-32
+ 120               	.LBE35:
+ 121               	.LBE34:
+ 122               	.LM26:
+ 123 0070 8093 0000 		sts msl,r24
+ 124 0074 1092 0000 		sts msl+1,__zero_reg__
+ 125               	.L7:
+ 126               	.LBB36:
+ 127               	.LBB37:
+ 128               	.LM27:
+ 129 0078 E199      		sbic 60-32,1
+ 130 007a 00C0      		rjmp .L7
+ 131               	.LM28:
+ 132 007c 83E0      		ldi r24,lo8(515)
+ 133 007e 92E0      		ldi r25,hi8(515)
+ 134 0080 9FBB      		out (62)+1-32,r25
+ 135 0082 8EBB      		out 62-32,r24
+ 136               	.LM29:
+ 137 0084 E09A      		sbi 60-32,0
+ 138               	.LM30:
+ 139 0086 8DB3      		in r24,61-32
+ 140               	.LBE37:
+ 141               	.LBE36:
+ 142               	.LM31:
+ 143 0088 8093 0000 		sts msr,r24
+ 144 008c 1092 0000 		sts msr+1,__zero_reg__
+ 145               	/* epilogue start */
+ 146               	.LM32:
+ 147 0090 0895      		ret
+ 148               	.LFE14:
+ 149               		.size	readEEPROM, .-readEEPROM
+ 150               	.global	KeyPressed
+ 151               		.type	KeyPressed, @function
+ 152               	KeyPressed:
+ 153               	.LFB11:
+ 154               	.LM33:
+ 155               	/* prologue: function */
+ 156               	/* frame size = 0 */
+ 157               	.LM34:
+ 158 0092 8B98      		cbi 49-32,3
+ 159               	.LM35:
+ 160 0094 A49A      		sbi 52-32,4
+ 161               	.LM36:
+ 162 0096 AC9A      		sbi 53-32,4
+ 163               	.LM37:
+ 164 0098 81E0      		ldi r24,lo8(1)
+ 165 009a 90E0      		ldi r25,hi8(1)
+ 166 009c 00D0      		rcall Msleep
+ 167               	.LM38:
+ 168 009e A498      		cbi 52-32,4
+ 169               	.LM39:
+ 170 00a0 AC98      		cbi 53-32,4
+ 171               	.LM40:
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 4
+
+
+ 172 00a2 81E0      		ldi r24,lo8(1)
+ 173 00a4 90E0      		ldi r25,hi8(1)
+ 174 00a6 00D0      		rcall Msleep
+ 175               	.LM41:
+ 176 00a8 80B3      		in r24,48-32
+ 177 00aa 8695      		lsr r24
+ 178 00ac 8695      		lsr r24
+ 179 00ae 8695      		lsr r24
+ 180 00b0 8095      		com r24
+ 181               	.LM42:
+ 182 00b2 8170      		andi r24,lo8(1)
+ 183               	/* epilogue start */
+ 184 00b4 0895      		ret
+ 185               	.LFE11:
+ 186               		.size	KeyPressed, .-KeyPressed
+ 187               		.data
+ 188               	.LC0:
+ 189 0000 7800      		.string	"x"
+ 190               		.text
+ 191               	.global	angekommen
+ 192               		.type	angekommen, @function
+ 193               	angekommen:
+ 194               	.LFB10:
+ 195               	.LM43:
+ 196               	/* prologue: function */
+ 197               	/* frame size = 0 */
+ 198               	.L18:
+ 199               	.LM44:
+ 200 00b6 80E0      		ldi r24,lo8(.LC0)
+ 201 00b8 90E0      		ldi r25,hi8(.LC0)
+ 202 00ba 00D0      		rcall SerPrint
+ 203 00bc 00C0      		rjmp .L18
+ 204               	.LFE10:
+ 205               		.size	angekommen, .-angekommen
+ 206               		.data
+ 207               	.LC1:
+ 208 0002 0D0A      		.ascii	"\r\n"
+ 209 0004 2D4D 6F74 		.string	"-Motorspeed einstellen-\r\na = +1\r\ns = -1\r\nd = speichern\r\nLinks:\r\n"
+ 209      6F72 7370 
+ 209      6565 6420 
+ 209      6569 6E73 
+ 209      7465 6C6C 
+ 210               	.LC2:
+ 211 0045 2000      		.string	" "
+ 212               	.LC3:
+ 213 0047 0D0A 446F 		.string	"\r\nDone: MSL: "
+ 213      6E65 3A20 
+ 213      4D53 4C3A 
+ 213      2000 
+ 214               	.LC4:
+ 215 0055 0D0A 5265 		.string	"\r\nRechts:"
+ 215      6368 7473 
+ 215      3A00 
+ 216               	.LC5:
+ 217 005f 0D0A 446F 		.string	"\r\nDone: MSR: "
+ 217      6E65 3A20 
+ 217      4D53 523A 
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 5
+
+
+ 217      2000 
+ 218               	.LC6:
+ 219 006d 0D0A 5772 		.string	"\r\nWriting holy shit to EEPROM\r\n"
+ 219      6974 696E 
+ 219      6720 686F 
+ 219      6C79 2073 
+ 219      6869 7420 
+ 220               		.text
+ 221               	.global	setMS
+ 222               		.type	setMS, @function
+ 223               	setMS:
+ 224               	.LFB16:
+ 225               	.LM45:
+ 226 00be AF92      		push r10
+ 227 00c0 BF92      		push r11
+ 228 00c2 CF92      		push r12
+ 229 00c4 DF92      		push r13
+ 230 00c6 EF92      		push r14
+ 231 00c8 FF92      		push r15
+ 232 00ca 0F93      		push r16
+ 233 00cc 1F93      		push r17
+ 234 00ce DF93      		push r29
+ 235 00d0 CF93      		push r28
+ 236 00d2 0F92      		push __tmp_reg__
+ 237 00d4 CDB7      		in r28,__SP_L__
+ 238 00d6 DEB7      		in r29,__SP_H__
+ 239               	/* prologue: function */
+ 240               	/* frame size = 1 */
+ 241               	.LM46:
+ 242 00d8 00D0      		rcall readEEPROM
+ 243               	.LM47:
+ 244 00da E090 0000 		lds r14,msl
+ 245 00de F090 0000 		lds r15,(msl)+1
+ 246               	.LVL0:
+ 247               	.LM48:
+ 248 00e2 B090 0000 		lds r11,msr
+ 249 00e6 A090 0000 		lds r10,msr+1
+ 250               	.LM49:
+ 251 00ea 80E0      		ldi r24,lo8(.LC1)
+ 252 00ec 90E0      		ldi r25,hi8(.LC1)
+ 253 00ee 00D0      		rcall SerPrint
+ 254               	.LM50:
+ 255 00f0 6E01      		movw r12,r28
+ 256 00f2 0894      		sec
+ 257 00f4 C11C      		adc r12,__zero_reg__
+ 258 00f6 D11C      		adc r13,__zero_reg__
+ 259               	.LVL1:
+ 260               	.L26:
+ 261 00f8 40E0      		ldi r20,lo8(0)
+ 262 00fa 50E0      		ldi r21,hi8(0)
+ 263 00fc 61E0      		ldi r22,lo8(1)
+ 264 00fe C601      		movw r24,r12
+ 265 0100 00D0      		rcall SerRead
+ 266               	.LM51:
+ 267 0102 8981      		ldd r24,Y+1
+ 268 0104 8436      		cpi r24,lo8(100)
+ 269 0106 01F0      		breq .L23
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 6
+
+
+ 270 0108 8337      		cpi r24,lo8(115)
+ 271 010a 01F0      		breq .L24
+ 272 010c 8136      		cpi r24,lo8(97)
+ 273 010e 01F4      		brne .L40
+ 274               	.L22:
+ 275               	.LM52:
+ 276 0110 0894      		sec
+ 277 0112 E11C      		adc r14,__zero_reg__
+ 278 0114 F11C      		adc r15,__zero_reg__
+ 279               	.L40:
+ 280 0116 00E0      		ldi r16,lo8(0)
+ 281 0118 10E0      		ldi r17,hi8(0)
+ 282 011a 00C0      		rjmp .L25
+ 283               	.L24:
+ 284               	.LM53:
+ 285 011c 0894      		sec
+ 286 011e E108      		sbc r14,__zero_reg__
+ 287 0120 F108      		sbc r15,__zero_reg__
+ 288 0122 00C0      		rjmp .L40
+ 289               	.L23:
+ 290               	.LM54:
+ 291 0124 F092 0000 		sts (msl)+1,r15
+ 292 0128 E092 0000 		sts msl,r14
+ 293 012c 01E0      		ldi r16,lo8(1)
+ 294 012e 10E0      		ldi r17,hi8(1)
+ 295               	.L25:
+ 296               	.LM55:
+ 297 0130 C701      		movw r24,r14
+ 298 0132 00D0      		rcall PrintInt
+ 299               	.LM56:
+ 300 0134 80E0      		ldi r24,lo8(.LC2)
+ 301 0136 90E0      		ldi r25,hi8(.LC2)
+ 302 0138 00D0      		rcall SerPrint
+ 303               	.LM57:
+ 304 013a 012B      		or r16,r17
+ 305 013c 01F0      		breq .L26
+ 306               	.LM58:
+ 307 013e 8B2D      		mov r24,r11
+ 308               	.LVL2:
+ 309 0140 9A2D      		mov r25,r10
+ 310               	.LVL3:
+ 311 0142 9C01      		movw r18,r24
+ 312               	.LVL4:
+ 313 0144 7901      		movw r14,r18
+ 314               	.LVL5:
+ 315               	.LM59:
+ 316 0146 80E0      		ldi r24,lo8(.LC3)
+ 317 0148 90E0      		ldi r25,hi8(.LC3)
+ 318 014a 00D0      		rcall SerPrint
+ 319               	.LVL6:
+ 320               	.LM60:
+ 321 014c 8091 0000 		lds r24,msl
+ 322 0150 9091 0000 		lds r25,(msl)+1
+ 323 0154 00D0      		rcall PrintInt
+ 324               	.LM61:
+ 325 0156 80E0      		ldi r24,lo8(.LC4)
+ 326 0158 90E0      		ldi r25,hi8(.LC4)
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 7
+
+
+ 327 015a 00D0      		rcall SerPrint
+ 328               	.LM62:
+ 329 015c 6E01      		movw r12,r28
+ 330 015e 0894      		sec
+ 331 0160 C11C      		adc r12,__zero_reg__
+ 332 0162 D11C      		adc r13,__zero_reg__
+ 333               	.L32:
+ 334 0164 40E0      		ldi r20,lo8(0)
+ 335 0166 50E0      		ldi r21,hi8(0)
+ 336 0168 61E0      		ldi r22,lo8(1)
+ 337 016a C601      		movw r24,r12
+ 338 016c 00D0      		rcall SerRead
+ 339               	.LM63:
+ 340 016e 8981      		ldd r24,Y+1
+ 341 0170 8436      		cpi r24,lo8(100)
+ 342 0172 01F0      		breq .L29
+ 343 0174 8337      		cpi r24,lo8(115)
+ 344 0176 01F0      		breq .L30
+ 345 0178 8136      		cpi r24,lo8(97)
+ 346 017a 01F4      		brne .L41
+ 347               	.L28:
+ 348               	.LM64:
+ 349 017c 0894      		sec
+ 350 017e E11C      		adc r14,__zero_reg__
+ 351 0180 F11C      		adc r15,__zero_reg__
+ 352               	.L41:
+ 353 0182 00E0      		ldi r16,lo8(0)
+ 354 0184 10E0      		ldi r17,hi8(0)
+ 355               	.LVL7:
+ 356 0186 00C0      		rjmp .L31
+ 357               	.L30:
+ 358               	.LM65:
+ 359 0188 0894      		sec
+ 360 018a E108      		sbc r14,__zero_reg__
+ 361 018c F108      		sbc r15,__zero_reg__
+ 362 018e 00C0      		rjmp .L41
+ 363               	.L29:
+ 364               	.LM66:
+ 365 0190 F092 0000 		sts (msr)+1,r15
+ 366 0194 E092 0000 		sts msr,r14
+ 367 0198 01E0      		ldi r16,lo8(1)
+ 368 019a 10E0      		ldi r17,hi8(1)
+ 369               	.LVL8:
+ 370               	.L31:
+ 371               	.LM67:
+ 372 019c C701      		movw r24,r14
+ 373 019e 00D0      		rcall PrintInt
+ 374               	.LM68:
+ 375 01a0 80E0      		ldi r24,lo8(.LC2)
+ 376 01a2 90E0      		ldi r25,hi8(.LC2)
+ 377 01a4 00D0      		rcall SerPrint
+ 378               	.LM69:
+ 379 01a6 012B      		or r16,r17
+ 380 01a8 01F0      		breq .L32
+ 381               	.LM70:
+ 382 01aa 80E0      		ldi r24,lo8(.LC5)
+ 383 01ac 90E0      		ldi r25,hi8(.LC5)
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 8
+
+
+ 384 01ae 00D0      		rcall SerPrint
+ 385               	.LM71:
+ 386 01b0 8091 0000 		lds r24,msr
+ 387 01b4 9091 0000 		lds r25,(msr)+1
+ 388 01b8 00D0      		rcall PrintInt
+ 389               	.LM72:
+ 390 01ba 80E0      		ldi r24,lo8(.LC6)
+ 391 01bc 90E0      		ldi r25,hi8(.LC6)
+ 392 01be 00D0      		rcall SerPrint
+ 393               	.LM73:
+ 394 01c0 2091 0000 		lds r18,msl
+ 395               	.L33:
+ 396               	.LBB38:
+ 397               	.LBB39:
+ 398               	.LM74:
+ 399 01c4 E199      		sbic 60-32,1
+ 400 01c6 00C0      		rjmp .L33
+ 401               	.LM75:
+ 402 01c8 82E0      		ldi r24,lo8(514)
+ 403 01ca 92E0      		ldi r25,hi8(514)
+ 404 01cc 9FBB      		out (62)+1-32,r25
+ 405 01ce 8EBB      		out 62-32,r24
+ 406               	.LM76:
+ 407 01d0 2DBB      		out 61-32,r18
+ 408               	.LM77:
+ 409               	/* #APP */
+ 410               	 ;  252 "c:/winavr-20080610/lib/gcc/../../avr/include/avr/eeprom.h" 1
+ 411               		/* START EEPROM WRITE CRITICAL SECTION */
+ 412 01d2 0FB6      		in	r0, 63		
+ 413 01d4 F894      		cli				
+ 414 01d6 E29A      		sbi	28, 2	
+ 415 01d8 E19A      		sbi	28, 1	
+ 416 01da 0FBE      		out	63, r0		
+ 417               		/* END EEPROM WRITE CRITICAL SECTION */
+ 418               	 ;  0 "" 2
+ 419               	/* #NOAPP */
+ 420               	.LBE39:
+ 421               	.LBE38:
+ 422               	.LM78:
+ 423 01dc 2091 0000 		lds r18,msr
+ 424               	.L34:
+ 425               	.LBB40:
+ 426               	.LBB41:
+ 427               	.LM79:
+ 428 01e0 E199      		sbic 60-32,1
+ 429 01e2 00C0      		rjmp .L34
+ 430               	.LM80:
+ 431 01e4 83E0      		ldi r24,lo8(515)
+ 432 01e6 92E0      		ldi r25,hi8(515)
+ 433 01e8 9FBB      		out (62)+1-32,r25
+ 434 01ea 8EBB      		out 62-32,r24
+ 435               	.LM81:
+ 436 01ec 2DBB      		out 61-32,r18
+ 437               	.LM82:
+ 438               	/* #APP */
+ 439               	 ;  252 "c:/winavr-20080610/lib/gcc/../../avr/include/avr/eeprom.h" 1
+ 440               		/* START EEPROM WRITE CRITICAL SECTION */
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 9
+
+
+ 441 01ee 0FB6      		in	r0, 63		
+ 442 01f0 F894      		cli				
+ 443 01f2 E29A      		sbi	28, 2	
+ 444 01f4 E19A      		sbi	28, 1	
+ 445 01f6 0FBE      		out	63, r0		
+ 446               		/* END EEPROM WRITE CRITICAL SECTION */
+ 447               	 ;  0 "" 2
+ 448               	/* #NOAPP */
+ 449               	.LBE41:
+ 450               	.LBE40:
+ 451               	.LM83:
+ 452 01f8 8091 0000 		lds r24,done
+ 453 01fc 9091 0000 		lds r25,(done)+1
+ 454 0200 00D0      		rcall SerPrint
+ 455               	/* epilogue start */
+ 456               	.LM84:
+ 457 0202 0F90      		pop __tmp_reg__
+ 458 0204 CF91      		pop r28
+ 459 0206 DF91      		pop r29
+ 460 0208 1F91      		pop r17
+ 461 020a 0F91      		pop r16
+ 462               	.LVL9:
+ 463 020c FF90      		pop r15
+ 464 020e EF90      		pop r14
+ 465               	.LVL10:
+ 466 0210 DF90      		pop r13
+ 467 0212 CF90      		pop r12
+ 468 0214 BF90      		pop r11
+ 469 0216 AF90      		pop r10
+ 470 0218 0895      		ret
+ 471               	.LFE16:
+ 472               		.size	setMS, .-setMS
+ 473               		.data
+ 474               	.LC7:
+ 475 008d 0D0A 496E 		.string	"\r\nInfos:\r\nEEPROM:\r\n-Schwarzwerte-\r\nL: "
+ 475      666F 733A 
+ 475      0D0A 4545 
+ 475      5052 4F4D 
+ 475      3A0D 0A2D 
+ 476               	.LC8:
+ 477 00b4 2052 3A20 		.string	" R: "
+ 477      00
+ 478               	.LC9:
+ 479 00b9 0D0A 2D57 		.string	"\r\n-Weisswerte-\r\nL: "
+ 479      6569 7373 
+ 479      7765 7274 
+ 479      652D 0D0A 
+ 479      4C3A 2000 
+ 480               	.LC10:
+ 481 00cd 0D0A 2D4D 		.string	"\r\n-Motorspeed-\r\nL: "
+ 481      6F74 6F72 
+ 481      7370 6565 
+ 481      642D 0D0A 
+ 481      4C3A 2000 
+ 482               		.text
+ 483               	.global	info
+ 484               		.type	info, @function
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 10
+
+
+ 485               	info:
+ 486               	.LFB15:
+ 487               	.LM85:
+ 488 021a 0F93      		push r16
+ 489 021c 1F93      		push r17
+ 490               	/* prologue: function */
+ 491               	/* frame size = 0 */
+ 492               	.LM86:
+ 493 021e 00D0      		rcall readEEPROM
+ 494               	.LM87:
+ 495 0220 80E0      		ldi r24,lo8(.LC7)
+ 496 0222 90E0      		ldi r25,hi8(.LC7)
+ 497 0224 00D0      		rcall SerPrint
+ 498               	.LM88:
+ 499 0226 8091 0000 		lds r24,black_l
+ 500 022a 9091 0000 		lds r25,(black_l)+1
+ 501 022e 00D0      		rcall PrintInt
+ 502               	.LM89:
+ 503 0230 00E0      		ldi r16,lo8(.LC8)
+ 504 0232 10E0      		ldi r17,hi8(.LC8)
+ 505 0234 C801      		movw r24,r16
+ 506 0236 00D0      		rcall SerPrint
+ 507               	.LM90:
+ 508 0238 8091 0000 		lds r24,black_r
+ 509 023c 9091 0000 		lds r25,(black_r)+1
+ 510 0240 00D0      		rcall PrintInt
+ 511               	.LM91:
+ 512 0242 80E0      		ldi r24,lo8(.LC9)
+ 513 0244 90E0      		ldi r25,hi8(.LC9)
+ 514 0246 00D0      		rcall SerPrint
+ 515               	.LM92:
+ 516 0248 8091 0000 		lds r24,white_l
+ 517 024c 9091 0000 		lds r25,(white_l)+1
+ 518 0250 00D0      		rcall PrintInt
+ 519               	.LM93:
+ 520 0252 C801      		movw r24,r16
+ 521 0254 00D0      		rcall SerPrint
+ 522               	.LM94:
+ 523 0256 8091 0000 		lds r24,white_r
+ 524 025a 9091 0000 		lds r25,(white_r)+1
+ 525 025e 00D0      		rcall PrintInt
+ 526               	.LM95:
+ 527 0260 80E0      		ldi r24,lo8(.LC10)
+ 528 0262 90E0      		ldi r25,hi8(.LC10)
+ 529 0264 00D0      		rcall SerPrint
+ 530               	.LM96:
+ 531 0266 8091 0000 		lds r24,msl
+ 532 026a 9091 0000 		lds r25,(msl)+1
+ 533 026e 00D0      		rcall PrintInt
+ 534               	.LM97:
+ 535 0270 C801      		movw r24,r16
+ 536 0272 00D0      		rcall SerPrint
+ 537               	.LM98:
+ 538 0274 8091 0000 		lds r24,msr
+ 539 0278 9091 0000 		lds r25,(msr)+1
+ 540 027c 00D0      		rcall PrintInt
+ 541               	.LM99:
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 11
+
+
+ 542 027e 8091 0000 		lds r24,done
+ 543 0282 9091 0000 		lds r25,(done)+1
+ 544 0286 00D0      		rcall SerPrint
+ 545               	/* epilogue start */
+ 546               	.LM100:
+ 547 0288 1F91      		pop r17
+ 548 028a 0F91      		pop r16
+ 549 028c 0895      		ret
+ 550               	.LFE15:
+ 551               		.size	info, .-info
+ 552               	.global	getKey
+ 553               		.type	getKey, @function
+ 554               	getKey:
+ 555               	.LFB12:
+ 556               	.LM101:
+ 557               	/* prologue: function */
+ 558               	/* frame size = 0 */
+ 559               	.LM102:
+ 560 028e 00D0      		rcall PollSwitch
+ 561               	.LM103:
+ 562 0290 8430      		cpi r24,lo8(4)
+ 563               	.LVL11:
+ 564 0292 01F0      		breq .L48
+ 565 0294 8530      		cpi r24,lo8(5)
+ 566 0296 00F4      		brsh .L52
+ 567 0298 8130      		cpi r24,lo8(1)
+ 568 029a 01F0      		breq .L46
+ 569 029c 8230      		cpi r24,lo8(2)
+ 570 029e 01F4      		brne .L45
+ 571 02a0 00C0      		rjmp .L55
+ 572               	.L52:
+ 573 02a2 8031      		cpi r24,lo8(16)
+ 574 02a4 01F0      		breq .L50
+ 575 02a6 8032      		cpi r24,lo8(32)
+ 576 02a8 01F0      		breq .L51
+ 577 02aa 8830      		cpi r24,lo8(8)
+ 578 02ac 01F4      		brne .L45
+ 579 02ae 00C0      		rjmp .L56
+ 580               	.L55:
+ 581 02b0 82E0      		ldi r24,lo8(2)
+ 582               	.LVL12:
+ 583 02b2 0895      		ret
+ 584               	.LVL13:
+ 585               	.L46:
+ 586 02b4 81E0      		ldi r24,lo8(1)
+ 587               	.LVL14:
+ 588 02b6 0895      		ret
+ 589               	.LVL15:
+ 590               	.L48:
+ 591 02b8 83E0      		ldi r24,lo8(3)
+ 592               	.LVL16:
+ 593 02ba 0895      		ret
+ 594               	.LVL17:
+ 595               	.L56:
+ 596               	.LM104:
+ 597 02bc 84E0      		ldi r24,lo8(4)
+ 598               	.LVL18:
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 12
+
+
+ 599 02be 0895      		ret
+ 600               	.LVL19:
+ 601               	.L50:
+ 602               	.LM105:
+ 603 02c0 85E0      		ldi r24,lo8(5)
+ 604               	.LVL20:
+ 605 02c2 0895      		ret
+ 606               	.LVL21:
+ 607               	.L51:
+ 608               	.LM106:
+ 609 02c4 86E0      		ldi r24,lo8(6)
+ 610               	.LVL22:
+ 611 02c6 0895      		ret
+ 612               	.LVL23:
+ 613               	.L45:
+ 614               	.LM107:
+ 615 02c8 80E0      		ldi r24,lo8(0)
+ 616               	.LVL24:
+ 617               	.LM108:
+ 618 02ca 0895      		ret
+ 619               	.LFE12:
+ 620               		.size	getKey, .-getKey
+ 621               		.data
+ 622               	.LC11:
+ 623 00e1 0D0A 4B61 		.ascii	"\r\nKalibriere Line-"
+ 623      6C69 6272 
+ 623      6965 7265 
+ 623      204C 696E 
+ 623      652D 
+ 624 00f3 5365 6E73 		.string	"Sensor\r\nASURO auf schwarzen Untergrund stellen und T1 druecken\r\n"
+ 624      6F72 0D0A 
+ 624      4153 5552 
+ 624      4F20 6175 
+ 624      6620 7363 
+ 625               	.LC12:
+ 626 0134 4B61 6C69 		.string	"Kalibriere...\r\n"
+ 626      6272 6965 
+ 626      7265 2E2E 
+ 626      2E0D 0A00 
+ 627               	.LC13:
+ 628 0144 4C3A 2000 		.string	"L: "
+ 629               	.LC14:
+ 630 0148 0D0A 4B61 		.string	"\r\nKalibrierung 1/2 - Abgeschlossen\r\n"
+ 630      6C69 6272 
+ 630      6965 7275 
+ 630      6E67 2031 
+ 630      2F32 202D 
+ 631               	.LC15:
+ 632 016d 4153 5552 		.string	"ASURO auf weissen Untergrund stellen und T1 druecken\r\n"
+ 632      4F20 6175 
+ 632      6620 7765 
+ 632      6973 7365 
+ 632      6E20 556E 
+ 633               	.LC16:
+ 634 01a4 0D0A 4B61 		.string	"\r\nKalibrierung 2/2 - Abgeschlossen\r\n"
+ 634      6C69 6272 
+ 634      6965 7275 
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 13
+
+
+ 634      6E67 2032 
+ 634      2F32 202D 
+ 635               		.text
+ 636               	.global	line_init
+ 637               		.type	line_init, @function
+ 638               	line_init:
+ 639               	.LFB13:
+ 640               	.LM109:
+ 641 02cc DF93      		push r29
+ 642 02ce CF93      		push r28
+ 643 02d0 00D0      		rcall .
+ 644 02d2 00D0      		rcall .
+ 645 02d4 CDB7      		in r28,__SP_L__
+ 646 02d6 DEB7      		in r29,__SP_H__
+ 647               	/* prologue: function */
+ 648               	/* frame size = 4 */
+ 649               	.LM110:
+ 650 02d8 81E0      		ldi r24,lo8(1)
+ 651 02da 00D0      		rcall FrontLED
+ 652               	.LM111:
+ 653 02dc 80E0      		ldi r24,lo8(.LC11)
+ 654 02de 90E0      		ldi r25,hi8(.LC11)
+ 655 02e0 00D0      		rcall SerPrint
+ 656               	.L58:
+ 657               	.LM112:
+ 658 02e2 00D0      		rcall getKey
+ 659 02e4 8130      		cpi r24,lo8(1)
+ 660 02e6 01F4      		brne .L58
+ 661               	.LM113:
+ 662 02e8 80E0      		ldi r24,lo8(.LC12)
+ 663 02ea 90E0      		ldi r25,hi8(.LC12)
+ 664 02ec 00D0      		rcall SerPrint
+ 665               	.LM114:
+ 666 02ee CE01      		movw r24,r28
+ 667 02f0 0196      		adiw r24,1
+ 668 02f2 00D0      		rcall LineData
+ 669               	.LM115:
+ 670 02f4 2981      		ldd r18,Y+1
+ 671               	.L59:
+ 672               	.LBB42:
+ 673               	.LBB43:
+ 674               	.LM116:
+ 675 02f6 E199      		sbic 60-32,1
+ 676 02f8 00C0      		rjmp .L59
+ 677               	.LM117:
+ 678 02fa 8EEF      		ldi r24,lo8(510)
+ 679 02fc 91E0      		ldi r25,hi8(510)
+ 680 02fe 9FBB      		out (62)+1-32,r25
+ 681 0300 8EBB      		out 62-32,r24
+ 682               	.LM118:
+ 683 0302 2DBB      		out 61-32,r18
+ 684               	.LM119:
+ 685               	/* #APP */
+ 686               	 ;  252 "c:/winavr-20080610/lib/gcc/../../avr/include/avr/eeprom.h" 1
+ 687               		/* START EEPROM WRITE CRITICAL SECTION */
+ 688 0304 0FB6      		in	r0, 63		
+ 689 0306 F894      		cli				
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 14
+
+
+ 690 0308 E29A      		sbi	28, 2	
+ 691 030a E19A      		sbi	28, 1	
+ 692 030c 0FBE      		out	63, r0		
+ 693               		/* END EEPROM WRITE CRITICAL SECTION */
+ 694               	 ;  0 "" 2
+ 695               	/* #NOAPP */
+ 696               	.LBE43:
+ 697               	.LBE42:
+ 698               	.LM120:
+ 699 030e 2B81      		ldd r18,Y+3
+ 700               	.L60:
+ 701               	.LBB44:
+ 702               	.LBB45:
+ 703               	.LM121:
+ 704 0310 E199      		sbic 60-32,1
+ 705 0312 00C0      		rjmp .L60
+ 706               	.LM122:
+ 707 0314 8FEF      		ldi r24,lo8(511)
+ 708 0316 91E0      		ldi r25,hi8(511)
+ 709 0318 9FBB      		out (62)+1-32,r25
+ 710 031a 8EBB      		out 62-32,r24
+ 711               	.LM123:
+ 712 031c 2DBB      		out 61-32,r18
+ 713               	.LM124:
+ 714               	/* #APP */
+ 715               	 ;  252 "c:/winavr-20080610/lib/gcc/../../avr/include/avr/eeprom.h" 1
+ 716               		/* START EEPROM WRITE CRITICAL SECTION */
+ 717 031e 0FB6      		in	r0, 63		
+ 718 0320 F894      		cli				
+ 719 0322 E29A      		sbi	28, 2	
+ 720 0324 E19A      		sbi	28, 1	
+ 721 0326 0FBE      		out	63, r0		
+ 722               		/* END EEPROM WRITE CRITICAL SECTION */
+ 723               	 ;  0 "" 2
+ 724               	/* #NOAPP */
+ 725               	.LBE45:
+ 726               	.LBE44:
+ 727               	.LM125:
+ 728 0328 80E0      		ldi r24,lo8(.LC13)
+ 729 032a 90E0      		ldi r25,hi8(.LC13)
+ 730 032c 00D0      		rcall SerPrint
+ 731               	.LM126:
+ 732 032e 8981      		ldd r24,Y+1
+ 733 0330 9A81      		ldd r25,Y+2
+ 734 0332 00D0      		rcall PrintInt
+ 735               	.LM127:
+ 736 0334 80E0      		ldi r24,lo8(.LC8)
+ 737 0336 90E0      		ldi r25,hi8(.LC8)
+ 738 0338 00D0      		rcall SerPrint
+ 739               	.LM128:
+ 740 033a 8B81      		ldd r24,Y+3
+ 741 033c 9C81      		ldd r25,Y+4
+ 742 033e 00D0      		rcall PrintInt
+ 743               	.LM129:
+ 744 0340 80E0      		ldi r24,lo8(.LC14)
+ 745 0342 90E0      		ldi r25,hi8(.LC14)
+ 746 0344 00D0      		rcall SerPrint
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 15
+
+
+ 747               	.LM130:
+ 748 0346 80E0      		ldi r24,lo8(.LC15)
+ 749 0348 90E0      		ldi r25,hi8(.LC15)
+ 750 034a 00D0      		rcall SerPrint
+ 751               	.L61:
+ 752               	.LM131:
+ 753 034c 00D0      		rcall getKey
+ 754 034e 8130      		cpi r24,lo8(1)
+ 755 0350 01F4      		brne .L61
+ 756               	.LM132:
+ 757 0352 80E0      		ldi r24,lo8(.LC12)
+ 758 0354 90E0      		ldi r25,hi8(.LC12)
+ 759 0356 00D0      		rcall SerPrint
+ 760               	.LM133:
+ 761 0358 CE01      		movw r24,r28
+ 762 035a 0196      		adiw r24,1
+ 763 035c 00D0      		rcall LineData
+ 764               	.LM134:
+ 765 035e 2981      		ldd r18,Y+1
+ 766               	.L62:
+ 767               	.LBB46:
+ 768               	.LBB47:
+ 769               	.LM135:
+ 770 0360 E199      		sbic 60-32,1
+ 771 0362 00C0      		rjmp .L62
+ 772               	.LM136:
+ 773 0364 80E0      		ldi r24,lo8(512)
+ 774 0366 92E0      		ldi r25,hi8(512)
+ 775 0368 9FBB      		out (62)+1-32,r25
+ 776 036a 8EBB      		out 62-32,r24
+ 777               	.LM137:
+ 778 036c 2DBB      		out 61-32,r18
+ 779               	.LM138:
+ 780               	/* #APP */
+ 781               	 ;  252 "c:/winavr-20080610/lib/gcc/../../avr/include/avr/eeprom.h" 1
+ 782               		/* START EEPROM WRITE CRITICAL SECTION */
+ 783 036e 0FB6      		in	r0, 63		
+ 784 0370 F894      		cli				
+ 785 0372 E29A      		sbi	28, 2	
+ 786 0374 E19A      		sbi	28, 1	
+ 787 0376 0FBE      		out	63, r0		
+ 788               		/* END EEPROM WRITE CRITICAL SECTION */
+ 789               	 ;  0 "" 2
+ 790               	/* #NOAPP */
+ 791               	.LBE47:
+ 792               	.LBE46:
+ 793               	.LM139:
+ 794 0378 2B81      		ldd r18,Y+3
+ 795               	.L63:
+ 796               	.LBB48:
+ 797               	.LBB49:
+ 798               	.LM140:
+ 799 037a E199      		sbic 60-32,1
+ 800 037c 00C0      		rjmp .L63
+ 801               	.LM141:
+ 802 037e 81E0      		ldi r24,lo8(513)
+ 803 0380 92E0      		ldi r25,hi8(513)
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 16
+
+
+ 804 0382 9FBB      		out (62)+1-32,r25
+ 805 0384 8EBB      		out 62-32,r24
+ 806               	.LM142:
+ 807 0386 2DBB      		out 61-32,r18
+ 808               	.LM143:
+ 809               	/* #APP */
+ 810               	 ;  252 "c:/winavr-20080610/lib/gcc/../../avr/include/avr/eeprom.h" 1
+ 811               		/* START EEPROM WRITE CRITICAL SECTION */
+ 812 0388 0FB6      		in	r0, 63		
+ 813 038a F894      		cli				
+ 814 038c E29A      		sbi	28, 2	
+ 815 038e E19A      		sbi	28, 1	
+ 816 0390 0FBE      		out	63, r0		
+ 817               		/* END EEPROM WRITE CRITICAL SECTION */
+ 818               	 ;  0 "" 2
+ 819               	/* #NOAPP */
+ 820               	.LBE49:
+ 821               	.LBE48:
+ 822               	.LM144:
+ 823 0392 80E0      		ldi r24,lo8(.LC13)
+ 824 0394 90E0      		ldi r25,hi8(.LC13)
+ 825 0396 00D0      		rcall SerPrint
+ 826               	.LM145:
+ 827 0398 8981      		ldd r24,Y+1
+ 828 039a 9A81      		ldd r25,Y+2
+ 829 039c 00D0      		rcall PrintInt
+ 830               	.LM146:
+ 831 039e 80E0      		ldi r24,lo8(.LC8)
+ 832 03a0 90E0      		ldi r25,hi8(.LC8)
+ 833 03a2 00D0      		rcall SerPrint
+ 834               	.LM147:
+ 835 03a4 8B81      		ldd r24,Y+3
+ 836 03a6 9C81      		ldd r25,Y+4
+ 837 03a8 00D0      		rcall PrintInt
+ 838               	.LM148:
+ 839 03aa 80E0      		ldi r24,lo8(.LC16)
+ 840 03ac 90E0      		ldi r25,hi8(.LC16)
+ 841 03ae 00D0      		rcall SerPrint
+ 842               	.LM149:
+ 843 03b0 80E0      		ldi r24,lo8(0)
+ 844 03b2 00D0      		rcall FrontLED
+ 845               	.LM150:
+ 846 03b4 8091 0000 		lds r24,done
+ 847 03b8 9091 0000 		lds r25,(done)+1
+ 848 03bc 00D0      		rcall SerPrint
+ 849               	/* epilogue start */
+ 850               	.LM151:
+ 851 03be 0F90      		pop __tmp_reg__
+ 852 03c0 0F90      		pop __tmp_reg__
+ 853 03c2 0F90      		pop __tmp_reg__
+ 854 03c4 0F90      		pop __tmp_reg__
+ 855 03c6 CF91      		pop r28
+ 856 03c8 DF91      		pop r29
+ 857 03ca 0895      		ret
+ 858               	.LFE13:
+ 859               		.size	line_init, .-line_init
+ 860               	.global	asuro_init
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 17
+
+
+ 861               		.type	asuro_init, @function
+ 862               	asuro_init:
+ 863               	.LFB17:
+ 864               	.LM152:
+ 865 03cc 0F93      		push r16
+ 866 03ce 1F93      		push r17
+ 867 03d0 DF93      		push r29
+ 868 03d2 CF93      		push r28
+ 869 03d4 0F92      		push __tmp_reg__
+ 870 03d6 CDB7      		in r28,__SP_L__
+ 871 03d8 DEB7      		in r29,__SP_H__
+ 872               	/* prologue: function */
+ 873               	/* frame size = 1 */
+ 874               	.LM153:
+ 875 03da 8E01      		movw r16,r28
+ 876 03dc 0F5F      		subi r16,lo8(-(1))
+ 877 03de 1F4F      		sbci r17,hi8(-(1))
+ 878               	.L79:
+ 879 03e0 41E0      		ldi r20,lo8(1)
+ 880 03e2 50E0      		ldi r21,hi8(1)
+ 881 03e4 61E0      		ldi r22,lo8(1)
+ 882 03e6 C801      		movw r24,r16
+ 883 03e8 00D0      		rcall SerRead
+ 884               	.LM154:
+ 885 03ea 8981      		ldd r24,Y+1
+ 886 03ec 8C36      		cpi r24,lo8(108)
+ 887 03ee 01F0      		breq .L74
+ 888 03f0 8D36      		cpi r24,lo8(109)
+ 889 03f2 00F4      		brsh .L77
+ 890 03f4 8936      		cpi r24,lo8(105)
+ 891 03f6 01F4      		brne .L72
+ 892 03f8 00C0      		rjmp .L83
+ 893               	.L77:
+ 894 03fa 8D36      		cpi r24,lo8(109)
+ 895 03fc 01F0      		breq .L75
+ 896 03fe 8337      		cpi r24,lo8(115)
+ 897 0400 01F4      		brne .L72
+ 898 0402 00C0      		rjmp .L82
+ 899               	.L74:
+ 900               	.LM155:
+ 901 0404 00D0      		rcall line_init
+ 902 0406 00C0      		rjmp .L72
+ 903               	.L83:
+ 904               	.LM156:
+ 905 0408 00D0      		rcall info
+ 906 040a 00C0      		rjmp .L72
+ 907               	.L75:
+ 908               	.LM157:
+ 909 040c 00D0      		rcall setMS
+ 910               	.L72:
+ 911               	.LM158:
+ 912 040e 00D0      		rcall getKey
+ 913 0410 8823      		tst r24
+ 914 0412 01F0      		breq .L79
+ 915               	.LM159:
+ 916 0414 88EE      		ldi r24,lo8(1000)
+ 917 0416 93E0      		ldi r25,hi8(1000)
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 18
+
+
+ 918 0418 00D0      		rcall Msleep
+ 919               	.L82:
+ 920               	.LM160:
+ 921 041a 00D0      		rcall readEEPROM
+ 922               	.LM161:
+ 923 041c 80E0      		ldi r24,lo8(0)
+ 924 041e 90E0      		ldi r25,hi8(0)
+ 925               	/* epilogue start */
+ 926 0420 0F90      		pop __tmp_reg__
+ 927 0422 CF91      		pop r28
+ 928 0424 DF91      		pop r29
+ 929 0426 1F91      		pop r17
+ 930 0428 0F91      		pop r16
+ 931 042a 0895      		ret
+ 932               	.LFE17:
+ 933               		.size	asuro_init, .-asuro_init
+ 934               	.global	main
+ 935               		.type	main, @function
+ 936               	main:
+ 937               	.LFB18:
+ 938               	.LM162:
+ 939 042c DF92      		push r13
+ 940 042e EF92      		push r14
+ 941 0430 FF92      		push r15
+ 942 0432 0F93      		push r16
+ 943 0434 1F93      		push r17
+ 944 0436 DF93      		push r29
+ 945 0438 CF93      		push r28
+ 946 043a 00D0      		rcall .
+ 947 043c 00D0      		rcall .
+ 948 043e CDB7      		in r28,__SP_L__
+ 949 0440 DEB7      		in r29,__SP_H__
+ 950               	/* prologue: function */
+ 951               	/* frame size = 4 */
+ 952               	.LM163:
+ 953 0442 00D0      		rcall Init
+ 954               	.LM164:
+ 955 0444 00D0      		rcall asuro_init
+ 956               	.LM165:
+ 957 0446 60E2      		ldi r22,lo8(32)
+ 958 0448 80E2      		ldi r24,lo8(32)
+ 959 044a 00D0      		rcall MotorDir
+ 960               	.LM166:
+ 961 044c 6091 0000 		lds r22,msr
+ 962 0450 6055      		subi r22,lo8(-(-80))
+ 963 0452 8091 0000 		lds r24,msl
+ 964 0456 8055      		subi r24,lo8(-(-80))
+ 965 0458 00D0      		rcall MotorSpeed
+ 966               	.LM167:
+ 967 045a 81E0      		ldi r24,lo8(1)
+ 968 045c 00D0      		rcall FrontLED
+ 969               	.LM168:
+ 970 045e 8E01      		movw r16,r28
+ 971 0460 0F5F      		subi r16,lo8(-(1))
+ 972 0462 1F4F      		sbci r17,hi8(-(1))
+ 973 0464 C801      		movw r24,r16
+ 974 0466 00D0      		rcall LineData
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 19
+
+
+ 975 0468 EE24      		clr r14
+ 976 046a FF24      		clr r15
+ 977               	.LVL25:
+ 978               	.LM169:
+ 979 046c D02E      		mov r13,r16
+ 980 046e 012F      		mov r16,r17
+ 981 0470 00C0      		rjmp .L93
+ 982               	.L89:
+ 983 0472 8D2D      		mov r24,r13
+ 984 0474 902F      		mov r25,r16
+ 985 0476 00D0      		rcall LineData
+ 986               	.LM170:
+ 987 0478 8091 0000 		lds r24,white_l
+ 988 047c 9091 0000 		lds r25,(white_l)+1
+ 989 0480 4497      		sbiw r24,20
+ 990 0482 2981      		ldd r18,Y+1
+ 991 0484 3A81      		ldd r19,Y+2
+ 992 0486 2817      		cp r18,r24
+ 993 0488 3907      		cpc r19,r25
+ 994 048a 00F0      		brlo .L86
+ 995 048c 8091 0000 		lds r24,white_r
+ 996 0490 9091 0000 		lds r25,(white_r)+1
+ 997 0494 4497      		sbiw r24,20
+ 998 0496 2B81      		ldd r18,Y+3
+ 999 0498 3C81      		ldd r19,Y+4
+ 1000 049a 2817      		cp r18,r24
+ 1001 049c 3907      		cpc r19,r25
+ 1002 049e 00F0      		brlo .L86
+ 1003               	.LM171:
+ 1004 04a0 60E1      		ldi r22,lo8(16)
+ 1005 04a2 80E1      		ldi r24,lo8(16)
+ 1006 04a4 00D0      		rcall MotorDir
+ 1007 04a6 91E0      		ldi r25,lo8(1)
+ 1008 04a8 E92E      		mov r14,r25
+ 1009 04aa F12C      		mov r15,__zero_reg__
+ 1010               	.L86:
+ 1011               	.LM172:
+ 1012 04ac 8091 0000 		lds r24,white_l
+ 1013 04b0 9091 0000 		lds r25,(white_l)+1
+ 1014 04b4 4497      		sbiw r24,20
+ 1015 04b6 2981      		ldd r18,Y+1
+ 1016 04b8 3A81      		ldd r19,Y+2
+ 1017 04ba 2817      		cp r18,r24
+ 1018 04bc 3907      		cpc r19,r25
+ 1019 04be 00F0      		brlo .L87
+ 1020 04c0 8091 0000 		lds r24,black_r
+ 1021 04c4 9091 0000 		lds r25,(black_r)+1
+ 1022 04c8 4496      		adiw r24,20
+ 1023 04ca 2B81      		ldd r18,Y+3
+ 1024 04cc 3C81      		ldd r19,Y+4
+ 1025 04ce 8217      		cp r24,r18
+ 1026 04d0 9307      		cpc r25,r19
+ 1027 04d2 00F0      		brlo .L87
+ 1028               	.LM173:
+ 1029 04d4 60E1      		ldi r22,lo8(16)
+ 1030 04d6 80E2      		ldi r24,lo8(32)
+ 1031 04d8 00D0      		rcall MotorDir
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 20
+
+
+ 1032 04da EE24      		clr r14
+ 1033 04dc FF24      		clr r15
+ 1034               	.L87:
+ 1035               	.LM174:
+ 1036 04de 8091 0000 		lds r24,black_l
+ 1037 04e2 9091 0000 		lds r25,(black_l)+1
+ 1038 04e6 4496      		adiw r24,20
+ 1039 04e8 2981      		ldd r18,Y+1
+ 1040 04ea 3A81      		ldd r19,Y+2
+ 1041 04ec 8217      		cp r24,r18
+ 1042 04ee 9307      		cpc r25,r19
+ 1043 04f0 00F0      		brlo .L88
+ 1044 04f2 8091 0000 		lds r24,white_r
+ 1045 04f6 9091 0000 		lds r25,(white_r)+1
+ 1046 04fa 4497      		sbiw r24,20
+ 1047 04fc 2B81      		ldd r18,Y+3
+ 1048 04fe 3C81      		ldd r19,Y+4
+ 1049 0500 2817      		cp r18,r24
+ 1050 0502 3907      		cpc r19,r25
+ 1051 0504 00F0      		brlo .L88
+ 1052               	.LM175:
+ 1053 0506 60E2      		ldi r22,lo8(32)
+ 1054 0508 80E1      		ldi r24,lo8(16)
+ 1055 050a 00D0      		rcall MotorDir
+ 1056 050c EE24      		clr r14
+ 1057 050e FF24      		clr r15
+ 1058               	.L88:
+ 1059               	.LM176:
+ 1060 0510 2981      		ldd r18,Y+1
+ 1061 0512 3A81      		ldd r19,Y+2
+ 1062 0514 8091 0000 		lds r24,black_l
+ 1063 0518 9091 0000 		lds r25,(black_l)+1
+ 1064 051c 4496      		adiw r24,20
+ 1065 051e 8217      		cp r24,r18
+ 1066 0520 9307      		cpc r25,r19
+ 1067 0522 00F0      		brlo .L93
+ 1068 0524 8091 0000 		lds r24,black_r
+ 1069 0528 9091 0000 		lds r25,(black_r)+1
+ 1070 052c 4496      		adiw r24,20
+ 1071 052e 8217      		cp r24,r18
+ 1072 0530 9307      		cpc r25,r19
+ 1073 0532 00F0      		brlo .L93
+ 1074               	.LM177:
+ 1075 0534 60E2      		ldi r22,lo8(32)
+ 1076 0536 80E2      		ldi r24,lo8(32)
+ 1077 0538 00D0      		rcall MotorDir
+ 1078 053a 82E0      		ldi r24,lo8(2)
+ 1079 053c E82E      		mov r14,r24
+ 1080 053e F12C      		mov r15,__zero_reg__
+ 1081               	.L93:
+ 1082               	.LM178:
+ 1083 0540 83E0      		ldi r24,lo8(3)
+ 1084 0542 E816      		cp r14,r24
+ 1085 0544 F104      		cpc r15,__zero_reg__
+ 1086 0546 00F4      		brsh .+2
+ 1087 0548 00C0      		rjmp .L89
+ 1088               	.LM179:
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 21
+
+
+ 1089 054a 60E0      		ldi r22,lo8(0)
+ 1090 054c 80E0      		ldi r24,lo8(0)
+ 1091 054e 00D0      		rcall MotorSpeed
+ 1092               	.LM180:
+ 1093 0550 80E0      		ldi r24,lo8(0)
+ 1094 0552 90E0      		ldi r25,hi8(0)
+ 1095               	/* epilogue start */
+ 1096 0554 0F90      		pop __tmp_reg__
+ 1097 0556 0F90      		pop __tmp_reg__
+ 1098 0558 0F90      		pop __tmp_reg__
+ 1099 055a 0F90      		pop __tmp_reg__
+ 1100 055c CF91      		pop r28
+ 1101 055e DF91      		pop r29
+ 1102 0560 1F91      		pop r17
+ 1103 0562 0F91      		pop r16
+ 1104 0564 FF90      		pop r15
+ 1105 0566 EF90      		pop r14
+ 1106               	.LVL26:
+ 1107 0568 DF90      		pop r13
+ 1108 056a 0895      		ret
+ 1109               	.LFE18:
+ 1110               		.size	main, .-main
+ 1111               	.global	done
+ 1112               		.data
+ 1113               	.LC17:
+ 1114 01c9 0D0A 2D54 		.string	"\r\n-THX-\r\n"
+ 1114      4858 2D0D 
+ 1114      0A00 
+ 1115               		.type	done, @object
+ 1116               		.size	done, 2
+ 1117               	done:
+ 1118 01d3 0000      		.word	.LC17
+ 1119               		.comm msl,2,1
+ 1120               		.comm msr,2,1
+ 1121               		.comm black_l,2,1
+ 1122               		.comm black_r,2,1
+ 1123               		.comm white_l,2,1
+ 1124               		.comm white_r,2,1
+ 1125               		.section	.debug_frame,"",@progbits
+ 1126               	.Lframe0:
+ 1127 0000 0C00 0000 		.long	.LECIE0-.LSCIE0
+ 1128               	.LSCIE0:
+ 1129 0004 FFFF FFFF 		.long	0xffffffff
+ 1130 0008 01        		.byte	0x1
+ 1131 0009 00        		.string	""
+ 1132 000a 01        		.uleb128 0x1
+ 1133 000b 7F        		.sleb128 -1
+ 1134 000c 24        		.byte	0x24
+ 1135 000d 0C        		.byte	0xc
+ 1136 000e 20        		.uleb128 0x20
+ 1137 000f 00        		.uleb128 0x0
+ 1138               		.p2align	2
+ 1139               	.LECIE0:
+ 1140               	.LSFDE0:
+ 1141 0010 0C00 0000 		.long	.LEFDE0-.LASFDE0
+ 1142               	.LASFDE0:
+ 1143 0014 0000 0000 		.long	.Lframe0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 22
+
+
+ 1144 0018 0000 0000 		.long	.LFB14
+ 1145 001c 9200 0000 		.long	.LFE14-.LFB14
+ 1146               		.p2align	2
+ 1147               	.LEFDE0:
+ 1148               	.LSFDE2:
+ 1149 0020 0C00 0000 		.long	.LEFDE2-.LASFDE2
+ 1150               	.LASFDE2:
+ 1151 0024 0000 0000 		.long	.Lframe0
+ 1152 0028 0000 0000 		.long	.LFB11
+ 1153 002c 2400 0000 		.long	.LFE11-.LFB11
+ 1154               		.p2align	2
+ 1155               	.LEFDE2:
+ 1156               	.LSFDE4:
+ 1157 0030 0C00 0000 		.long	.LEFDE4-.LASFDE4
+ 1158               	.LASFDE4:
+ 1159 0034 0000 0000 		.long	.Lframe0
+ 1160 0038 0000 0000 		.long	.LFB10
+ 1161 003c 0800 0000 		.long	.LFE10-.LFB10
+ 1162               		.p2align	2
+ 1163               	.LEFDE4:
+ 1164               	.LSFDE6:
+ 1165 0040 0C00 0000 		.long	.LEFDE6-.LASFDE6
+ 1166               	.LASFDE6:
+ 1167 0044 0000 0000 		.long	.Lframe0
+ 1168 0048 0000 0000 		.long	.LFB16
+ 1169 004c 5C01 0000 		.long	.LFE16-.LFB16
+ 1170               		.p2align	2
+ 1171               	.LEFDE6:
+ 1172               	.LSFDE8:
+ 1173 0050 0C00 0000 		.long	.LEFDE8-.LASFDE8
+ 1174               	.LASFDE8:
+ 1175 0054 0000 0000 		.long	.Lframe0
+ 1176 0058 0000 0000 		.long	.LFB15
+ 1177 005c 7400 0000 		.long	.LFE15-.LFB15
+ 1178               		.p2align	2
+ 1179               	.LEFDE8:
+ 1180               	.LSFDE10:
+ 1181 0060 0C00 0000 		.long	.LEFDE10-.LASFDE10
+ 1182               	.LASFDE10:
+ 1183 0064 0000 0000 		.long	.Lframe0
+ 1184 0068 0000 0000 		.long	.LFB12
+ 1185 006c 3E00 0000 		.long	.LFE12-.LFB12
+ 1186               		.p2align	2
+ 1187               	.LEFDE10:
+ 1188               	.LSFDE12:
+ 1189 0070 0C00 0000 		.long	.LEFDE12-.LASFDE12
+ 1190               	.LASFDE12:
+ 1191 0074 0000 0000 		.long	.Lframe0
+ 1192 0078 0000 0000 		.long	.LFB13
+ 1193 007c 0001 0000 		.long	.LFE13-.LFB13
+ 1194               		.p2align	2
+ 1195               	.LEFDE12:
+ 1196               	.LSFDE14:
+ 1197 0080 0C00 0000 		.long	.LEFDE14-.LASFDE14
+ 1198               	.LASFDE14:
+ 1199 0084 0000 0000 		.long	.Lframe0
+ 1200 0088 0000 0000 		.long	.LFB17
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 23
+
+
+ 1201 008c 6000 0000 		.long	.LFE17-.LFB17
+ 1202               		.p2align	2
+ 1203               	.LEFDE14:
+ 1204               	.LSFDE16:
+ 1205 0090 0C00 0000 		.long	.LEFDE16-.LASFDE16
+ 1206               	.LASFDE16:
+ 1207 0094 0000 0000 		.long	.Lframe0
+ 1208 0098 0000 0000 		.long	.LFB18
+ 1209 009c 4001 0000 		.long	.LFE18-.LFB18
+ 1210               		.p2align	2
+ 1211               	.LEFDE16:
+ 1212               		.text
+ 1213               	.Letext0:
+ 1214               		.section	.debug_loc,"",@progbits
+ 1215               	.Ldebug_loc0:
+ 1216               	.LLST4:
+ 1217 0000 E200 0000 		.long	.LVL0-.Ltext0
+ 1218 0004 4601 0000 		.long	.LVL5-.Ltext0
+ 1219 0008 0600      		.word	0x6
+ 1220 000a 5E        		.byte	0x5e
+ 1221 000b 93        		.byte	0x93
+ 1222 000c 01        		.uleb128 0x1
+ 1223 000d 5F        		.byte	0x5f
+ 1224 000e 93        		.byte	0x93
+ 1225 000f 01        		.uleb128 0x1
+ 1226 0010 0000 0000 		.long	0x0
+ 1227 0014 0000 0000 		.long	0x0
+ 1228               	.LLST5:
+ 1229 0018 4201 0000 		.long	.LVL3-.Ltext0
+ 1230 001c 4401 0000 		.long	.LVL4-.Ltext0
+ 1231 0020 0600      		.word	0x6
+ 1232 0022 68        		.byte	0x68
+ 1233 0023 93        		.byte	0x93
+ 1234 0024 01        		.uleb128 0x1
+ 1235 0025 69        		.byte	0x69
+ 1236 0026 93        		.byte	0x93
+ 1237 0027 01        		.uleb128 0x1
+ 1238 0028 4601 0000 		.long	.LVL5-.Ltext0
+ 1239 002c 4C01 0000 		.long	.LVL6-.Ltext0
+ 1240 0030 0600      		.word	0x6
+ 1241 0032 62        		.byte	0x62
+ 1242 0033 93        		.byte	0x93
+ 1243 0034 01        		.uleb128 0x1
+ 1244 0035 63        		.byte	0x63
+ 1245 0036 93        		.byte	0x93
+ 1246 0037 01        		.uleb128 0x1
+ 1247 0038 4C01 0000 		.long	.LVL6-.Ltext0
+ 1248 003c 1002 0000 		.long	.LVL10-.Ltext0
+ 1249 0040 0600      		.word	0x6
+ 1250 0042 5E        		.byte	0x5e
+ 1251 0043 93        		.byte	0x93
+ 1252 0044 01        		.uleb128 0x1
+ 1253 0045 5F        		.byte	0x5f
+ 1254 0046 93        		.byte	0x93
+ 1255 0047 01        		.uleb128 0x1
+ 1256 0048 0000 0000 		.long	0x0
+ 1257 004c 0000 0000 		.long	0x0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 24
+
+
+ 1258               	.LLST6:
+ 1259 0050 F800 0000 		.long	.LVL1-.Ltext0
+ 1260 0054 0C02 0000 		.long	.LVL9-.Ltext0
+ 1261 0058 0600      		.word	0x6
+ 1262 005a 60        		.byte	0x60
+ 1263 005b 93        		.byte	0x93
+ 1264 005c 01        		.uleb128 0x1
+ 1265 005d 61        		.byte	0x61
+ 1266 005e 93        		.byte	0x93
+ 1267 005f 01        		.uleb128 0x1
+ 1268 0060 0000 0000 		.long	0x0
+ 1269 0064 0000 0000 		.long	0x0
+ 1270               	.LLST9:
+ 1271 0068 9202 0000 		.long	.LVL11-.Ltext0
+ 1272 006c B202 0000 		.long	.LVL12-.Ltext0
+ 1273 0070 0100      		.word	0x1
+ 1274 0072 68        		.byte	0x68
+ 1275 0073 B402 0000 		.long	.LVL13-.Ltext0
+ 1276 0077 B602 0000 		.long	.LVL14-.Ltext0
+ 1277 007b 0100      		.word	0x1
+ 1278 007d 68        		.byte	0x68
+ 1279 007e B802 0000 		.long	.LVL15-.Ltext0
+ 1280 0082 BA02 0000 		.long	.LVL16-.Ltext0
+ 1281 0086 0100      		.word	0x1
+ 1282 0088 68        		.byte	0x68
+ 1283 0089 BC02 0000 		.long	.LVL17-.Ltext0
+ 1284 008d BE02 0000 		.long	.LVL18-.Ltext0
+ 1285 0091 0100      		.word	0x1
+ 1286 0093 68        		.byte	0x68
+ 1287 0094 C002 0000 		.long	.LVL19-.Ltext0
+ 1288 0098 C202 0000 		.long	.LVL20-.Ltext0
+ 1289 009c 0100      		.word	0x1
+ 1290 009e 68        		.byte	0x68
+ 1291 009f C402 0000 		.long	.LVL21-.Ltext0
+ 1292 00a3 C602 0000 		.long	.LVL22-.Ltext0
+ 1293 00a7 0100      		.word	0x1
+ 1294 00a9 68        		.byte	0x68
+ 1295 00aa C802 0000 		.long	.LVL23-.Ltext0
+ 1296 00ae CA02 0000 		.long	.LVL24-.Ltext0
+ 1297 00b2 0100      		.word	0x1
+ 1298 00b4 68        		.byte	0x68
+ 1299 00b5 0000 0000 		.long	0x0
+ 1300 00b9 0000 0000 		.long	0x0
+ 1301               	.LLST13:
+ 1302 00bd 6C04 0000 		.long	.LVL25-.Ltext0
+ 1303 00c1 6805 0000 		.long	.LVL26-.Ltext0
+ 1304 00c5 0600      		.word	0x6
+ 1305 00c7 5E        		.byte	0x5e
+ 1306 00c8 93        		.byte	0x93
+ 1307 00c9 01        		.uleb128 0x1
+ 1308 00ca 5F        		.byte	0x5f
+ 1309 00cb 93        		.byte	0x93
+ 1310 00cc 01        		.uleb128 0x1
+ 1311 00cd 0000 0000 		.long	0x0
+ 1312 00d1 0000 0000 		.long	0x0
+ 1313               		.section	.debug_info
+ 1314 0000 4004 0000 		.long	0x440
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 25
+
+
+ 1315 0004 0200      		.word	0x2
+ 1316 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 1317 000a 04        		.byte	0x4
+ 1318 000b 01        		.uleb128 0x1
+ 1319 000c 0000 0000 		.long	.LASF32
+ 1320 0010 01        		.byte	0x1
+ 1321 0011 0000 0000 		.long	.LASF33
+ 1322 0015 0000 0000 		.long	.LASF34
+ 1323 0019 0000 0000 		.long	.Ltext0
+ 1324 001d 0000 0000 		.long	.Letext0
+ 1325 0021 0000 0000 		.long	.Ldebug_line0
+ 1326 0025 02        		.uleb128 0x2
+ 1327 0026 01        		.byte	0x1
+ 1328 0027 06        		.byte	0x6
+ 1329 0028 0000 0000 		.long	.LASF0
+ 1330 002c 03        		.uleb128 0x3
+ 1331 002d 0000 0000 		.long	.LASF35
+ 1332 0031 05        		.byte	0x5
+ 1333 0032 7A        		.byte	0x7a
+ 1334 0033 3700 0000 		.long	0x37
+ 1335 0037 02        		.uleb128 0x2
+ 1336 0038 01        		.byte	0x1
+ 1337 0039 08        		.byte	0x8
+ 1338 003a 0000 0000 		.long	.LASF1
+ 1339 003e 04        		.uleb128 0x4
+ 1340 003f 02        		.byte	0x2
+ 1341 0040 05        		.byte	0x5
+ 1342 0041 696E 7400 		.string	"int"
+ 1343 0045 02        		.uleb128 0x2
+ 1344 0046 02        		.byte	0x2
+ 1345 0047 07        		.byte	0x7
+ 1346 0048 0000 0000 		.long	.LASF2
+ 1347 004c 02        		.uleb128 0x2
+ 1348 004d 04        		.byte	0x4
+ 1349 004e 05        		.byte	0x5
+ 1350 004f 0000 0000 		.long	.LASF3
+ 1351 0053 02        		.uleb128 0x2
+ 1352 0054 04        		.byte	0x4
+ 1353 0055 07        		.byte	0x7
+ 1354 0056 0000 0000 		.long	.LASF4
+ 1355 005a 02        		.uleb128 0x2
+ 1356 005b 08        		.byte	0x8
+ 1357 005c 05        		.byte	0x5
+ 1358 005d 0000 0000 		.long	.LASF5
+ 1359 0061 02        		.uleb128 0x2
+ 1360 0062 08        		.byte	0x8
+ 1361 0063 07        		.byte	0x7
+ 1362 0064 0000 0000 		.long	.LASF6
+ 1363 0068 05        		.uleb128 0x5
+ 1364 0069 01        		.byte	0x1
+ 1365 006a 08        		.byte	0x8
+ 1366 006b 06        		.uleb128 0x6
+ 1367 006c 0000 0000 		.long	.LASF36
+ 1368 0070 02        		.byte	0x2
+ 1369 0071 C2        		.byte	0xc2
+ 1370 0072 01        		.byte	0x1
+ 1371 0073 2C00 0000 		.long	0x2c
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 26
+
+
+ 1372 0077 03        		.byte	0x3
+ 1373 0078 8800 0000 		.long	0x88
+ 1374 007c 07        		.uleb128 0x7
+ 1375 007d 5F5F 7000 		.string	"__p"
+ 1376 0081 02        		.byte	0x2
+ 1377 0082 C1        		.byte	0xc1
+ 1378 0083 8800 0000 		.long	0x88
+ 1379 0087 00        		.byte	0x0
+ 1380 0088 08        		.uleb128 0x8
+ 1381 0089 02        		.byte	0x2
+ 1382 008a 8E00 0000 		.long	0x8e
+ 1383 008e 09        		.uleb128 0x9
+ 1384 008f 2C00 0000 		.long	0x2c
+ 1385 0093 0A        		.uleb128 0xa
+ 1386 0094 0000 0000 		.long	.LASF37
+ 1387 0098 02        		.byte	0x2
+ 1388 0099 EC        		.byte	0xec
+ 1389 009a 01        		.byte	0x1
+ 1390 009b 03        		.byte	0x3
+ 1391 009c B700 0000 		.long	0xb7
+ 1392 00a0 07        		.uleb128 0x7
+ 1393 00a1 5F5F 7000 		.string	"__p"
+ 1394 00a5 02        		.byte	0x2
+ 1395 00a6 EB        		.byte	0xeb
+ 1396 00a7 B700 0000 		.long	0xb7
+ 1397 00ab 0B        		.uleb128 0xb
+ 1398 00ac 0000 0000 		.long	.LASF7
+ 1399 00b0 02        		.byte	0x2
+ 1400 00b1 EB        		.byte	0xeb
+ 1401 00b2 2C00 0000 		.long	0x2c
+ 1402 00b6 00        		.byte	0x0
+ 1403 00b7 08        		.uleb128 0x8
+ 1404 00b8 02        		.byte	0x2
+ 1405 00b9 2C00 0000 		.long	0x2c
+ 1406 00bd 0C        		.uleb128 0xc
+ 1407 00be 01        		.byte	0x1
+ 1408 00bf 0000 0000 		.long	.LASF8
+ 1409 00c3 01        		.byte	0x1
+ 1410 00c4 C0        		.byte	0xc0
+ 1411 00c5 01        		.byte	0x1
+ 1412 00c6 0000 0000 		.long	.LFB14
+ 1413 00ca 0000 0000 		.long	.LFE14
+ 1414 00ce 02        		.byte	0x2
+ 1415 00cf 90        		.byte	0x90
+ 1416 00d0 20        		.uleb128 0x20
+ 1417 00d1 6801 0000 		.long	0x168
+ 1418 00d5 0D        		.uleb128 0xd
+ 1419 00d6 6B00 0000 		.long	0x6b
+ 1420 00da 0000 0000 		.long	.LBB26
+ 1421 00de 0000 0000 		.long	.LBE26
+ 1422 00e2 01        		.byte	0x1
+ 1423 00e3 C1        		.byte	0xc1
+ 1424 00e4 EE00 0000 		.long	0xee
+ 1425 00e8 0E        		.uleb128 0xe
+ 1426 00e9 7C00 0000 		.long	0x7c
+ 1427 00ed 00        		.byte	0x0
+ 1428 00ee 0D        		.uleb128 0xd
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 27
+
+
+ 1429 00ef 6B00 0000 		.long	0x6b
+ 1430 00f3 0000 0000 		.long	.LBB28
+ 1431 00f7 0000 0000 		.long	.LBE28
+ 1432 00fb 01        		.byte	0x1
+ 1433 00fc C2        		.byte	0xc2
+ 1434 00fd 0701 0000 		.long	0x107
+ 1435 0101 0E        		.uleb128 0xe
+ 1436 0102 7C00 0000 		.long	0x7c
+ 1437 0106 00        		.byte	0x0
+ 1438 0107 0D        		.uleb128 0xd
+ 1439 0108 6B00 0000 		.long	0x6b
+ 1440 010c 0000 0000 		.long	.LBB30
+ 1441 0110 0000 0000 		.long	.LBE30
+ 1442 0114 01        		.byte	0x1
+ 1443 0115 C3        		.byte	0xc3
+ 1444 0116 2001 0000 		.long	0x120
+ 1445 011a 0E        		.uleb128 0xe
+ 1446 011b 7C00 0000 		.long	0x7c
+ 1447 011f 00        		.byte	0x0
+ 1448 0120 0D        		.uleb128 0xd
+ 1449 0121 6B00 0000 		.long	0x6b
+ 1450 0125 0000 0000 		.long	.LBB32
+ 1451 0129 0000 0000 		.long	.LBE32
+ 1452 012d 01        		.byte	0x1
+ 1453 012e C4        		.byte	0xc4
+ 1454 012f 3901 0000 		.long	0x139
+ 1455 0133 0E        		.uleb128 0xe
+ 1456 0134 7C00 0000 		.long	0x7c
+ 1457 0138 00        		.byte	0x0
+ 1458 0139 0D        		.uleb128 0xd
+ 1459 013a 6B00 0000 		.long	0x6b
+ 1460 013e 0000 0000 		.long	.LBB34
+ 1461 0142 0000 0000 		.long	.LBE34
+ 1462 0146 01        		.byte	0x1
+ 1463 0147 C5        		.byte	0xc5
+ 1464 0148 5201 0000 		.long	0x152
+ 1465 014c 0E        		.uleb128 0xe
+ 1466 014d 7C00 0000 		.long	0x7c
+ 1467 0151 00        		.byte	0x0
+ 1468 0152 0F        		.uleb128 0xf
+ 1469 0153 6B00 0000 		.long	0x6b
+ 1470 0157 0000 0000 		.long	.LBB36
+ 1471 015b 0000 0000 		.long	.LBE36
+ 1472 015f 01        		.byte	0x1
+ 1473 0160 C6        		.byte	0xc6
+ 1474 0161 0E        		.uleb128 0xe
+ 1475 0162 7C00 0000 		.long	0x7c
+ 1476 0166 00        		.byte	0x0
+ 1477 0167 00        		.byte	0x0
+ 1478 0168 10        		.uleb128 0x10
+ 1479 0169 01        		.byte	0x1
+ 1480 016a 0000 0000 		.long	.LASF16
+ 1481 016e 01        		.byte	0x1
+ 1482 016f 3C        		.byte	0x3c
+ 1483 0170 01        		.byte	0x1
+ 1484 0171 2C00 0000 		.long	0x2c
+ 1485 0175 0000 0000 		.long	.LFB11
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 28
+
+
+ 1486 0179 0000 0000 		.long	.LFE11
+ 1487 017d 02        		.byte	0x2
+ 1488 017e 90        		.byte	0x90
+ 1489 017f 20        		.uleb128 0x20
+ 1490 0180 9001 0000 		.long	0x190
+ 1491 0184 11        		.uleb128 0x11
+ 1492 0185 0000 0000 		.long	.LASF19
+ 1493 0189 01        		.byte	0x1
+ 1494 018a 3D        		.byte	0x3d
+ 1495 018b 2C00 0000 		.long	0x2c
+ 1496 018f 00        		.byte	0x0
+ 1497 0190 12        		.uleb128 0x12
+ 1498 0191 01        		.byte	0x1
+ 1499 0192 0000 0000 		.long	.LASF14
+ 1500 0196 01        		.byte	0x1
+ 1501 0197 26        		.byte	0x26
+ 1502 0198 01        		.byte	0x1
+ 1503 0199 0000 0000 		.long	.LFB10
+ 1504 019d 0000 0000 		.long	.LFE10
+ 1505 01a1 02        		.byte	0x2
+ 1506 01a2 90        		.byte	0x90
+ 1507 01a3 20        		.uleb128 0x20
+ 1508 01a4 0C        		.uleb128 0xc
+ 1509 01a5 01        		.byte	0x1
+ 1510 01a6 0000 0000 		.long	.LASF9
+ 1511 01aa 01        		.byte	0x1
+ 1512 01ab EA        		.byte	0xea
+ 1513 01ac 01        		.byte	0x1
+ 1514 01ad 0000 0000 		.long	.LFB16
+ 1515 01b1 0000 0000 		.long	.LFE16
+ 1516 01b5 02        		.byte	0x2
+ 1517 01b6 90        		.byte	0x90
+ 1518 01b7 20        		.uleb128 0x20
+ 1519 01b8 3202 0000 		.long	0x232
+ 1520 01bc 13        		.uleb128 0x13
+ 1521 01bd 0000 0000 		.long	.LASF10
+ 1522 01c1 01        		.byte	0x1
+ 1523 01c2 EB        		.byte	0xeb
+ 1524 01c3 3202 0000 		.long	0x232
+ 1525 01c7 02        		.byte	0x2
+ 1526 01c8 8C        		.byte	0x8c
+ 1527 01c9 01        		.sleb128 1
+ 1528 01ca 14        		.uleb128 0x14
+ 1529 01cb 0000 0000 		.long	.LASF11
+ 1530 01cf 01        		.byte	0x1
+ 1531 01d0 EF        		.byte	0xef
+ 1532 01d1 3E00 0000 		.long	0x3e
+ 1533 01d5 0000 0000 		.long	.LLST4
+ 1534 01d9 14        		.uleb128 0x14
+ 1535 01da 0000 0000 		.long	.LASF12
+ 1536 01de 01        		.byte	0x1
+ 1537 01df F0        		.byte	0xf0
+ 1538 01e0 3E00 0000 		.long	0x3e
+ 1539 01e4 0000 0000 		.long	.LLST5
+ 1540 01e8 14        		.uleb128 0x14
+ 1541 01e9 0000 0000 		.long	.LASF13
+ 1542 01ed 01        		.byte	0x1
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 29
+
+
+ 1543 01ee F1        		.byte	0xf1
+ 1544 01ef 3E00 0000 		.long	0x3e
+ 1545 01f3 0000 0000 		.long	.LLST6
+ 1546 01f7 15        		.uleb128 0x15
+ 1547 01f8 9300 0000 		.long	0x93
+ 1548 01fc 0000 0000 		.long	.LBB38
+ 1549 0200 0000 0000 		.long	.LBE38
+ 1550 0204 01        		.byte	0x1
+ 1551 0205 2D01      		.word	0x12d
+ 1552 0207 1602 0000 		.long	0x216
+ 1553 020b 0E        		.uleb128 0xe
+ 1554 020c AB00 0000 		.long	0xab
+ 1555 0210 0E        		.uleb128 0xe
+ 1556 0211 A000 0000 		.long	0xa0
+ 1557 0215 00        		.byte	0x0
+ 1558 0216 16        		.uleb128 0x16
+ 1559 0217 9300 0000 		.long	0x93
+ 1560 021b 0000 0000 		.long	.LBB40
+ 1561 021f 0000 0000 		.long	.LBE40
+ 1562 0223 01        		.byte	0x1
+ 1563 0224 2E01      		.word	0x12e
+ 1564 0226 0E        		.uleb128 0xe
+ 1565 0227 AB00 0000 		.long	0xab
+ 1566 022b 0E        		.uleb128 0xe
+ 1567 022c A000 0000 		.long	0xa0
+ 1568 0230 00        		.byte	0x0
+ 1569 0231 00        		.byte	0x0
+ 1570 0232 17        		.uleb128 0x17
+ 1571 0233 3700 0000 		.long	0x37
+ 1572 0237 4202 0000 		.long	0x242
+ 1573 023b 18        		.uleb128 0x18
+ 1574 023c 4202 0000 		.long	0x242
+ 1575 0240 00        		.byte	0x0
+ 1576 0241 00        		.byte	0x0
+ 1577 0242 05        		.uleb128 0x5
+ 1578 0243 02        		.byte	0x2
+ 1579 0244 07        		.byte	0x7
+ 1580 0245 12        		.uleb128 0x12
+ 1581 0246 01        		.byte	0x1
+ 1582 0247 0000 0000 		.long	.LASF15
+ 1583 024b 01        		.byte	0x1
+ 1584 024c D0        		.byte	0xd0
+ 1585 024d 01        		.byte	0x1
+ 1586 024e 0000 0000 		.long	.LFB15
+ 1587 0252 0000 0000 		.long	.LFE15
+ 1588 0256 02        		.byte	0x2
+ 1589 0257 90        		.byte	0x90
+ 1590 0258 20        		.uleb128 0x20
+ 1591 0259 10        		.uleb128 0x10
+ 1592 025a 01        		.byte	0x1
+ 1593 025b 0000 0000 		.long	.LASF17
+ 1594 025f 01        		.byte	0x1
+ 1595 0260 57        		.byte	0x57
+ 1596 0261 01        		.byte	0x1
+ 1597 0262 2C00 0000 		.long	0x2c
+ 1598 0266 0000 0000 		.long	.LFB12
+ 1599 026a 0000 0000 		.long	.LFE12
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 30
+
+
+ 1600 026e 02        		.byte	0x2
+ 1601 026f 90        		.byte	0x90
+ 1602 0270 20        		.uleb128 0x20
+ 1603 0271 8502 0000 		.long	0x285
+ 1604 0275 19        		.uleb128 0x19
+ 1605 0276 6B65 7900 		.string	"key"
+ 1606 027a 01        		.byte	0x1
+ 1607 027b 58        		.byte	0x58
+ 1608 027c 2C00 0000 		.long	0x2c
+ 1609 0280 0000 0000 		.long	.LLST9
+ 1610 0284 00        		.byte	0x0
+ 1611 0285 0C        		.uleb128 0xc
+ 1612 0286 01        		.byte	0x1
+ 1613 0287 0000 0000 		.long	.LASF18
+ 1614 028b 01        		.byte	0x1
+ 1615 028c 7D        		.byte	0x7d
+ 1616 028d 01        		.byte	0x1
+ 1617 028e 0000 0000 		.long	.LFB13
+ 1618 0292 0000 0000 		.long	.LFE13
+ 1619 0296 02        		.byte	0x2
+ 1620 0297 90        		.byte	0x90
+ 1621 0298 20        		.uleb128 0x20
+ 1622 0299 2B03 0000 		.long	0x32b
+ 1623 029d 11        		.uleb128 0x11
+ 1624 029e 0000 0000 		.long	.LASF13
+ 1625 02a2 01        		.byte	0x1
+ 1626 02a3 7E        		.byte	0x7e
+ 1627 02a4 2C00 0000 		.long	0x2c
+ 1628 02a8 13        		.uleb128 0x13
+ 1629 02a9 0000 0000 		.long	.LASF20
+ 1630 02ad 01        		.byte	0x1
+ 1631 02ae 7F        		.byte	0x7f
+ 1632 02af 2B03 0000 		.long	0x32b
+ 1633 02b3 02        		.byte	0x2
+ 1634 02b4 8C        		.byte	0x8c
+ 1635 02b5 01        		.sleb128 1
+ 1636 02b6 0D        		.uleb128 0xd
+ 1637 02b7 9300 0000 		.long	0x93
+ 1638 02bb 0000 0000 		.long	.LBB42
+ 1639 02bf 0000 0000 		.long	.LBE42
+ 1640 02c3 01        		.byte	0x1
+ 1641 02c4 8D        		.byte	0x8d
+ 1642 02c5 D402 0000 		.long	0x2d4
+ 1643 02c9 0E        		.uleb128 0xe
+ 1644 02ca AB00 0000 		.long	0xab
+ 1645 02ce 0E        		.uleb128 0xe
+ 1646 02cf A000 0000 		.long	0xa0
+ 1647 02d3 00        		.byte	0x0
+ 1648 02d4 0D        		.uleb128 0xd
+ 1649 02d5 9300 0000 		.long	0x93
+ 1650 02d9 0000 0000 		.long	.LBB44
+ 1651 02dd 0000 0000 		.long	.LBE44
+ 1652 02e1 01        		.byte	0x1
+ 1653 02e2 8E        		.byte	0x8e
+ 1654 02e3 F202 0000 		.long	0x2f2
+ 1655 02e7 0E        		.uleb128 0xe
+ 1656 02e8 AB00 0000 		.long	0xab
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 31
+
+
+ 1657 02ec 0E        		.uleb128 0xe
+ 1658 02ed A000 0000 		.long	0xa0
+ 1659 02f1 00        		.byte	0x0
+ 1660 02f2 0D        		.uleb128 0xd
+ 1661 02f3 9300 0000 		.long	0x93
+ 1662 02f7 0000 0000 		.long	.LBB46
+ 1663 02fb 0000 0000 		.long	.LBE46
+ 1664 02ff 01        		.byte	0x1
+ 1665 0300 A6        		.byte	0xa6
+ 1666 0301 1003 0000 		.long	0x310
+ 1667 0305 0E        		.uleb128 0xe
+ 1668 0306 AB00 0000 		.long	0xab
+ 1669 030a 0E        		.uleb128 0xe
+ 1670 030b A000 0000 		.long	0xa0
+ 1671 030f 00        		.byte	0x0
+ 1672 0310 0F        		.uleb128 0xf
+ 1673 0311 9300 0000 		.long	0x93
+ 1674 0315 0000 0000 		.long	.LBB48
+ 1675 0319 0000 0000 		.long	.LBE48
+ 1676 031d 01        		.byte	0x1
+ 1677 031e A7        		.byte	0xa7
+ 1678 031f 0E        		.uleb128 0xe
+ 1679 0320 AB00 0000 		.long	0xab
+ 1680 0324 0E        		.uleb128 0xe
+ 1681 0325 A000 0000 		.long	0xa0
+ 1682 0329 00        		.byte	0x0
+ 1683 032a 00        		.byte	0x0
+ 1684 032b 17        		.uleb128 0x17
+ 1685 032c 4500 0000 		.long	0x45
+ 1686 0330 3B03 0000 		.long	0x33b
+ 1687 0334 18        		.uleb128 0x18
+ 1688 0335 4202 0000 		.long	0x242
+ 1689 0339 01        		.byte	0x1
+ 1690 033a 00        		.byte	0x0
+ 1691 033b 1A        		.uleb128 0x1a
+ 1692 033c 01        		.byte	0x1
+ 1693 033d 0000 0000 		.long	.LASF21
+ 1694 0341 01        		.byte	0x1
+ 1695 0342 3901      		.word	0x139
+ 1696 0344 01        		.byte	0x1
+ 1697 0345 3E00 0000 		.long	0x3e
+ 1698 0349 0000 0000 		.long	.LFB17
+ 1699 034d 0000 0000 		.long	.LFE17
+ 1700 0351 02        		.byte	0x2
+ 1701 0352 90        		.byte	0x90
+ 1702 0353 20        		.uleb128 0x20
+ 1703 0354 6803 0000 		.long	0x368
+ 1704 0358 1B        		.uleb128 0x1b
+ 1705 0359 0000 0000 		.long	.LASF10
+ 1706 035d 01        		.byte	0x1
+ 1707 035e 3A01      		.word	0x13a
+ 1708 0360 3202 0000 		.long	0x232
+ 1709 0364 02        		.byte	0x2
+ 1710 0365 8C        		.byte	0x8c
+ 1711 0366 01        		.sleb128 1
+ 1712 0367 00        		.byte	0x0
+ 1713 0368 10        		.uleb128 0x10
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 32
+
+
+ 1714 0369 01        		.byte	0x1
+ 1715 036a 0000 0000 		.long	.LASF22
+ 1716 036e 03        		.byte	0x3
+ 1717 036f 17        		.byte	0x17
+ 1718 0370 01        		.byte	0x1
+ 1719 0371 3E00 0000 		.long	0x3e
+ 1720 0375 0000 0000 		.long	.LFB18
+ 1721 0379 0000 0000 		.long	.LFE18
+ 1722 037d 02        		.byte	0x2
+ 1723 037e 90        		.byte	0x90
+ 1724 037f 20        		.uleb128 0x20
+ 1725 0380 B803 0000 		.long	0x3b8
+ 1726 0384 11        		.uleb128 0x11
+ 1727 0385 0000 0000 		.long	.LASF23
+ 1728 0389 03        		.byte	0x3
+ 1729 038a 1A        		.byte	0x1a
+ 1730 038b 3E00 0000 		.long	0x3e
+ 1731 038f 13        		.uleb128 0x13
+ 1732 0390 0000 0000 		.long	.LASF20
+ 1733 0394 03        		.byte	0x3
+ 1734 0395 1B        		.byte	0x1b
+ 1735 0396 2B03 0000 		.long	0x32b
+ 1736 039a 02        		.byte	0x2
+ 1737 039b 8C        		.byte	0x8c
+ 1738 039c 01        		.sleb128 1
+ 1739 039d 14        		.uleb128 0x14
+ 1740 039e 0000 0000 		.long	.LASF24
+ 1741 03a2 03        		.byte	0x3
+ 1742 03a3 1C        		.byte	0x1c
+ 1743 03a4 3E00 0000 		.long	0x3e
+ 1744 03a8 0000 0000 		.long	.LLST13
+ 1745 03ac 11        		.uleb128 0x11
+ 1746 03ad 0000 0000 		.long	.LASF25
+ 1747 03b1 03        		.byte	0x3
+ 1748 03b2 1D        		.byte	0x1d
+ 1749 03b3 3E00 0000 		.long	0x3e
+ 1750 03b7 00        		.byte	0x0
+ 1751 03b8 1C        		.uleb128 0x1c
+ 1752 03b9 6D73 6C00 		.string	"msl"
+ 1753 03bd 04        		.byte	0x4
+ 1754 03be 16        		.byte	0x16
+ 1755 03bf 4500 0000 		.long	0x45
+ 1756 03c3 01        		.byte	0x1
+ 1757 03c4 05        		.byte	0x5
+ 1758 03c5 03        		.byte	0x3
+ 1759 03c6 0000 0000 		.long	msl
+ 1760 03ca 1C        		.uleb128 0x1c
+ 1761 03cb 6D73 7200 		.string	"msr"
+ 1762 03cf 04        		.byte	0x4
+ 1763 03d0 17        		.byte	0x17
+ 1764 03d1 4500 0000 		.long	0x45
+ 1765 03d5 01        		.byte	0x1
+ 1766 03d6 05        		.byte	0x5
+ 1767 03d7 03        		.byte	0x3
+ 1768 03d8 0000 0000 		.long	msr
+ 1769 03dc 1D        		.uleb128 0x1d
+ 1770 03dd 0000 0000 		.long	.LASF26
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 33
+
+
+ 1771 03e1 04        		.byte	0x4
+ 1772 03e2 18        		.byte	0x18
+ 1773 03e3 4500 0000 		.long	0x45
+ 1774 03e7 01        		.byte	0x1
+ 1775 03e8 05        		.byte	0x5
+ 1776 03e9 03        		.byte	0x3
+ 1777 03ea 0000 0000 		.long	black_l
+ 1778 03ee 1D        		.uleb128 0x1d
+ 1779 03ef 0000 0000 		.long	.LASF27
+ 1780 03f3 04        		.byte	0x4
+ 1781 03f4 19        		.byte	0x19
+ 1782 03f5 4500 0000 		.long	0x45
+ 1783 03f9 01        		.byte	0x1
+ 1784 03fa 05        		.byte	0x5
+ 1785 03fb 03        		.byte	0x3
+ 1786 03fc 0000 0000 		.long	black_r
+ 1787 0400 1D        		.uleb128 0x1d
+ 1788 0401 0000 0000 		.long	.LASF28
+ 1789 0405 04        		.byte	0x4
+ 1790 0406 1A        		.byte	0x1a
+ 1791 0407 4500 0000 		.long	0x45
+ 1792 040b 01        		.byte	0x1
+ 1793 040c 05        		.byte	0x5
+ 1794 040d 03        		.byte	0x3
+ 1795 040e 0000 0000 		.long	white_l
+ 1796 0412 1D        		.uleb128 0x1d
+ 1797 0413 0000 0000 		.long	.LASF29
+ 1798 0417 04        		.byte	0x4
+ 1799 0418 1B        		.byte	0x1b
+ 1800 0419 4500 0000 		.long	0x45
+ 1801 041d 01        		.byte	0x1
+ 1802 041e 05        		.byte	0x5
+ 1803 041f 03        		.byte	0x3
+ 1804 0420 0000 0000 		.long	white_r
+ 1805 0424 1D        		.uleb128 0x1d
+ 1806 0425 0000 0000 		.long	.LASF30
+ 1807 0429 04        		.byte	0x4
+ 1808 042a 1C        		.byte	0x1c
+ 1809 042b 3604 0000 		.long	0x436
+ 1810 042f 01        		.byte	0x1
+ 1811 0430 05        		.byte	0x5
+ 1812 0431 03        		.byte	0x3
+ 1813 0432 0000 0000 		.long	done
+ 1814 0436 08        		.uleb128 0x8
+ 1815 0437 02        		.byte	0x2
+ 1816 0438 3C04 0000 		.long	0x43c
+ 1817 043c 02        		.uleb128 0x2
+ 1818 043d 01        		.byte	0x1
+ 1819 043e 08        		.byte	0x8
+ 1820 043f 0000 0000 		.long	.LASF31
+ 1821 0443 00        		.byte	0x0
+ 1822               		.section	.debug_abbrev
+ 1823 0000 01        		.uleb128 0x1
+ 1824 0001 11        		.uleb128 0x11
+ 1825 0002 01        		.byte	0x1
+ 1826 0003 25        		.uleb128 0x25
+ 1827 0004 0E        		.uleb128 0xe
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 34
+
+
+ 1828 0005 13        		.uleb128 0x13
+ 1829 0006 0B        		.uleb128 0xb
+ 1830 0007 03        		.uleb128 0x3
+ 1831 0008 0E        		.uleb128 0xe
+ 1832 0009 1B        		.uleb128 0x1b
+ 1833 000a 0E        		.uleb128 0xe
+ 1834 000b 11        		.uleb128 0x11
+ 1835 000c 01        		.uleb128 0x1
+ 1836 000d 12        		.uleb128 0x12
+ 1837 000e 01        		.uleb128 0x1
+ 1838 000f 10        		.uleb128 0x10
+ 1839 0010 06        		.uleb128 0x6
+ 1840 0011 00        		.byte	0x0
+ 1841 0012 00        		.byte	0x0
+ 1842 0013 02        		.uleb128 0x2
+ 1843 0014 24        		.uleb128 0x24
+ 1844 0015 00        		.byte	0x0
+ 1845 0016 0B        		.uleb128 0xb
+ 1846 0017 0B        		.uleb128 0xb
+ 1847 0018 3E        		.uleb128 0x3e
+ 1848 0019 0B        		.uleb128 0xb
+ 1849 001a 03        		.uleb128 0x3
+ 1850 001b 0E        		.uleb128 0xe
+ 1851 001c 00        		.byte	0x0
+ 1852 001d 00        		.byte	0x0
+ 1853 001e 03        		.uleb128 0x3
+ 1854 001f 16        		.uleb128 0x16
+ 1855 0020 00        		.byte	0x0
+ 1856 0021 03        		.uleb128 0x3
+ 1857 0022 0E        		.uleb128 0xe
+ 1858 0023 3A        		.uleb128 0x3a
+ 1859 0024 0B        		.uleb128 0xb
+ 1860 0025 3B        		.uleb128 0x3b
+ 1861 0026 0B        		.uleb128 0xb
+ 1862 0027 49        		.uleb128 0x49
+ 1863 0028 13        		.uleb128 0x13
+ 1864 0029 00        		.byte	0x0
+ 1865 002a 00        		.byte	0x0
+ 1866 002b 04        		.uleb128 0x4
+ 1867 002c 24        		.uleb128 0x24
+ 1868 002d 00        		.byte	0x0
+ 1869 002e 0B        		.uleb128 0xb
+ 1870 002f 0B        		.uleb128 0xb
+ 1871 0030 3E        		.uleb128 0x3e
+ 1872 0031 0B        		.uleb128 0xb
+ 1873 0032 03        		.uleb128 0x3
+ 1874 0033 08        		.uleb128 0x8
+ 1875 0034 00        		.byte	0x0
+ 1876 0035 00        		.byte	0x0
+ 1877 0036 05        		.uleb128 0x5
+ 1878 0037 24        		.uleb128 0x24
+ 1879 0038 00        		.byte	0x0
+ 1880 0039 0B        		.uleb128 0xb
+ 1881 003a 0B        		.uleb128 0xb
+ 1882 003b 3E        		.uleb128 0x3e
+ 1883 003c 0B        		.uleb128 0xb
+ 1884 003d 00        		.byte	0x0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 35
+
+
+ 1885 003e 00        		.byte	0x0
+ 1886 003f 06        		.uleb128 0x6
+ 1887 0040 2E        		.uleb128 0x2e
+ 1888 0041 01        		.byte	0x1
+ 1889 0042 03        		.uleb128 0x3
+ 1890 0043 0E        		.uleb128 0xe
+ 1891 0044 3A        		.uleb128 0x3a
+ 1892 0045 0B        		.uleb128 0xb
+ 1893 0046 3B        		.uleb128 0x3b
+ 1894 0047 0B        		.uleb128 0xb
+ 1895 0048 27        		.uleb128 0x27
+ 1896 0049 0C        		.uleb128 0xc
+ 1897 004a 49        		.uleb128 0x49
+ 1898 004b 13        		.uleb128 0x13
+ 1899 004c 20        		.uleb128 0x20
+ 1900 004d 0B        		.uleb128 0xb
+ 1901 004e 01        		.uleb128 0x1
+ 1902 004f 13        		.uleb128 0x13
+ 1903 0050 00        		.byte	0x0
+ 1904 0051 00        		.byte	0x0
+ 1905 0052 07        		.uleb128 0x7
+ 1906 0053 05        		.uleb128 0x5
+ 1907 0054 00        		.byte	0x0
+ 1908 0055 03        		.uleb128 0x3
+ 1909 0056 08        		.uleb128 0x8
+ 1910 0057 3A        		.uleb128 0x3a
+ 1911 0058 0B        		.uleb128 0xb
+ 1912 0059 3B        		.uleb128 0x3b
+ 1913 005a 0B        		.uleb128 0xb
+ 1914 005b 49        		.uleb128 0x49
+ 1915 005c 13        		.uleb128 0x13
+ 1916 005d 00        		.byte	0x0
+ 1917 005e 00        		.byte	0x0
+ 1918 005f 08        		.uleb128 0x8
+ 1919 0060 0F        		.uleb128 0xf
+ 1920 0061 00        		.byte	0x0
+ 1921 0062 0B        		.uleb128 0xb
+ 1922 0063 0B        		.uleb128 0xb
+ 1923 0064 49        		.uleb128 0x49
+ 1924 0065 13        		.uleb128 0x13
+ 1925 0066 00        		.byte	0x0
+ 1926 0067 00        		.byte	0x0
+ 1927 0068 09        		.uleb128 0x9
+ 1928 0069 26        		.uleb128 0x26
+ 1929 006a 00        		.byte	0x0
+ 1930 006b 49        		.uleb128 0x49
+ 1931 006c 13        		.uleb128 0x13
+ 1932 006d 00        		.byte	0x0
+ 1933 006e 00        		.byte	0x0
+ 1934 006f 0A        		.uleb128 0xa
+ 1935 0070 2E        		.uleb128 0x2e
+ 1936 0071 01        		.byte	0x1
+ 1937 0072 03        		.uleb128 0x3
+ 1938 0073 0E        		.uleb128 0xe
+ 1939 0074 3A        		.uleb128 0x3a
+ 1940 0075 0B        		.uleb128 0xb
+ 1941 0076 3B        		.uleb128 0x3b
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 36
+
+
+ 1942 0077 0B        		.uleb128 0xb
+ 1943 0078 27        		.uleb128 0x27
+ 1944 0079 0C        		.uleb128 0xc
+ 1945 007a 20        		.uleb128 0x20
+ 1946 007b 0B        		.uleb128 0xb
+ 1947 007c 01        		.uleb128 0x1
+ 1948 007d 13        		.uleb128 0x13
+ 1949 007e 00        		.byte	0x0
+ 1950 007f 00        		.byte	0x0
+ 1951 0080 0B        		.uleb128 0xb
+ 1952 0081 05        		.uleb128 0x5
+ 1953 0082 00        		.byte	0x0
+ 1954 0083 03        		.uleb128 0x3
+ 1955 0084 0E        		.uleb128 0xe
+ 1956 0085 3A        		.uleb128 0x3a
+ 1957 0086 0B        		.uleb128 0xb
+ 1958 0087 3B        		.uleb128 0x3b
+ 1959 0088 0B        		.uleb128 0xb
+ 1960 0089 49        		.uleb128 0x49
+ 1961 008a 13        		.uleb128 0x13
+ 1962 008b 00        		.byte	0x0
+ 1963 008c 00        		.byte	0x0
+ 1964 008d 0C        		.uleb128 0xc
+ 1965 008e 2E        		.uleb128 0x2e
+ 1966 008f 01        		.byte	0x1
+ 1967 0090 3F        		.uleb128 0x3f
+ 1968 0091 0C        		.uleb128 0xc
+ 1969 0092 03        		.uleb128 0x3
+ 1970 0093 0E        		.uleb128 0xe
+ 1971 0094 3A        		.uleb128 0x3a
+ 1972 0095 0B        		.uleb128 0xb
+ 1973 0096 3B        		.uleb128 0x3b
+ 1974 0097 0B        		.uleb128 0xb
+ 1975 0098 27        		.uleb128 0x27
+ 1976 0099 0C        		.uleb128 0xc
+ 1977 009a 11        		.uleb128 0x11
+ 1978 009b 01        		.uleb128 0x1
+ 1979 009c 12        		.uleb128 0x12
+ 1980 009d 01        		.uleb128 0x1
+ 1981 009e 40        		.uleb128 0x40
+ 1982 009f 0A        		.uleb128 0xa
+ 1983 00a0 01        		.uleb128 0x1
+ 1984 00a1 13        		.uleb128 0x13
+ 1985 00a2 00        		.byte	0x0
+ 1986 00a3 00        		.byte	0x0
+ 1987 00a4 0D        		.uleb128 0xd
+ 1988 00a5 1D        		.uleb128 0x1d
+ 1989 00a6 01        		.byte	0x1
+ 1990 00a7 31        		.uleb128 0x31
+ 1991 00a8 13        		.uleb128 0x13
+ 1992 00a9 11        		.uleb128 0x11
+ 1993 00aa 01        		.uleb128 0x1
+ 1994 00ab 12        		.uleb128 0x12
+ 1995 00ac 01        		.uleb128 0x1
+ 1996 00ad 58        		.uleb128 0x58
+ 1997 00ae 0B        		.uleb128 0xb
+ 1998 00af 59        		.uleb128 0x59
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 37
+
+
+ 1999 00b0 0B        		.uleb128 0xb
+ 2000 00b1 01        		.uleb128 0x1
+ 2001 00b2 13        		.uleb128 0x13
+ 2002 00b3 00        		.byte	0x0
+ 2003 00b4 00        		.byte	0x0
+ 2004 00b5 0E        		.uleb128 0xe
+ 2005 00b6 05        		.uleb128 0x5
+ 2006 00b7 00        		.byte	0x0
+ 2007 00b8 31        		.uleb128 0x31
+ 2008 00b9 13        		.uleb128 0x13
+ 2009 00ba 00        		.byte	0x0
+ 2010 00bb 00        		.byte	0x0
+ 2011 00bc 0F        		.uleb128 0xf
+ 2012 00bd 1D        		.uleb128 0x1d
+ 2013 00be 01        		.byte	0x1
+ 2014 00bf 31        		.uleb128 0x31
+ 2015 00c0 13        		.uleb128 0x13
+ 2016 00c1 11        		.uleb128 0x11
+ 2017 00c2 01        		.uleb128 0x1
+ 2018 00c3 12        		.uleb128 0x12
+ 2019 00c4 01        		.uleb128 0x1
+ 2020 00c5 58        		.uleb128 0x58
+ 2021 00c6 0B        		.uleb128 0xb
+ 2022 00c7 59        		.uleb128 0x59
+ 2023 00c8 0B        		.uleb128 0xb
+ 2024 00c9 00        		.byte	0x0
+ 2025 00ca 00        		.byte	0x0
+ 2026 00cb 10        		.uleb128 0x10
+ 2027 00cc 2E        		.uleb128 0x2e
+ 2028 00cd 01        		.byte	0x1
+ 2029 00ce 3F        		.uleb128 0x3f
+ 2030 00cf 0C        		.uleb128 0xc
+ 2031 00d0 03        		.uleb128 0x3
+ 2032 00d1 0E        		.uleb128 0xe
+ 2033 00d2 3A        		.uleb128 0x3a
+ 2034 00d3 0B        		.uleb128 0xb
+ 2035 00d4 3B        		.uleb128 0x3b
+ 2036 00d5 0B        		.uleb128 0xb
+ 2037 00d6 27        		.uleb128 0x27
+ 2038 00d7 0C        		.uleb128 0xc
+ 2039 00d8 49        		.uleb128 0x49
+ 2040 00d9 13        		.uleb128 0x13
+ 2041 00da 11        		.uleb128 0x11
+ 2042 00db 01        		.uleb128 0x1
+ 2043 00dc 12        		.uleb128 0x12
+ 2044 00dd 01        		.uleb128 0x1
+ 2045 00de 40        		.uleb128 0x40
+ 2046 00df 0A        		.uleb128 0xa
+ 2047 00e0 01        		.uleb128 0x1
+ 2048 00e1 13        		.uleb128 0x13
+ 2049 00e2 00        		.byte	0x0
+ 2050 00e3 00        		.byte	0x0
+ 2051 00e4 11        		.uleb128 0x11
+ 2052 00e5 34        		.uleb128 0x34
+ 2053 00e6 00        		.byte	0x0
+ 2054 00e7 03        		.uleb128 0x3
+ 2055 00e8 0E        		.uleb128 0xe
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 38
+
+
+ 2056 00e9 3A        		.uleb128 0x3a
+ 2057 00ea 0B        		.uleb128 0xb
+ 2058 00eb 3B        		.uleb128 0x3b
+ 2059 00ec 0B        		.uleb128 0xb
+ 2060 00ed 49        		.uleb128 0x49
+ 2061 00ee 13        		.uleb128 0x13
+ 2062 00ef 00        		.byte	0x0
+ 2063 00f0 00        		.byte	0x0
+ 2064 00f1 12        		.uleb128 0x12
+ 2065 00f2 2E        		.uleb128 0x2e
+ 2066 00f3 00        		.byte	0x0
+ 2067 00f4 3F        		.uleb128 0x3f
+ 2068 00f5 0C        		.uleb128 0xc
+ 2069 00f6 03        		.uleb128 0x3
+ 2070 00f7 0E        		.uleb128 0xe
+ 2071 00f8 3A        		.uleb128 0x3a
+ 2072 00f9 0B        		.uleb128 0xb
+ 2073 00fa 3B        		.uleb128 0x3b
+ 2074 00fb 0B        		.uleb128 0xb
+ 2075 00fc 27        		.uleb128 0x27
+ 2076 00fd 0C        		.uleb128 0xc
+ 2077 00fe 11        		.uleb128 0x11
+ 2078 00ff 01        		.uleb128 0x1
+ 2079 0100 12        		.uleb128 0x12
+ 2080 0101 01        		.uleb128 0x1
+ 2081 0102 40        		.uleb128 0x40
+ 2082 0103 0A        		.uleb128 0xa
+ 2083 0104 00        		.byte	0x0
+ 2084 0105 00        		.byte	0x0
+ 2085 0106 13        		.uleb128 0x13
+ 2086 0107 34        		.uleb128 0x34
+ 2087 0108 00        		.byte	0x0
+ 2088 0109 03        		.uleb128 0x3
+ 2089 010a 0E        		.uleb128 0xe
+ 2090 010b 3A        		.uleb128 0x3a
+ 2091 010c 0B        		.uleb128 0xb
+ 2092 010d 3B        		.uleb128 0x3b
+ 2093 010e 0B        		.uleb128 0xb
+ 2094 010f 49        		.uleb128 0x49
+ 2095 0110 13        		.uleb128 0x13
+ 2096 0111 02        		.uleb128 0x2
+ 2097 0112 0A        		.uleb128 0xa
+ 2098 0113 00        		.byte	0x0
+ 2099 0114 00        		.byte	0x0
+ 2100 0115 14        		.uleb128 0x14
+ 2101 0116 34        		.uleb128 0x34
+ 2102 0117 00        		.byte	0x0
+ 2103 0118 03        		.uleb128 0x3
+ 2104 0119 0E        		.uleb128 0xe
+ 2105 011a 3A        		.uleb128 0x3a
+ 2106 011b 0B        		.uleb128 0xb
+ 2107 011c 3B        		.uleb128 0x3b
+ 2108 011d 0B        		.uleb128 0xb
+ 2109 011e 49        		.uleb128 0x49
+ 2110 011f 13        		.uleb128 0x13
+ 2111 0120 02        		.uleb128 0x2
+ 2112 0121 06        		.uleb128 0x6
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 39
+
+
+ 2113 0122 00        		.byte	0x0
+ 2114 0123 00        		.byte	0x0
+ 2115 0124 15        		.uleb128 0x15
+ 2116 0125 1D        		.uleb128 0x1d
+ 2117 0126 01        		.byte	0x1
+ 2118 0127 31        		.uleb128 0x31
+ 2119 0128 13        		.uleb128 0x13
+ 2120 0129 11        		.uleb128 0x11
+ 2121 012a 01        		.uleb128 0x1
+ 2122 012b 12        		.uleb128 0x12
+ 2123 012c 01        		.uleb128 0x1
+ 2124 012d 58        		.uleb128 0x58
+ 2125 012e 0B        		.uleb128 0xb
+ 2126 012f 59        		.uleb128 0x59
+ 2127 0130 05        		.uleb128 0x5
+ 2128 0131 01        		.uleb128 0x1
+ 2129 0132 13        		.uleb128 0x13
+ 2130 0133 00        		.byte	0x0
+ 2131 0134 00        		.byte	0x0
+ 2132 0135 16        		.uleb128 0x16
+ 2133 0136 1D        		.uleb128 0x1d
+ 2134 0137 01        		.byte	0x1
+ 2135 0138 31        		.uleb128 0x31
+ 2136 0139 13        		.uleb128 0x13
+ 2137 013a 11        		.uleb128 0x11
+ 2138 013b 01        		.uleb128 0x1
+ 2139 013c 12        		.uleb128 0x12
+ 2140 013d 01        		.uleb128 0x1
+ 2141 013e 58        		.uleb128 0x58
+ 2142 013f 0B        		.uleb128 0xb
+ 2143 0140 59        		.uleb128 0x59
+ 2144 0141 05        		.uleb128 0x5
+ 2145 0142 00        		.byte	0x0
+ 2146 0143 00        		.byte	0x0
+ 2147 0144 17        		.uleb128 0x17
+ 2148 0145 01        		.uleb128 0x1
+ 2149 0146 01        		.byte	0x1
+ 2150 0147 49        		.uleb128 0x49
+ 2151 0148 13        		.uleb128 0x13
+ 2152 0149 01        		.uleb128 0x1
+ 2153 014a 13        		.uleb128 0x13
+ 2154 014b 00        		.byte	0x0
+ 2155 014c 00        		.byte	0x0
+ 2156 014d 18        		.uleb128 0x18
+ 2157 014e 21        		.uleb128 0x21
+ 2158 014f 00        		.byte	0x0
+ 2159 0150 49        		.uleb128 0x49
+ 2160 0151 13        		.uleb128 0x13
+ 2161 0152 2F        		.uleb128 0x2f
+ 2162 0153 0B        		.uleb128 0xb
+ 2163 0154 00        		.byte	0x0
+ 2164 0155 00        		.byte	0x0
+ 2165 0156 19        		.uleb128 0x19
+ 2166 0157 34        		.uleb128 0x34
+ 2167 0158 00        		.byte	0x0
+ 2168 0159 03        		.uleb128 0x3
+ 2169 015a 08        		.uleb128 0x8
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 40
+
+
+ 2170 015b 3A        		.uleb128 0x3a
+ 2171 015c 0B        		.uleb128 0xb
+ 2172 015d 3B        		.uleb128 0x3b
+ 2173 015e 0B        		.uleb128 0xb
+ 2174 015f 49        		.uleb128 0x49
+ 2175 0160 13        		.uleb128 0x13
+ 2176 0161 02        		.uleb128 0x2
+ 2177 0162 06        		.uleb128 0x6
+ 2178 0163 00        		.byte	0x0
+ 2179 0164 00        		.byte	0x0
+ 2180 0165 1A        		.uleb128 0x1a
+ 2181 0166 2E        		.uleb128 0x2e
+ 2182 0167 01        		.byte	0x1
+ 2183 0168 3F        		.uleb128 0x3f
+ 2184 0169 0C        		.uleb128 0xc
+ 2185 016a 03        		.uleb128 0x3
+ 2186 016b 0E        		.uleb128 0xe
+ 2187 016c 3A        		.uleb128 0x3a
+ 2188 016d 0B        		.uleb128 0xb
+ 2189 016e 3B        		.uleb128 0x3b
+ 2190 016f 05        		.uleb128 0x5
+ 2191 0170 27        		.uleb128 0x27
+ 2192 0171 0C        		.uleb128 0xc
+ 2193 0172 49        		.uleb128 0x49
+ 2194 0173 13        		.uleb128 0x13
+ 2195 0174 11        		.uleb128 0x11
+ 2196 0175 01        		.uleb128 0x1
+ 2197 0176 12        		.uleb128 0x12
+ 2198 0177 01        		.uleb128 0x1
+ 2199 0178 40        		.uleb128 0x40
+ 2200 0179 0A        		.uleb128 0xa
+ 2201 017a 01        		.uleb128 0x1
+ 2202 017b 13        		.uleb128 0x13
+ 2203 017c 00        		.byte	0x0
+ 2204 017d 00        		.byte	0x0
+ 2205 017e 1B        		.uleb128 0x1b
+ 2206 017f 34        		.uleb128 0x34
+ 2207 0180 00        		.byte	0x0
+ 2208 0181 03        		.uleb128 0x3
+ 2209 0182 0E        		.uleb128 0xe
+ 2210 0183 3A        		.uleb128 0x3a
+ 2211 0184 0B        		.uleb128 0xb
+ 2212 0185 3B        		.uleb128 0x3b
+ 2213 0186 05        		.uleb128 0x5
+ 2214 0187 49        		.uleb128 0x49
+ 2215 0188 13        		.uleb128 0x13
+ 2216 0189 02        		.uleb128 0x2
+ 2217 018a 0A        		.uleb128 0xa
+ 2218 018b 00        		.byte	0x0
+ 2219 018c 00        		.byte	0x0
+ 2220 018d 1C        		.uleb128 0x1c
+ 2221 018e 34        		.uleb128 0x34
+ 2222 018f 00        		.byte	0x0
+ 2223 0190 03        		.uleb128 0x3
+ 2224 0191 08        		.uleb128 0x8
+ 2225 0192 3A        		.uleb128 0x3a
+ 2226 0193 0B        		.uleb128 0xb
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 41
+
+
+ 2227 0194 3B        		.uleb128 0x3b
+ 2228 0195 0B        		.uleb128 0xb
+ 2229 0196 49        		.uleb128 0x49
+ 2230 0197 13        		.uleb128 0x13
+ 2231 0198 3F        		.uleb128 0x3f
+ 2232 0199 0C        		.uleb128 0xc
+ 2233 019a 02        		.uleb128 0x2
+ 2234 019b 0A        		.uleb128 0xa
+ 2235 019c 00        		.byte	0x0
+ 2236 019d 00        		.byte	0x0
+ 2237 019e 1D        		.uleb128 0x1d
+ 2238 019f 34        		.uleb128 0x34
+ 2239 01a0 00        		.byte	0x0
+ 2240 01a1 03        		.uleb128 0x3
+ 2241 01a2 0E        		.uleb128 0xe
+ 2242 01a3 3A        		.uleb128 0x3a
+ 2243 01a4 0B        		.uleb128 0xb
+ 2244 01a5 3B        		.uleb128 0x3b
+ 2245 01a6 0B        		.uleb128 0xb
+ 2246 01a7 49        		.uleb128 0x49
+ 2247 01a8 13        		.uleb128 0x13
+ 2248 01a9 3F        		.uleb128 0x3f
+ 2249 01aa 0C        		.uleb128 0xc
+ 2250 01ab 02        		.uleb128 0x2
+ 2251 01ac 0A        		.uleb128 0xa
+ 2252 01ad 00        		.byte	0x0
+ 2253 01ae 00        		.byte	0x0
+ 2254 01af 00        		.byte	0x0
+ 2255               		.section	.debug_pubnames,"",@progbits
+ 2256 0000 C800 0000 		.long	0xc8
+ 2257 0004 0200      		.word	0x2
+ 2258 0006 0000 0000 		.long	.Ldebug_info0
+ 2259 000a 4404 0000 		.long	0x444
+ 2260 000e BD00 0000 		.long	0xbd
+ 2261 0012 7265 6164 		.string	"readEEPROM"
+ 2261      4545 5052 
+ 2261      4F4D 00
+ 2262 001d 6801 0000 		.long	0x168
+ 2263 0021 4B65 7950 		.string	"KeyPressed"
+ 2263      7265 7373 
+ 2263      6564 00
+ 2264 002c 9001 0000 		.long	0x190
+ 2265 0030 616E 6765 		.string	"angekommen"
+ 2265      6B6F 6D6D 
+ 2265      656E 00
+ 2266 003b A401 0000 		.long	0x1a4
+ 2267 003f 7365 744D 		.string	"setMS"
+ 2267      5300 
+ 2268 0045 4502 0000 		.long	0x245
+ 2269 0049 696E 666F 		.string	"info"
+ 2269      00
+ 2270 004e 5902 0000 		.long	0x259
+ 2271 0052 6765 744B 		.string	"getKey"
+ 2271      6579 00
+ 2272 0059 8502 0000 		.long	0x285
+ 2273 005d 6C69 6E65 		.string	"line_init"
+ 2273      5F69 6E69 
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 42
+
+
+ 2273      7400 
+ 2274 0067 3B03 0000 		.long	0x33b
+ 2275 006b 6173 7572 		.string	"asuro_init"
+ 2275      6F5F 696E 
+ 2275      6974 00
+ 2276 0076 6803 0000 		.long	0x368
+ 2277 007a 6D61 696E 		.string	"main"
+ 2277      00
+ 2278 007f B803 0000 		.long	0x3b8
+ 2279 0083 6D73 6C00 		.string	"msl"
+ 2280 0087 CA03 0000 		.long	0x3ca
+ 2281 008b 6D73 7200 		.string	"msr"
+ 2282 008f DC03 0000 		.long	0x3dc
+ 2283 0093 626C 6163 		.string	"black_l"
+ 2283      6B5F 6C00 
+ 2284 009b EE03 0000 		.long	0x3ee
+ 2285 009f 626C 6163 		.string	"black_r"
+ 2285      6B5F 7200 
+ 2286 00a7 0004 0000 		.long	0x400
+ 2287 00ab 7768 6974 		.string	"white_l"
+ 2287      655F 6C00 
+ 2288 00b3 1204 0000 		.long	0x412
+ 2289 00b7 7768 6974 		.string	"white_r"
+ 2289      655F 7200 
+ 2290 00bf 2404 0000 		.long	0x424
+ 2291 00c3 646F 6E65 		.string	"done"
+ 2291      00
+ 2292 00c8 0000 0000 		.long	0x0
+ 2293               		.section	.debug_aranges,"",@progbits
+ 2294 0000 1C00 0000 		.long	0x1c
+ 2295 0004 0200      		.word	0x2
+ 2296 0006 0000 0000 		.long	.Ldebug_info0
+ 2297 000a 04        		.byte	0x4
+ 2298 000b 00        		.byte	0x0
+ 2299 000c 0000      		.word	0x0
+ 2300 000e 0000      		.word	0x0
+ 2301 0010 0000 0000 		.long	.Ltext0
+ 2302 0014 6C05 0000 		.long	.Letext0-.Ltext0
+ 2303 0018 0000 0000 		.long	0x0
+ 2304 001c 0000 0000 		.long	0x0
+ 2305               		.section	.debug_line
+ 2306 0000 B006 0000 		.long	.LELT0-.LSLT0
+ 2307               	.LSLT0:
+ 2308 0004 0200      		.word	0x2
+ 2309 0006 A900 0000 		.long	.LELTP0-.LASLTP0
+ 2310               	.LASLTP0:
+ 2311 000a 01        		.byte	0x1
+ 2312 000b 01        		.byte	0x1
+ 2313 000c F6        		.byte	0xf6
+ 2314 000d F5        		.byte	0xf5
+ 2315 000e 0A        		.byte	0xa
+ 2316 000f 00        		.byte	0x0
+ 2317 0010 01        		.byte	0x1
+ 2318 0011 01        		.byte	0x1
+ 2319 0012 01        		.byte	0x1
+ 2320 0013 01        		.byte	0x1
+ 2321 0014 00        		.byte	0x0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 43
+
+
+ 2322 0015 00        		.byte	0x0
+ 2323 0016 00        		.byte	0x0
+ 2324 0017 01        		.byte	0x1
+ 2325 0018 633A 2F77 		.ascii	"c:/winavr-20080610/lib/gcc/../../avr/include"
+ 2325      696E 6176 
+ 2325      722D 3230 
+ 2325      3038 3036 
+ 2325      3130 2F6C 
+ 2326 0044 00        		.byte	0
+ 2327 0045 633A 2F77 		.ascii	"c:/winavr-20080610/lib/gcc/../../avr/include/avr"
+ 2327      696E 6176 
+ 2327      722D 3230 
+ 2327      3038 3036 
+ 2327      3130 2F6C 
+ 2328 0075 00        		.byte	0
+ 2329 0076 00        		.byte	0x0
+ 2330 0077 696E 632E 		.string	"inc.c"
+ 2330      6300 
+ 2331 007d 00        		.uleb128 0x0
+ 2332 007e 00        		.uleb128 0x0
+ 2333 007f 00        		.uleb128 0x0
+ 2334 0080 6176 722F 		.string	"avr/eeprom.h"
+ 2334      6565 7072 
+ 2334      6F6D 2E68 
+ 2334      00
+ 2335 008d 01        		.uleb128 0x1
+ 2336 008e 00        		.uleb128 0x0
+ 2337 008f 00        		.uleb128 0x0
+ 2338 0090 6C69 652E 		.string	"lie.c"
+ 2338      6300 
+ 2339 0096 00        		.uleb128 0x0
+ 2340 0097 00        		.uleb128 0x0
+ 2341 0098 00        		.uleb128 0x0
+ 2342 0099 676C 6F62 		.string	"globals.c"
+ 2342      616C 732E 
+ 2342      6300 
+ 2343 00a3 00        		.uleb128 0x0
+ 2344 00a4 00        		.uleb128 0x0
+ 2345 00a5 00        		.uleb128 0x0
+ 2346 00a6 7374 6469 		.string	"stdint.h"
+ 2346      6E74 2E68 
+ 2346      00
+ 2347 00af 01        		.uleb128 0x1
+ 2348 00b0 00        		.uleb128 0x0
+ 2349 00b1 00        		.uleb128 0x0
+ 2350 00b2 00        		.byte	0x0
+ 2351               	.LELTP0:
+ 2352 00b3 00        		.byte	0x0
+ 2353 00b4 05        		.uleb128 0x5
+ 2354 00b5 02        		.byte	0x2
+ 2355 00b6 0000 0000 		.long	.LM1
+ 2356 00ba D3        		.byte	0xd3
+ 2357 00bb 00        		.byte	0x0
+ 2358 00bc 05        		.uleb128 0x5
+ 2359 00bd 02        		.byte	0x2
+ 2360 00be 0000 0000 		.long	.LM2
+ 2361 00c2 04        		.byte	0x4
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 44
+
+
+ 2362 00c3 02        		.uleb128 0x2
+ 2363 00c4 17        		.byte	0x17
+ 2364 00c5 00        		.byte	0x0
+ 2365 00c6 05        		.uleb128 0x5
+ 2366 00c7 02        		.byte	0x2
+ 2367 00c8 0000 0000 		.long	.LM3
+ 2368 00cc 18        		.byte	0x18
+ 2369 00cd 00        		.byte	0x0
+ 2370 00ce 05        		.uleb128 0x5
+ 2371 00cf 02        		.byte	0x2
+ 2372 00d0 0000 0000 		.long	.LM4
+ 2373 00d4 16        		.byte	0x16
+ 2374 00d5 00        		.byte	0x0
+ 2375 00d6 05        		.uleb128 0x5
+ 2376 00d7 02        		.byte	0x2
+ 2377 00d8 0000 0000 		.long	.LM5
+ 2378 00dc 15        		.byte	0x15
+ 2379 00dd 00        		.byte	0x0
+ 2380 00de 05        		.uleb128 0x5
+ 2381 00df 02        		.byte	0x2
+ 2382 00e0 0000 0000 		.long	.LM6
+ 2383 00e4 04        		.byte	0x4
+ 2384 00e5 01        		.uleb128 0x1
+ 2385 00e6 0B        		.byte	0xb
+ 2386 00e7 00        		.byte	0x0
+ 2387 00e8 05        		.uleb128 0x5
+ 2388 00e9 02        		.byte	0x2
+ 2389 00ea 0000 0000 		.long	.LM7
+ 2390 00ee 04        		.byte	0x4
+ 2391 00ef 02        		.uleb128 0x2
+ 2392 00f0 16        		.byte	0x16
+ 2393 00f1 00        		.byte	0x0
+ 2394 00f2 05        		.uleb128 0x5
+ 2395 00f3 02        		.byte	0x2
+ 2396 00f4 0000 0000 		.long	.LM8
+ 2397 00f8 18        		.byte	0x18
+ 2398 00f9 00        		.byte	0x0
+ 2399 00fa 05        		.uleb128 0x5
+ 2400 00fb 02        		.byte	0x2
+ 2401 00fc 0000 0000 		.long	.LM9
+ 2402 0100 16        		.byte	0x16
+ 2403 0101 00        		.byte	0x0
+ 2404 0102 05        		.uleb128 0x5
+ 2405 0103 02        		.byte	0x2
+ 2406 0104 0000 0000 		.long	.LM10
+ 2407 0108 15        		.byte	0x15
+ 2408 0109 00        		.byte	0x0
+ 2409 010a 05        		.uleb128 0x5
+ 2410 010b 02        		.byte	0x2
+ 2411 010c 0000 0000 		.long	.LM11
+ 2412 0110 04        		.byte	0x4
+ 2413 0111 01        		.uleb128 0x1
+ 2414 0112 0C        		.byte	0xc
+ 2415 0113 00        		.byte	0x0
+ 2416 0114 05        		.uleb128 0x5
+ 2417 0115 02        		.byte	0x2
+ 2418 0116 0000 0000 		.long	.LM12
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 45
+
+
+ 2419 011a 04        		.byte	0x4
+ 2420 011b 02        		.uleb128 0x2
+ 2421 011c 15        		.byte	0x15
+ 2422 011d 00        		.byte	0x0
+ 2423 011e 05        		.uleb128 0x5
+ 2424 011f 02        		.byte	0x2
+ 2425 0120 0000 0000 		.long	.LM13
+ 2426 0124 18        		.byte	0x18
+ 2427 0125 00        		.byte	0x0
+ 2428 0126 05        		.uleb128 0x5
+ 2429 0127 02        		.byte	0x2
+ 2430 0128 0000 0000 		.long	.LM14
+ 2431 012c 16        		.byte	0x16
+ 2432 012d 00        		.byte	0x0
+ 2433 012e 05        		.uleb128 0x5
+ 2434 012f 02        		.byte	0x2
+ 2435 0130 0000 0000 		.long	.LM15
+ 2436 0134 15        		.byte	0x15
+ 2437 0135 00        		.byte	0x0
+ 2438 0136 05        		.uleb128 0x5
+ 2439 0137 02        		.byte	0x2
+ 2440 0138 0000 0000 		.long	.LM16
+ 2441 013c 04        		.byte	0x4
+ 2442 013d 01        		.uleb128 0x1
+ 2443 013e 0D        		.byte	0xd
+ 2444 013f 00        		.byte	0x0
+ 2445 0140 05        		.uleb128 0x5
+ 2446 0141 02        		.byte	0x2
+ 2447 0142 0000 0000 		.long	.LM17
+ 2448 0146 04        		.byte	0x4
+ 2449 0147 02        		.uleb128 0x2
+ 2450 0148 01        		.byte	0x1
+ 2451 0149 00        		.byte	0x0
+ 2452 014a 05        		.uleb128 0x5
+ 2453 014b 02        		.byte	0x2
+ 2454 014c 0000 0000 		.long	.LM18
+ 2455 0150 18        		.byte	0x18
+ 2456 0151 00        		.byte	0x0
+ 2457 0152 05        		.uleb128 0x5
+ 2458 0153 02        		.byte	0x2
+ 2459 0154 0000 0000 		.long	.LM19
+ 2460 0158 16        		.byte	0x16
+ 2461 0159 00        		.byte	0x0
+ 2462 015a 05        		.uleb128 0x5
+ 2463 015b 02        		.byte	0x2
+ 2464 015c 0000 0000 		.long	.LM20
+ 2465 0160 15        		.byte	0x15
+ 2466 0161 00        		.byte	0x0
+ 2467 0162 05        		.uleb128 0x5
+ 2468 0163 02        		.byte	0x2
+ 2469 0164 0000 0000 		.long	.LM21
+ 2470 0168 04        		.byte	0x4
+ 2471 0169 01        		.uleb128 0x1
+ 2472 016a 0E        		.byte	0xe
+ 2473 016b 00        		.byte	0x0
+ 2474 016c 05        		.uleb128 0x5
+ 2475 016d 02        		.byte	0x2
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 46
+
+
+ 2476 016e 0000 0000 		.long	.LM22
+ 2477 0172 04        		.byte	0x4
+ 2478 0173 02        		.uleb128 0x2
+ 2479 0174 13        		.byte	0x13
+ 2480 0175 00        		.byte	0x0
+ 2481 0176 05        		.uleb128 0x5
+ 2482 0177 02        		.byte	0x2
+ 2483 0178 0000 0000 		.long	.LM23
+ 2484 017c 18        		.byte	0x18
+ 2485 017d 00        		.byte	0x0
+ 2486 017e 05        		.uleb128 0x5
+ 2487 017f 02        		.byte	0x2
+ 2488 0180 0000 0000 		.long	.LM24
+ 2489 0184 16        		.byte	0x16
+ 2490 0185 00        		.byte	0x0
+ 2491 0186 05        		.uleb128 0x5
+ 2492 0187 02        		.byte	0x2
+ 2493 0188 0000 0000 		.long	.LM25
+ 2494 018c 15        		.byte	0x15
+ 2495 018d 00        		.byte	0x0
+ 2496 018e 05        		.uleb128 0x5
+ 2497 018f 02        		.byte	0x2
+ 2498 0190 0000 0000 		.long	.LM26
+ 2499 0194 04        		.byte	0x4
+ 2500 0195 01        		.uleb128 0x1
+ 2501 0196 0F        		.byte	0xf
+ 2502 0197 00        		.byte	0x0
+ 2503 0198 05        		.uleb128 0x5
+ 2504 0199 02        		.byte	0x2
+ 2505 019a 0000 0000 		.long	.LM27
+ 2506 019e 04        		.byte	0x4
+ 2507 019f 02        		.uleb128 0x2
+ 2508 01a0 12        		.byte	0x12
+ 2509 01a1 00        		.byte	0x0
+ 2510 01a2 05        		.uleb128 0x5
+ 2511 01a3 02        		.byte	0x2
+ 2512 01a4 0000 0000 		.long	.LM28
+ 2513 01a8 18        		.byte	0x18
+ 2514 01a9 00        		.byte	0x0
+ 2515 01aa 05        		.uleb128 0x5
+ 2516 01ab 02        		.byte	0x2
+ 2517 01ac 0000 0000 		.long	.LM29
+ 2518 01b0 16        		.byte	0x16
+ 2519 01b1 00        		.byte	0x0
+ 2520 01b2 05        		.uleb128 0x5
+ 2521 01b3 02        		.byte	0x2
+ 2522 01b4 0000 0000 		.long	.LM30
+ 2523 01b8 15        		.byte	0x15
+ 2524 01b9 00        		.byte	0x0
+ 2525 01ba 05        		.uleb128 0x5
+ 2526 01bb 02        		.byte	0x2
+ 2527 01bc 0000 0000 		.long	.LM31
+ 2528 01c0 04        		.byte	0x4
+ 2529 01c1 01        		.uleb128 0x1
+ 2530 01c2 10        		.byte	0x10
+ 2531 01c3 00        		.byte	0x0
+ 2532 01c4 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 47
+
+
+ 2533 01c5 02        		.byte	0x2
+ 2534 01c6 0000 0000 		.long	.LM32
+ 2535 01ca 15        		.byte	0x15
+ 2536 01cb 00        		.byte	0x0
+ 2537 01cc 05        		.uleb128 0x5
+ 2538 01cd 02        		.byte	0x2
+ 2539 01ce 0000 0000 		.long	.LM33
+ 2540 01d2 03        		.byte	0x3
+ 2541 01d3 F57E      		.sleb128 -139
+ 2542 01d5 01        		.byte	0x1
+ 2543 01d6 00        		.byte	0x0
+ 2544 01d7 05        		.uleb128 0x5
+ 2545 01d8 02        		.byte	0x2
+ 2546 01d9 0000 0000 		.long	.LM34
+ 2547 01dd 17        		.byte	0x17
+ 2548 01de 00        		.byte	0x0
+ 2549 01df 05        		.uleb128 0x5
+ 2550 01e0 02        		.byte	0x2
+ 2551 01e1 0000 0000 		.long	.LM35
+ 2552 01e5 15        		.byte	0x15
+ 2553 01e6 00        		.byte	0x0
+ 2554 01e7 05        		.uleb128 0x5
+ 2555 01e8 02        		.byte	0x2
+ 2556 01e9 0000 0000 		.long	.LM36
+ 2557 01ed 15        		.byte	0x15
+ 2558 01ee 00        		.byte	0x0
+ 2559 01ef 05        		.uleb128 0x5
+ 2560 01f0 02        		.byte	0x2
+ 2561 01f1 0000 0000 		.long	.LM37
+ 2562 01f5 15        		.byte	0x15
+ 2563 01f6 00        		.byte	0x0
+ 2564 01f7 05        		.uleb128 0x5
+ 2565 01f8 02        		.byte	0x2
+ 2566 01f9 0000 0000 		.long	.LM38
+ 2567 01fd 15        		.byte	0x15
+ 2568 01fe 00        		.byte	0x0
+ 2569 01ff 05        		.uleb128 0x5
+ 2570 0200 02        		.byte	0x2
+ 2571 0201 0000 0000 		.long	.LM39
+ 2572 0205 15        		.byte	0x15
+ 2573 0206 00        		.byte	0x0
+ 2574 0207 05        		.uleb128 0x5
+ 2575 0208 02        		.byte	0x2
+ 2576 0209 0000 0000 		.long	.LM40
+ 2577 020d 16        		.byte	0x16
+ 2578 020e 00        		.byte	0x0
+ 2579 020f 05        		.uleb128 0x5
+ 2580 0210 02        		.byte	0x2
+ 2581 0211 0000 0000 		.long	.LM41
+ 2582 0215 16        		.byte	0x16
+ 2583 0216 00        		.byte	0x0
+ 2584 0217 05        		.uleb128 0x5
+ 2585 0218 02        		.byte	0x2
+ 2586 0219 0000 0000 		.long	.LM42
+ 2587 021d 18        		.byte	0x18
+ 2588 021e 00        		.byte	0x0
+ 2589 021f 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 48
+
+
+ 2590 0220 02        		.byte	0x2
+ 2591 0221 0000 0000 		.long	.LM43
+ 2592 0225 03        		.byte	0x3
+ 2593 0226 5A        		.sleb128 -38
+ 2594 0227 01        		.byte	0x1
+ 2595 0228 00        		.byte	0x0
+ 2596 0229 05        		.uleb128 0x5
+ 2597 022a 02        		.byte	0x2
+ 2598 022b 0000 0000 		.long	.LM44
+ 2599 022f 18        		.byte	0x18
+ 2600 0230 00        		.byte	0x0
+ 2601 0231 05        		.uleb128 0x5
+ 2602 0232 02        		.byte	0x2
+ 2603 0233 0000 0000 		.long	.LM45
+ 2604 0237 D4        		.byte	0xd4
+ 2605 0238 00        		.byte	0x0
+ 2606 0239 05        		.uleb128 0x5
+ 2607 023a 02        		.byte	0x2
+ 2608 023b 0000 0000 		.long	.LM46
+ 2609 023f 17        		.byte	0x17
+ 2610 0240 00        		.byte	0x0
+ 2611 0241 05        		.uleb128 0x5
+ 2612 0242 02        		.byte	0x2
+ 2613 0243 0000 0000 		.long	.LM47
+ 2614 0247 16        		.byte	0x16
+ 2615 0248 00        		.byte	0x0
+ 2616 0249 05        		.uleb128 0x5
+ 2617 024a 02        		.byte	0x2
+ 2618 024b 0000 0000 		.long	.LM48
+ 2619 024f 15        		.byte	0x15
+ 2620 0250 00        		.byte	0x0
+ 2621 0251 05        		.uleb128 0x5
+ 2622 0252 02        		.byte	0x2
+ 2623 0253 0000 0000 		.long	.LM49
+ 2624 0257 17        		.byte	0x17
+ 2625 0258 00        		.byte	0x0
+ 2626 0259 05        		.uleb128 0x5
+ 2627 025a 02        		.byte	0x2
+ 2628 025b 0000 0000 		.long	.LM50
+ 2629 025f 18        		.byte	0x18
+ 2630 0260 00        		.byte	0x0
+ 2631 0261 05        		.uleb128 0x5
+ 2632 0262 02        		.byte	0x2
+ 2633 0263 0000 0000 		.long	.LM51
+ 2634 0267 16        		.byte	0x16
+ 2635 0268 00        		.byte	0x0
+ 2636 0269 05        		.uleb128 0x5
+ 2637 026a 02        		.byte	0x2
+ 2638 026b 0000 0000 		.long	.LM52
+ 2639 026f 17        		.byte	0x17
+ 2640 0270 00        		.byte	0x0
+ 2641 0271 05        		.uleb128 0x5
+ 2642 0272 02        		.byte	0x2
+ 2643 0273 0000 0000 		.long	.LM53
+ 2644 0277 17        		.byte	0x17
+ 2645 0278 00        		.byte	0x0
+ 2646 0279 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 49
+
+
+ 2647 027a 02        		.byte	0x2
+ 2648 027b 0000 0000 		.long	.LM54
+ 2649 027f 17        		.byte	0x17
+ 2650 0280 00        		.byte	0x0
+ 2651 0281 05        		.uleb128 0x5
+ 2652 0282 02        		.byte	0x2
+ 2653 0283 0000 0000 		.long	.LM55
+ 2654 0287 19        		.byte	0x19
+ 2655 0288 00        		.byte	0x0
+ 2656 0289 05        		.uleb128 0x5
+ 2657 028a 02        		.byte	0x2
+ 2658 028b 0000 0000 		.long	.LM56
+ 2659 028f 15        		.byte	0x15
+ 2660 0290 00        		.byte	0x0
+ 2661 0291 05        		.uleb128 0x5
+ 2662 0292 02        		.byte	0x2
+ 2663 0293 0000 0000 		.long	.LM57
+ 2664 0297 03        		.byte	0x3
+ 2665 0298 6D        		.sleb128 -19
+ 2666 0299 01        		.byte	0x1
+ 2667 029a 00        		.byte	0x0
+ 2668 029b 05        		.uleb128 0x5
+ 2669 029c 02        		.byte	0x2
+ 2670 029d 0000 0000 		.long	.LM58
+ 2671 02a1 0F        		.byte	0xf
+ 2672 02a2 00        		.byte	0x0
+ 2673 02a3 05        		.uleb128 0x5
+ 2674 02a4 02        		.byte	0x2
+ 2675 02a5 0000 0000 		.long	.LM59
+ 2676 02a9 2F        		.byte	0x2f
+ 2677 02aa 00        		.byte	0x0
+ 2678 02ab 05        		.uleb128 0x5
+ 2679 02ac 02        		.byte	0x2
+ 2680 02ad 0000 0000 		.long	.LM60
+ 2681 02b1 15        		.byte	0x15
+ 2682 02b2 00        		.byte	0x0
+ 2683 02b3 05        		.uleb128 0x5
+ 2684 02b4 02        		.byte	0x2
+ 2685 02b5 0000 0000 		.long	.LM61
+ 2686 02b9 18        		.byte	0x18
+ 2687 02ba 00        		.byte	0x0
+ 2688 02bb 05        		.uleb128 0x5
+ 2689 02bc 02        		.byte	0x2
+ 2690 02bd 0000 0000 		.long	.LM62
+ 2691 02c1 18        		.byte	0x18
+ 2692 02c2 00        		.byte	0x0
+ 2693 02c3 05        		.uleb128 0x5
+ 2694 02c4 02        		.byte	0x2
+ 2695 02c5 0000 0000 		.long	.LM63
+ 2696 02c9 16        		.byte	0x16
+ 2697 02ca 00        		.byte	0x0
+ 2698 02cb 05        		.uleb128 0x5
+ 2699 02cc 02        		.byte	0x2
+ 2700 02cd 0000 0000 		.long	.LM64
+ 2701 02d1 17        		.byte	0x17
+ 2702 02d2 00        		.byte	0x0
+ 2703 02d3 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 50
+
+
+ 2704 02d4 02        		.byte	0x2
+ 2705 02d5 0000 0000 		.long	.LM65
+ 2706 02d9 17        		.byte	0x17
+ 2707 02da 00        		.byte	0x0
+ 2708 02db 05        		.uleb128 0x5
+ 2709 02dc 02        		.byte	0x2
+ 2710 02dd 0000 0000 		.long	.LM66
+ 2711 02e1 17        		.byte	0x17
+ 2712 02e2 00        		.byte	0x0
+ 2713 02e3 05        		.uleb128 0x5
+ 2714 02e4 02        		.byte	0x2
+ 2715 02e5 0000 0000 		.long	.LM67
+ 2716 02e9 19        		.byte	0x19
+ 2717 02ea 00        		.byte	0x0
+ 2718 02eb 05        		.uleb128 0x5
+ 2719 02ec 02        		.byte	0x2
+ 2720 02ed 0000 0000 		.long	.LM68
+ 2721 02f1 15        		.byte	0x15
+ 2722 02f2 00        		.byte	0x0
+ 2723 02f3 05        		.uleb128 0x5
+ 2724 02f4 02        		.byte	0x2
+ 2725 02f5 0000 0000 		.long	.LM69
+ 2726 02f9 03        		.byte	0x3
+ 2727 02fa 6D        		.sleb128 -19
+ 2728 02fb 01        		.byte	0x1
+ 2729 02fc 00        		.byte	0x0
+ 2730 02fd 05        		.uleb128 0x5
+ 2731 02fe 02        		.byte	0x2
+ 2732 02ff 0000 0000 		.long	.LM70
+ 2733 0303 2A        		.byte	0x2a
+ 2734 0304 00        		.byte	0x0
+ 2735 0305 05        		.uleb128 0x5
+ 2736 0306 02        		.byte	0x2
+ 2737 0307 0000 0000 		.long	.LM71
+ 2738 030b 15        		.byte	0x15
+ 2739 030c 00        		.byte	0x0
+ 2740 030d 05        		.uleb128 0x5
+ 2741 030e 02        		.byte	0x2
+ 2742 030f 0000 0000 		.long	.LM72
+ 2743 0313 16        		.byte	0x16
+ 2744 0314 00        		.byte	0x0
+ 2745 0315 05        		.uleb128 0x5
+ 2746 0316 02        		.byte	0x2
+ 2747 0317 0000 0000 		.long	.LM73
+ 2748 031b 16        		.byte	0x16
+ 2749 031c 00        		.byte	0x0
+ 2750 031d 05        		.uleb128 0x5
+ 2751 031e 02        		.byte	0x2
+ 2752 031f 0000 0000 		.long	.LM74
+ 2753 0323 04        		.byte	0x4
+ 2754 0324 02        		.uleb128 0x2
+ 2755 0325 03        		.byte	0x3
+ 2756 0326 40        		.sleb128 -64
+ 2757 0327 01        		.byte	0x1
+ 2758 0328 00        		.byte	0x0
+ 2759 0329 05        		.uleb128 0x5
+ 2760 032a 02        		.byte	0x2
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 51
+
+
+ 2761 032b 0000 0000 		.long	.LM75
+ 2762 032f 1F        		.byte	0x1f
+ 2763 0330 00        		.byte	0x0
+ 2764 0331 05        		.uleb128 0x5
+ 2765 0332 02        		.byte	0x2
+ 2766 0333 0000 0000 		.long	.LM76
+ 2767 0337 16        		.byte	0x16
+ 2768 0338 00        		.byte	0x0
+ 2769 0339 05        		.uleb128 0x5
+ 2770 033a 02        		.byte	0x2
+ 2771 033b 0000 0000 		.long	.LM77
+ 2772 033f 16        		.byte	0x16
+ 2773 0340 00        		.byte	0x0
+ 2774 0341 05        		.uleb128 0x5
+ 2775 0342 02        		.byte	0x2
+ 2776 0343 0000 0000 		.long	.LM78
+ 2777 0347 04        		.byte	0x4
+ 2778 0348 01        		.uleb128 0x1
+ 2779 0349 46        		.byte	0x46
+ 2780 034a 00        		.byte	0x0
+ 2781 034b 05        		.uleb128 0x5
+ 2782 034c 02        		.byte	0x2
+ 2783 034d 0000 0000 		.long	.LM79
+ 2784 0351 04        		.byte	0x4
+ 2785 0352 02        		.uleb128 0x2
+ 2786 0353 03        		.byte	0x3
+ 2787 0354 BF7F      		.sleb128 -65
+ 2788 0356 01        		.byte	0x1
+ 2789 0357 00        		.byte	0x0
+ 2790 0358 05        		.uleb128 0x5
+ 2791 0359 02        		.byte	0x2
+ 2792 035a 0000 0000 		.long	.LM80
+ 2793 035e 1F        		.byte	0x1f
+ 2794 035f 00        		.byte	0x0
+ 2795 0360 05        		.uleb128 0x5
+ 2796 0361 02        		.byte	0x2
+ 2797 0362 0000 0000 		.long	.LM81
+ 2798 0366 16        		.byte	0x16
+ 2799 0367 00        		.byte	0x0
+ 2800 0368 05        		.uleb128 0x5
+ 2801 0369 02        		.byte	0x2
+ 2802 036a 0000 0000 		.long	.LM82
+ 2803 036e 16        		.byte	0x16
+ 2804 036f 00        		.byte	0x0
+ 2805 0370 05        		.uleb128 0x5
+ 2806 0371 02        		.byte	0x2
+ 2807 0372 0000 0000 		.long	.LM83
+ 2808 0376 04        		.byte	0x4
+ 2809 0377 01        		.uleb128 0x1
+ 2810 0378 48        		.byte	0x48
+ 2811 0379 00        		.byte	0x0
+ 2812 037a 05        		.uleb128 0x5
+ 2813 037b 02        		.byte	0x2
+ 2814 037c 0000 0000 		.long	.LM84
+ 2815 0380 15        		.byte	0x15
+ 2816 0381 00        		.byte	0x0
+ 2817 0382 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 52
+
+
+ 2818 0383 02        		.byte	0x2
+ 2819 0384 0000 0000 		.long	.LM85
+ 2820 0388 03        		.byte	0x3
+ 2821 0389 9F7F      		.sleb128 -97
+ 2822 038b 01        		.byte	0x1
+ 2823 038c 00        		.byte	0x0
+ 2824 038d 05        		.uleb128 0x5
+ 2825 038e 02        		.byte	0x2
+ 2826 038f 0000 0000 		.long	.LM86
+ 2827 0393 15        		.byte	0x15
+ 2828 0394 00        		.byte	0x0
+ 2829 0395 05        		.uleb128 0x5
+ 2830 0396 02        		.byte	0x2
+ 2831 0397 0000 0000 		.long	.LM87
+ 2832 039b 16        		.byte	0x16
+ 2833 039c 00        		.byte	0x0
+ 2834 039d 05        		.uleb128 0x5
+ 2835 039e 02        		.byte	0x2
+ 2836 039f 0000 0000 		.long	.LM88
+ 2837 03a3 15        		.byte	0x15
+ 2838 03a4 00        		.byte	0x0
+ 2839 03a5 05        		.uleb128 0x5
+ 2840 03a6 02        		.byte	0x2
+ 2841 03a7 0000 0000 		.long	.LM89
+ 2842 03ab 15        		.byte	0x15
+ 2843 03ac 00        		.byte	0x0
+ 2844 03ad 05        		.uleb128 0x5
+ 2845 03ae 02        		.byte	0x2
+ 2846 03af 0000 0000 		.long	.LM90
+ 2847 03b3 15        		.byte	0x15
+ 2848 03b4 00        		.byte	0x0
+ 2849 03b5 05        		.uleb128 0x5
+ 2850 03b6 02        		.byte	0x2
+ 2851 03b7 0000 0000 		.long	.LM91
+ 2852 03bb 16        		.byte	0x16
+ 2853 03bc 00        		.byte	0x0
+ 2854 03bd 05        		.uleb128 0x5
+ 2855 03be 02        		.byte	0x2
+ 2856 03bf 0000 0000 		.long	.LM92
+ 2857 03c3 15        		.byte	0x15
+ 2858 03c4 00        		.byte	0x0
+ 2859 03c5 05        		.uleb128 0x5
+ 2860 03c6 02        		.byte	0x2
+ 2861 03c7 0000 0000 		.long	.LM93
+ 2862 03cb 15        		.byte	0x15
+ 2863 03cc 00        		.byte	0x0
+ 2864 03cd 05        		.uleb128 0x5
+ 2865 03ce 02        		.byte	0x2
+ 2866 03cf 0000 0000 		.long	.LM94
+ 2867 03d3 15        		.byte	0x15
+ 2868 03d4 00        		.byte	0x0
+ 2869 03d5 05        		.uleb128 0x5
+ 2870 03d6 02        		.byte	0x2
+ 2871 03d7 0000 0000 		.long	.LM95
+ 2872 03db 16        		.byte	0x16
+ 2873 03dc 00        		.byte	0x0
+ 2874 03dd 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 53
+
+
+ 2875 03de 02        		.byte	0x2
+ 2876 03df 0000 0000 		.long	.LM96
+ 2877 03e3 15        		.byte	0x15
+ 2878 03e4 00        		.byte	0x0
+ 2879 03e5 05        		.uleb128 0x5
+ 2880 03e6 02        		.byte	0x2
+ 2881 03e7 0000 0000 		.long	.LM97
+ 2882 03eb 15        		.byte	0x15
+ 2883 03ec 00        		.byte	0x0
+ 2884 03ed 05        		.uleb128 0x5
+ 2885 03ee 02        		.byte	0x2
+ 2886 03ef 0000 0000 		.long	.LM98
+ 2887 03f3 15        		.byte	0x15
+ 2888 03f4 00        		.byte	0x0
+ 2889 03f5 05        		.uleb128 0x5
+ 2890 03f6 02        		.byte	0x2
+ 2891 03f7 0000 0000 		.long	.LM99
+ 2892 03fb 16        		.byte	0x16
+ 2893 03fc 00        		.byte	0x0
+ 2894 03fd 05        		.uleb128 0x5
+ 2895 03fe 02        		.byte	0x2
+ 2896 03ff 0000 0000 		.long	.LM100
+ 2897 0403 15        		.byte	0x15
+ 2898 0404 00        		.byte	0x0
+ 2899 0405 05        		.uleb128 0x5
+ 2900 0406 02        		.byte	0x2
+ 2901 0407 0000 0000 		.long	.LM101
+ 2902 040b 03        		.byte	0x3
+ 2903 040c F47E      		.sleb128 -140
+ 2904 040e 01        		.byte	0x1
+ 2905 040f 00        		.byte	0x0
+ 2906 0410 05        		.uleb128 0x5
+ 2907 0411 02        		.byte	0x2
+ 2908 0412 0000 0000 		.long	.LM102
+ 2909 0416 1A        		.byte	0x1a
+ 2910 0417 00        		.byte	0x0
+ 2911 0418 05        		.uleb128 0x5
+ 2912 0419 02        		.byte	0x2
+ 2913 041a 0000 0000 		.long	.LM103
+ 2914 041e 18        		.byte	0x18
+ 2915 041f 00        		.byte	0x0
+ 2916 0420 05        		.uleb128 0x5
+ 2917 0421 02        		.byte	0x2
+ 2918 0422 0000 0000 		.long	.LM104
+ 2919 0426 1B        		.byte	0x1b
+ 2920 0427 00        		.byte	0x0
+ 2921 0428 05        		.uleb128 0x5
+ 2922 0429 02        		.byte	0x2
+ 2923 042a 0000 0000 		.long	.LM105
+ 2924 042e 16        		.byte	0x16
+ 2925 042f 00        		.byte	0x0
+ 2926 0430 05        		.uleb128 0x5
+ 2927 0431 02        		.byte	0x2
+ 2928 0432 0000 0000 		.long	.LM106
+ 2929 0436 16        		.byte	0x16
+ 2930 0437 00        		.byte	0x0
+ 2931 0438 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 54
+
+
+ 2932 0439 02        		.byte	0x2
+ 2933 043a 0000 0000 		.long	.LM107
+ 2934 043e 16        		.byte	0x16
+ 2935 043f 00        		.byte	0x0
+ 2936 0440 05        		.uleb128 0x5
+ 2937 0441 02        		.byte	0x2
+ 2938 0442 0000 0000 		.long	.LM108
+ 2939 0446 1A        		.byte	0x1a
+ 2940 0447 00        		.byte	0x0
+ 2941 0448 05        		.uleb128 0x5
+ 2942 0449 02        		.byte	0x2
+ 2943 044a 0000 0000 		.long	.LM109
+ 2944 044e 1D        		.byte	0x1d
+ 2945 044f 00        		.byte	0x0
+ 2946 0450 05        		.uleb128 0x5
+ 2947 0451 02        		.byte	0x2
+ 2948 0452 0000 0000 		.long	.LM110
+ 2949 0456 18        		.byte	0x18
+ 2950 0457 00        		.byte	0x0
+ 2951 0458 05        		.uleb128 0x5
+ 2952 0459 02        		.byte	0x2
+ 2953 045a 0000 0000 		.long	.LM111
+ 2954 045e 16        		.byte	0x16
+ 2955 045f 00        		.byte	0x0
+ 2956 0460 05        		.uleb128 0x5
+ 2957 0461 02        		.byte	0x2
+ 2958 0462 0000 0000 		.long	.LM112
+ 2959 0466 18        		.byte	0x18
+ 2960 0467 00        		.byte	0x0
+ 2961 0468 05        		.uleb128 0x5
+ 2962 0469 02        		.byte	0x2
+ 2963 046a 0000 0000 		.long	.LM113
+ 2964 046e 16        		.byte	0x16
+ 2965 046f 00        		.byte	0x0
+ 2966 0470 05        		.uleb128 0x5
+ 2967 0471 02        		.byte	0x2
+ 2968 0472 0000 0000 		.long	.LM114
+ 2969 0476 16        		.byte	0x16
+ 2970 0477 00        		.byte	0x0
+ 2971 0478 05        		.uleb128 0x5
+ 2972 0479 02        		.byte	0x2
+ 2973 047a 0000 0000 		.long	.LM115
+ 2974 047e 16        		.byte	0x16
+ 2975 047f 00        		.byte	0x0
+ 2976 0480 05        		.uleb128 0x5
+ 2977 0481 02        		.byte	0x2
+ 2978 0482 0000 0000 		.long	.LM116
+ 2979 0486 04        		.byte	0x4
+ 2980 0487 02        		.uleb128 0x2
+ 2981 0488 74        		.byte	0x74
+ 2982 0489 00        		.byte	0x0
+ 2983 048a 05        		.uleb128 0x5
+ 2984 048b 02        		.byte	0x2
+ 2985 048c 0000 0000 		.long	.LM117
+ 2986 0490 1F        		.byte	0x1f
+ 2987 0491 00        		.byte	0x0
+ 2988 0492 05        		.uleb128 0x5
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 55
+
+
+ 2989 0493 02        		.byte	0x2
+ 2990 0494 0000 0000 		.long	.LM118
+ 2991 0498 16        		.byte	0x16
+ 2992 0499 00        		.byte	0x0
+ 2993 049a 05        		.uleb128 0x5
+ 2994 049b 02        		.byte	0x2
+ 2995 049c 0000 0000 		.long	.LM119
+ 2996 04a0 16        		.byte	0x16
+ 2997 04a1 00        		.byte	0x0
+ 2998 04a2 05        		.uleb128 0x5
+ 2999 04a3 02        		.byte	0x2
+ 3000 04a4 0000 0000 		.long	.LM120
+ 3001 04a8 04        		.byte	0x4
+ 3002 04a9 01        		.uleb128 0x1
+ 3003 04aa 03        		.byte	0x3
+ 3004 04ab 927F      		.sleb128 -110
+ 3005 04ad 01        		.byte	0x1
+ 3006 04ae 00        		.byte	0x0
+ 3007 04af 05        		.uleb128 0x5
+ 3008 04b0 02        		.byte	0x2
+ 3009 04b1 0000 0000 		.long	.LM121
+ 3010 04b5 04        		.byte	0x4
+ 3011 04b6 02        		.uleb128 0x2
+ 3012 04b7 73        		.byte	0x73
+ 3013 04b8 00        		.byte	0x0
+ 3014 04b9 05        		.uleb128 0x5
+ 3015 04ba 02        		.byte	0x2
+ 3016 04bb 0000 0000 		.long	.LM122
+ 3017 04bf 1F        		.byte	0x1f
+ 3018 04c0 00        		.byte	0x0
+ 3019 04c1 05        		.uleb128 0x5
+ 3020 04c2 02        		.byte	0x2
+ 3021 04c3 0000 0000 		.long	.LM123
+ 3022 04c7 16        		.byte	0x16
+ 3023 04c8 00        		.byte	0x0
+ 3024 04c9 05        		.uleb128 0x5
+ 3025 04ca 02        		.byte	0x2
+ 3026 04cb 0000 0000 		.long	.LM124
+ 3027 04cf 16        		.byte	0x16
+ 3028 04d0 00        		.byte	0x0
+ 3029 04d1 05        		.uleb128 0x5
+ 3030 04d2 02        		.byte	0x2
+ 3031 04d3 0000 0000 		.long	.LM125
+ 3032 04d7 04        		.byte	0x4
+ 3033 04d8 01        		.uleb128 0x1
+ 3034 04d9 03        		.byte	0x3
+ 3035 04da 947F      		.sleb128 -108
+ 3036 04dc 01        		.byte	0x1
+ 3037 04dd 00        		.byte	0x0
+ 3038 04de 05        		.uleb128 0x5
+ 3039 04df 02        		.byte	0x2
+ 3040 04e0 0000 0000 		.long	.LM126
+ 3041 04e4 15        		.byte	0x15
+ 3042 04e5 00        		.byte	0x0
+ 3043 04e6 05        		.uleb128 0x5
+ 3044 04e7 02        		.byte	0x2
+ 3045 04e8 0000 0000 		.long	.LM127
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 56
+
+
+ 3046 04ec 15        		.byte	0x15
+ 3047 04ed 00        		.byte	0x0
+ 3048 04ee 05        		.uleb128 0x5
+ 3049 04ef 02        		.byte	0x2
+ 3050 04f0 0000 0000 		.long	.LM128
+ 3051 04f4 15        		.byte	0x15
+ 3052 04f5 00        		.byte	0x0
+ 3053 04f6 05        		.uleb128 0x5
+ 3054 04f7 02        		.byte	0x2
+ 3055 04f8 0000 0000 		.long	.LM129
+ 3056 04fc 15        		.byte	0x15
+ 3057 04fd 00        		.byte	0x0
+ 3058 04fe 05        		.uleb128 0x5
+ 3059 04ff 02        		.byte	0x2
+ 3060 0500 0000 0000 		.long	.LM130
+ 3061 0504 1C        		.byte	0x1c
+ 3062 0505 00        		.byte	0x0
+ 3063 0506 05        		.uleb128 0x5
+ 3064 0507 02        		.byte	0x2
+ 3065 0508 0000 0000 		.long	.LM131
+ 3066 050c 18        		.byte	0x18
+ 3067 050d 00        		.byte	0x0
+ 3068 050e 05        		.uleb128 0x5
+ 3069 050f 02        		.byte	0x2
+ 3070 0510 0000 0000 		.long	.LM132
+ 3071 0514 16        		.byte	0x16
+ 3072 0515 00        		.byte	0x0
+ 3073 0516 05        		.uleb128 0x5
+ 3074 0517 02        		.byte	0x2
+ 3075 0518 0000 0000 		.long	.LM133
+ 3076 051c 16        		.byte	0x16
+ 3077 051d 00        		.byte	0x0
+ 3078 051e 05        		.uleb128 0x5
+ 3079 051f 02        		.byte	0x2
+ 3080 0520 0000 0000 		.long	.LM134
+ 3081 0524 16        		.byte	0x16
+ 3082 0525 00        		.byte	0x0
+ 3083 0526 05        		.uleb128 0x5
+ 3084 0527 02        		.byte	0x2
+ 3085 0528 0000 0000 		.long	.LM135
+ 3086 052c 04        		.byte	0x4
+ 3087 052d 02        		.uleb128 0x2
+ 3088 052e 5B        		.byte	0x5b
+ 3089 052f 00        		.byte	0x0
+ 3090 0530 05        		.uleb128 0x5
+ 3091 0531 02        		.byte	0x2
+ 3092 0532 0000 0000 		.long	.LM136
+ 3093 0536 1F        		.byte	0x1f
+ 3094 0537 00        		.byte	0x0
+ 3095 0538 05        		.uleb128 0x5
+ 3096 0539 02        		.byte	0x2
+ 3097 053a 0000 0000 		.long	.LM137
+ 3098 053e 16        		.byte	0x16
+ 3099 053f 00        		.byte	0x0
+ 3100 0540 05        		.uleb128 0x5
+ 3101 0541 02        		.byte	0x2
+ 3102 0542 0000 0000 		.long	.LM138
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 57
+
+
+ 3103 0546 16        		.byte	0x16
+ 3104 0547 00        		.byte	0x0
+ 3105 0548 05        		.uleb128 0x5
+ 3106 0549 02        		.byte	0x2
+ 3107 054a 0000 0000 		.long	.LM139
+ 3108 054e 04        		.byte	0x4
+ 3109 054f 01        		.uleb128 0x1
+ 3110 0550 03        		.byte	0x3
+ 3111 0551 AB7F      		.sleb128 -85
+ 3112 0553 01        		.byte	0x1
+ 3113 0554 00        		.byte	0x0
+ 3114 0555 05        		.uleb128 0x5
+ 3115 0556 02        		.byte	0x2
+ 3116 0557 0000 0000 		.long	.LM140
+ 3117 055b 04        		.byte	0x4
+ 3118 055c 02        		.uleb128 0x2
+ 3119 055d 5A        		.byte	0x5a
+ 3120 055e 00        		.byte	0x0
+ 3121 055f 05        		.uleb128 0x5
+ 3122 0560 02        		.byte	0x2
+ 3123 0561 0000 0000 		.long	.LM141
+ 3124 0565 1F        		.byte	0x1f
+ 3125 0566 00        		.byte	0x0
+ 3126 0567 05        		.uleb128 0x5
+ 3127 0568 02        		.byte	0x2
+ 3128 0569 0000 0000 		.long	.LM142
+ 3129 056d 16        		.byte	0x16
+ 3130 056e 00        		.byte	0x0
+ 3131 056f 05        		.uleb128 0x5
+ 3132 0570 02        		.byte	0x2
+ 3133 0571 0000 0000 		.long	.LM143
+ 3134 0575 16        		.byte	0x16
+ 3135 0576 00        		.byte	0x0
+ 3136 0577 05        		.uleb128 0x5
+ 3137 0578 02        		.byte	0x2
+ 3138 0579 0000 0000 		.long	.LM144
+ 3139 057d 04        		.byte	0x4
+ 3140 057e 01        		.uleb128 0x1
+ 3141 057f 03        		.byte	0x3
+ 3142 0580 AD7F      		.sleb128 -83
+ 3143 0582 01        		.byte	0x1
+ 3144 0583 00        		.byte	0x0
+ 3145 0584 05        		.uleb128 0x5
+ 3146 0585 02        		.byte	0x2
+ 3147 0586 0000 0000 		.long	.LM145
+ 3148 058a 15        		.byte	0x15
+ 3149 058b 00        		.byte	0x0
+ 3150 058c 05        		.uleb128 0x5
+ 3151 058d 02        		.byte	0x2
+ 3152 058e 0000 0000 		.long	.LM146
+ 3153 0592 15        		.byte	0x15
+ 3154 0593 00        		.byte	0x0
+ 3155 0594 05        		.uleb128 0x5
+ 3156 0595 02        		.byte	0x2
+ 3157 0596 0000 0000 		.long	.LM147
+ 3158 059a 15        		.byte	0x15
+ 3159 059b 00        		.byte	0x0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 58
+
+
+ 3160 059c 05        		.uleb128 0x5
+ 3161 059d 02        		.byte	0x2
+ 3162 059e 0000 0000 		.long	.LM148
+ 3163 05a2 15        		.byte	0x15
+ 3164 05a3 00        		.byte	0x0
+ 3165 05a4 05        		.uleb128 0x5
+ 3166 05a5 02        		.byte	0x2
+ 3167 05a6 0000 0000 		.long	.LM149
+ 3168 05aa 1B        		.byte	0x1b
+ 3169 05ab 00        		.byte	0x0
+ 3170 05ac 05        		.uleb128 0x5
+ 3171 05ad 02        		.byte	0x2
+ 3172 05ae 0000 0000 		.long	.LM150
+ 3173 05b2 16        		.byte	0x16
+ 3174 05b3 00        		.byte	0x0
+ 3175 05b4 05        		.uleb128 0x5
+ 3176 05b5 02        		.byte	0x2
+ 3177 05b6 0000 0000 		.long	.LM151
+ 3178 05ba 15        		.byte	0x15
+ 3179 05bb 00        		.byte	0x0
+ 3180 05bc 05        		.uleb128 0x5
+ 3181 05bd 02        		.byte	0x2
+ 3182 05be 0000 0000 		.long	.LM152
+ 3183 05c2 96        		.byte	0x96
+ 3184 05c3 00        		.byte	0x0
+ 3185 05c4 05        		.uleb128 0x5
+ 3186 05c5 02        		.byte	0x2
+ 3187 05c6 0000 0000 		.long	.LM153
+ 3188 05ca 19        		.byte	0x19
+ 3189 05cb 00        		.byte	0x0
+ 3190 05cc 05        		.uleb128 0x5
+ 3191 05cd 02        		.byte	0x2
+ 3192 05ce 0000 0000 		.long	.LM154
+ 3193 05d2 16        		.byte	0x16
+ 3194 05d3 00        		.byte	0x0
+ 3195 05d4 05        		.uleb128 0x5
+ 3196 05d5 02        		.byte	0x2
+ 3197 05d6 0000 0000 		.long	.LM155
+ 3198 05da 1B        		.byte	0x1b
+ 3199 05db 00        		.byte	0x0
+ 3200 05dc 05        		.uleb128 0x5
+ 3201 05dd 02        		.byte	0x2
+ 3202 05de 0000 0000 		.long	.LM156
+ 3203 05e2 18        		.byte	0x18
+ 3204 05e3 00        		.byte	0x0
+ 3205 05e4 05        		.uleb128 0x5
+ 3206 05e5 02        		.byte	0x2
+ 3207 05e6 0000 0000 		.long	.LM157
+ 3208 05ea 18        		.byte	0x18
+ 3209 05eb 00        		.byte	0x0
+ 3210 05ec 05        		.uleb128 0x5
+ 3211 05ed 02        		.byte	0x2
+ 3212 05ee 0000 0000 		.long	.LM158
+ 3213 05f2 17        		.byte	0x17
+ 3214 05f3 00        		.byte	0x0
+ 3215 05f4 05        		.uleb128 0x5
+ 3216 05f5 02        		.byte	0x2
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 59
+
+
+ 3217 05f6 0000 0000 		.long	.LM159
+ 3218 05fa 16        		.byte	0x16
+ 3219 05fb 00        		.byte	0x0
+ 3220 05fc 05        		.uleb128 0x5
+ 3221 05fd 02        		.byte	0x2
+ 3222 05fe 0000 0000 		.long	.LM160
+ 3223 0602 15        		.byte	0x15
+ 3224 0603 00        		.byte	0x0
+ 3225 0604 05        		.uleb128 0x5
+ 3226 0605 02        		.byte	0x2
+ 3227 0606 0000 0000 		.long	.LM161
+ 3228 060a 18        		.byte	0x18
+ 3229 060b 00        		.byte	0x0
+ 3230 060c 05        		.uleb128 0x5
+ 3231 060d 02        		.byte	0x2
+ 3232 060e 0000 0000 		.long	.LM162
+ 3233 0612 04        		.byte	0x4
+ 3234 0613 03        		.uleb128 0x3
+ 3235 0614 03        		.byte	0x3
+ 3236 0615 BE7D      		.sleb128 -322
+ 3237 0617 01        		.byte	0x1
+ 3238 0618 00        		.byte	0x0
+ 3239 0619 05        		.uleb128 0x5
+ 3240 061a 02        		.byte	0x2
+ 3241 061b 0000 0000 		.long	.LM163
+ 3242 061f 15        		.byte	0x15
+ 3243 0620 00        		.byte	0x0
+ 3244 0621 05        		.uleb128 0x5
+ 3245 0622 02        		.byte	0x2
+ 3246 0623 0000 0000 		.long	.LM164
+ 3247 0627 16        		.byte	0x16
+ 3248 0628 00        		.byte	0x0
+ 3249 0629 05        		.uleb128 0x5
+ 3250 062a 02        		.byte	0x2
+ 3251 062b 0000 0000 		.long	.LM165
+ 3252 062f 1A        		.byte	0x1a
+ 3253 0630 00        		.byte	0x0
+ 3254 0631 05        		.uleb128 0x5
+ 3255 0632 02        		.byte	0x2
+ 3256 0633 0000 0000 		.long	.LM166
+ 3257 0637 15        		.byte	0x15
+ 3258 0638 00        		.byte	0x0
+ 3259 0639 05        		.uleb128 0x5
+ 3260 063a 02        		.byte	0x2
+ 3261 063b 0000 0000 		.long	.LM167
+ 3262 063f 15        		.byte	0x15
+ 3263 0640 00        		.byte	0x0
+ 3264 0641 05        		.uleb128 0x5
+ 3265 0642 02        		.byte	0x2
+ 3266 0643 0000 0000 		.long	.LM168
+ 3267 0647 16        		.byte	0x16
+ 3268 0648 00        		.byte	0x0
+ 3269 0649 05        		.uleb128 0x5
+ 3270 064a 02        		.byte	0x2
+ 3271 064b 0000 0000 		.long	.LM169
+ 3272 064f 19        		.byte	0x19
+ 3273 0650 00        		.byte	0x0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 60
+
+
+ 3274 0651 05        		.uleb128 0x5
+ 3275 0652 02        		.byte	0x2
+ 3276 0653 0000 0000 		.long	.LM170
+ 3277 0657 1C        		.byte	0x1c
+ 3278 0658 00        		.byte	0x0
+ 3279 0659 05        		.uleb128 0x5
+ 3280 065a 02        		.byte	0x2
+ 3281 065b 0000 0000 		.long	.LM171
+ 3282 065f 18        		.byte	0x18
+ 3283 0660 00        		.byte	0x0
+ 3284 0661 05        		.uleb128 0x5
+ 3285 0662 02        		.byte	0x2
+ 3286 0663 0000 0000 		.long	.LM172
+ 3287 0667 1E        		.byte	0x1e
+ 3288 0668 00        		.byte	0x0
+ 3289 0669 05        		.uleb128 0x5
+ 3290 066a 02        		.byte	0x2
+ 3291 066b 0000 0000 		.long	.LM173
+ 3292 066f 16        		.byte	0x16
+ 3293 0670 00        		.byte	0x0
+ 3294 0671 05        		.uleb128 0x5
+ 3295 0672 02        		.byte	0x2
+ 3296 0673 0000 0000 		.long	.LM174
+ 3297 0677 18        		.byte	0x18
+ 3298 0678 00        		.byte	0x0
+ 3299 0679 05        		.uleb128 0x5
+ 3300 067a 02        		.byte	0x2
+ 3301 067b 0000 0000 		.long	.LM175
+ 3302 067f 16        		.byte	0x16
+ 3303 0680 00        		.byte	0x0
+ 3304 0681 05        		.uleb128 0x5
+ 3305 0682 02        		.byte	0x2
+ 3306 0683 0000 0000 		.long	.LM176
+ 3307 0687 18        		.byte	0x18
+ 3308 0688 00        		.byte	0x0
+ 3309 0689 05        		.uleb128 0x5
+ 3310 068a 02        		.byte	0x2
+ 3311 068b 0000 0000 		.long	.LM177
+ 3312 068f 16        		.byte	0x16
+ 3313 0690 00        		.byte	0x0
+ 3314 0691 05        		.uleb128 0x5
+ 3315 0692 02        		.byte	0x2
+ 3316 0693 0000 0000 		.long	.LM178
+ 3317 0697 03        		.byte	0x3
+ 3318 0698 5A        		.sleb128 -38
+ 3319 0699 01        		.byte	0x1
+ 3320 069a 00        		.byte	0x0
+ 3321 069b 05        		.uleb128 0x5
+ 3322 069c 02        		.byte	0x2
+ 3323 069d 0000 0000 		.long	.LM179
+ 3324 06a1 3F        		.byte	0x3f
+ 3325 06a2 00        		.byte	0x0
+ 3326 06a3 05        		.uleb128 0x5
+ 3327 06a4 02        		.byte	0x2
+ 3328 06a5 0000 0000 		.long	.LM180
+ 3329 06a9 17        		.byte	0x17
+ 3330 06aa 00        		.byte	0x0
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 61
+
+
+ 3331 06ab 05        		.uleb128 0x5
+ 3332 06ac 02        		.byte	0x2
+ 3333 06ad 0000 0000 		.long	.Letext0
+ 3334 06b1 00        		.byte	0x0
+ 3335 06b2 01        		.uleb128 0x1
+ 3336 06b3 01        		.byte	0x1
+ 3337               	.LELT0:
+ 3338 06b4 1900 0000 		.section	.debug_str,"MS",@progbits,1
+ 3338      0200 1300 
+ 3338      0000 0101 
+ 3338      FB0E 0D00 
+ 3338      0101 0101 
+ 3339               	.LASF14:
+ 3340 0000 616E 6765 		.string	"angekommen"
+ 3340      6B6F 6D6D 
+ 3340      656E 00
+ 3341               	.LASF36:
+ 3342 000b 6565 7072 		.string	"eeprom_read_byte"
+ 3342      6F6D 5F72 
+ 3342      6561 645F 
+ 3342      6279 7465 
+ 3342      00
+ 3343               	.LASF34:
+ 3344 001c 433A 5C55 		.string	"C:\\Users\\Elvalith\\ASURO-Wettbewerb\\Programm\\the_lie"
+ 3344      7365 7273 
+ 3344      5C45 6C76 
+ 3344      616C 6974 
+ 3344      685C 4153 
+ 3345               	.LASF10:
+ 3346 0050 7365 7249 		.string	"serIn"
+ 3346      6E00 
+ 3347               	.LASF18:
+ 3348 0056 6C69 6E65 		.string	"line_init"
+ 3348      5F69 6E69 
+ 3348      7400 
+ 3349               	.LASF17:
+ 3350 0060 6765 744B 		.string	"getKey"
+ 3350      6579 00
+ 3351               	.LASF11:
+ 3352 0067 746D 736C 		.string	"tmsl"
+ 3352      00
+ 3353               	.LASF20:
+ 3354 006c 6461 7461 		.string	"data"
+ 3354      00
+ 3355               	.LASF13:
+ 3356 0071 7761 6974 		.string	"wait"
+ 3356      00
+ 3357               	.LASF1:
+ 3358 0076 756E 7369 		.string	"unsigned char"
+ 3358      676E 6564 
+ 3358      2063 6861 
+ 3358      7200 
+ 3359               	.LASF12:
+ 3360 0084 746D 7372 		.string	"tmsr"
+ 3360      00
+ 3361               	.LASF4:
+ 3362 0089 6C6F 6E67 		.string	"long unsigned int"
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 62
+
+
+ 3362      2075 6E73 
+ 3362      6967 6E65 
+ 3362      6420 696E 
+ 3362      7400 
+ 3363               	.LASF32:
+ 3364 009b 474E 5520 		.string	"GNU C 4.3.0"
+ 3364      4320 342E 
+ 3364      332E 3000 
+ 3365               	.LASF21:
+ 3366 00a7 6173 7572 		.string	"asuro_init"
+ 3366      6F5F 696E 
+ 3366      6974 00
+ 3367               	.LASF16:
+ 3368 00b2 4B65 7950 		.string	"KeyPressed"
+ 3368      7265 7373 
+ 3368      6564 00
+ 3369               	.LASF15:
+ 3370 00bd 696E 666F 		.string	"info"
+ 3370      00
+ 3371               	.LASF22:
+ 3372 00c2 6D61 696E 		.string	"main"
+ 3372      00
+ 3373               	.LASF37:
+ 3374 00c7 6565 7072 		.string	"eeprom_write_byte"
+ 3374      6F6D 5F77 
+ 3374      7269 7465 
+ 3374      5F62 7974 
+ 3374      6500 
+ 3375               	.LASF19:
+ 3376 00d9 666C 6167 		.string	"flag"
+ 3376      00
+ 3377               	.LASF2:
+ 3378 00de 756E 7369 		.string	"unsigned int"
+ 3378      676E 6564 
+ 3378      2069 6E74 
+ 3378      00
+ 3379               	.LASF33:
+ 3380 00eb 6C69 652E 		.string	"lie.c"
+ 3380      6300 
+ 3381               	.LASF6:
+ 3382 00f1 6C6F 6E67 		.string	"long long unsigned int"
+ 3382      206C 6F6E 
+ 3382      6720 756E 
+ 3382      7369 676E 
+ 3382      6564 2069 
+ 3383               	.LASF35:
+ 3384 0108 7569 6E74 		.string	"uint8_t"
+ 3384      385F 7400 
+ 3385               	.LASF25:
+ 3386 0110 6D6F 6465 		.string	"mode_alt"
+ 3386      5F61 6C74 
+ 3386      00
+ 3387               	.LASF24:
+ 3388 0119 6D6F 6465 		.string	"mode"
+ 3388      00
+ 3389               	.LASF23:
+ 3390 011e 6465 764E 		.string	"devNull"
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 63
+
+
+ 3390      756C 6C00 
+ 3391               	.LASF8:
+ 3392 0126 7265 6164 		.string	"readEEPROM"
+ 3392      4545 5052 
+ 3392      4F4D 00
+ 3393               	.LASF26:
+ 3394 0131 626C 6163 		.string	"black_l"
+ 3394      6B5F 6C00 
+ 3395               	.LASF5:
+ 3396 0139 6C6F 6E67 		.string	"long long int"
+ 3396      206C 6F6E 
+ 3396      6720 696E 
+ 3396      7400 
+ 3397               	.LASF27:
+ 3398 0147 626C 6163 		.string	"black_r"
+ 3398      6B5F 7200 
+ 3399               	.LASF9:
+ 3400 014f 7365 744D 		.string	"setMS"
+ 3400      5300 
+ 3401               	.LASF28:
+ 3402 0155 7768 6974 		.string	"white_l"
+ 3402      655F 6C00 
+ 3403               	.LASF3:
+ 3404 015d 6C6F 6E67 		.string	"long int"
+ 3404      2069 6E74 
+ 3404      00
+ 3405               	.LASF31:
+ 3406 0166 6368 6172 		.string	"char"
+ 3406      00
+ 3407               	.LASF7:
+ 3408 016b 5F5F 7661 		.string	"__value"
+ 3408      6C75 6500 
+ 3409               	.LASF0:
+ 3410 0173 7369 676E 		.string	"signed char"
+ 3410      6564 2063 
+ 3410      6861 7200 
+ 3411               	.LASF29:
+ 3412 017f 7768 6974 		.string	"white_r"
+ 3412      655F 7200 
+ 3413               	.LASF30:
+ 3414 0187 646F 6E65 		.string	"done"
+ 3414      00
+GAS LISTING C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s 			page 64
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lie.c
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:2      *ABS*:0000003f __SREG__
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:5      *ABS*:00000034 __CCP__
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:20     .text:00000000 readEEPROM
+                            *COM*:00000002 black_l
+                            *COM*:00000002 black_r
+                            *COM*:00000002 white_l
+                            *COM*:00000002 white_r
+                            *COM*:00000002 msl
+                            *COM*:00000002 msr
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:152    .text:00000092 KeyPressed
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:193    .text:000000b6 angekommen
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:223    .text:000000be setMS
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:1117   .data:000001d3 done
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:485    .text:0000021a info
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:554    .text:0000028e getKey
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:638    .text:000002cc line_init
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:862    .text:000003cc asuro_init
+C:\Users\Elvalith\AppData\Local\Temp/ccB4x6I5.s:936    .text:0000042c main
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss
+Msleep
+SerPrint
+SerRead
+PrintInt
+PollSwitch
+FrontLED
+LineData
+Init
+MotorDir
+MotorSpeed
